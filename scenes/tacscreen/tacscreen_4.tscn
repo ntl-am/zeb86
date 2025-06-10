@@ -1,0 +1,375 @@
+[gd_scene format=3 uid="uid://cin5g5pje33fg"]
+
+[node name="tacscreen4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="top" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.8
+anchor_bottom = 0.05
+
+[node name="HBoxContainer" type="HBoxContainer" parent="top"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "cidade pallet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "dia 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "16:20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "sol forte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+text = "1h32m"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "16:20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.8
+tab_alignment = 1
+current_tab = 0
+
+[node name="Actors" type="ScrollContainer" parent="TabContainer"]
+clip_contents = false
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Actors"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Actors/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Label" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "hostil"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "zequinha"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label3" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label4" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "13u"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label5" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "jaguadarte"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label6" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label7" type="Button" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "inspect"
+text_overrun_behavior = 3
+
+[node name="Label8" type="Button" parent="TabContainer/Actors/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "center"
+text_overrun_behavior = 3
+
+[node name="GridContainer2" type="GridContainer" parent="TabContainer/Actors/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Label" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "hostil"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "zequinha"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label3" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label4" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "13u"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label5" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "jaguadarte"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label6" type="Label" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label7" type="Button" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "inspect"
+text_overrun_behavior = 3
+
+[node name="Label8" type="Button" parent="TabContainer/Actors/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "center"
+text_overrun_behavior = 3
+
+[node name="Items" type="ScrollContainer" parent="TabContainer"]
+visible = false
+clip_contents = false
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Items/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Label" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "hostil"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "zequinha"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label3" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label4" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "13u"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label5" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "jaguadarte"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label6" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label7" type="Button" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "inspect"
+text_overrun_behavior = 3
+
+[node name="Label8" type="Button" parent="TabContainer/Items/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "center"
+text_overrun_behavior = 3
+
+[node name="GridContainer2" type="GridContainer" parent="TabContainer/Items/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Label" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "hostil"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "zequinha"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label3" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label4" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "13u"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label5" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "jaguadarte"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label6" type="Label" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Label7" type="Button" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "inspect"
+text_overrun_behavior = 3
+
+[node name="Label8" type="Button" parent="TabContainer/Items/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "center"
+text_overrun_behavior = 3

@@ -1,0 +1,62 @@
+@startuml
+hide empty members
+'hide circle
+<style>
+
+</style>
+struct BodyStatus {
+    <#transparent,#transparent>|LP:| PointBar|
+    |MP:| PointBar|
+    |SP:| PointBar|
+    |NP:| PointBar|
+    |AP:| PointBar|
+    |PP:| PurityScale|
+}
+
+struct PointBar {
+    <#transparent,#transparent>|Available:| Int|
+    |Spent:| Int|
+    |Reserved:| Int|
+    |Maximum:| Int|
+    |Temporary:| Int|
+}
+
+enum PurityScale {
+    -3
+    -2
+    -1
+     0
+    +1
+    +2
+    +3
+}
+
+struct Resists {
+    <#transparent,#transparent>|Fisico:| ResistScale|
+    |Biologico:| ResistScale|
+    |Psiquico:| ResistScale|
+    |Calor:| ResistScale|
+    |Frio:| ResistScale|
+    |Eletrico:| ResistScale|
+}
+
+enum ResistScale {
+    -3
+    -2
+    -1
+    0
+    +1
+    +2
+    +3
+}
+
+enum TiposDano {
+    Fisico
+    Biologico
+    Psiquico
+    Calor
+    Frio
+    Eletrico
+}
+
+@enduml

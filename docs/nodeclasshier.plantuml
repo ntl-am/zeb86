@@ -1,0 +1,140 @@
+@startuml
+hide empty members
+hide circle
+
+
+object Node
+object Node2D {
+    Sprite: Sprite
+    Coords: V2
+    Scale: Float
+    ZIndex: Int
+    Rotate: Float
+    Visible: Bool
+}
+object TileMap
+object Tabuleiro {
+    Processo: WorldProcess | Null
+    Efeitos: [ActorModifier + ItemModifier]
+    Casas: ~[[Casa]]
+}
+object Perk {
+    Nome: String
+    Tipo: TiposPerk
+    Portador: Peca
+    Criacao: Turno
+    Efeitos: [ActorModifier U ItemModifier]
+    Duracao: Turno | Infinito
+    Processo: WorldProcess | Null
+}
+
+object GlobalState {
+    Turno: Int
+    FaseTurno: PC | World1 | NPC | World2
+    GameTime: Tempo
+    Seed: RandomSeed
+    Template: GameTemplate
+}
+
+object Peca {
+    Coords: Tabuleiro + Casa
+    Ativo: Bool
+}
+
+object Item {
+    Nome: String
+    Tipo: ItemTipos
+    Tamanho: EnumTamanho
+    Material: SubstanciasSolidas
+    IntegridadeMaxima: Int
+    Integridade: Int
+    WorldProcess: Process
+    IDRequirement: [Skill]
+    Valor: Int
+    Raridade: Int
+}
+
+object Equipamento {
+    EquipSlot: Membro
+    Tipo: EquipmentType
+    Acoes: [Acao]
+    Efeitos: [ActorEffect]
+    WorldProcess: [Process]
+}
+
+object DragoonRevolver {
+    Municao: Int
+    MunicaoMax: Int
+    Projetil: TipoProjetil
+    Acoes: [Acao]
+    Efeitos: [ActorEffect]
+    WorldProcess: [Process]
+}
+
+object Ator {
+    Nome: String
+    Tamanho: ActorSizes
+    Status: Status
+    Corpo: Corpo
+    Faccoes: [(Faccao + Standing)]
+    WorldEfects : Proces
+    Sentidos
+    Conhecimento
+    Skills
+    Time: PC | NPC
+}
+
+object Fenomeno {
+    TIpoFenomeno
+    WorldProcess
+    Duracao
+    Efeitos
+    Acoes
+    IA
+    Material
+    EstadoMateria
+}
+
+enum CasaShape {
+    Floor
+    PitS
+    PitM
+    PitL
+    PitG
+    Wall
+    Mureta
+    Hole
+    Debris
+    Grate
+}
+
+struct Casa {
+    CasaShape
+    IntegrityMax
+    Integritx
+    material
+}
+
+classe SubsSolida {
+    resists
+    see thru
+    move thru
+    nome
+    
+}
+
+enum Materiaism
+
+Node --> Node2D
+Node --> Perk
+Node2D --> TileMap
+TileMap --> Tabuleiro
+Node --> GlobalState
+Node2D --> Peca
+Peca --> Item
+Item --> Equipamento
+Equipamento --> DragoonRevolver
+Peca --> Ator
+Peca --> Fenomeno
+
+@enduml

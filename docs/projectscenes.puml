@@ -1,0 +1,71 @@
+@startuml
+hide empty members
+hide circle
+
+!theme plain 
+'!theme mono plain none mimeograph
+<style>
+</style>
+
+title Scene Relation Diagram
+
+rectangle GlobalState
+rectangle Partida
+rectangle Faccao
+rectangle Evento
+rectangle Geografia
+rectangle Tabuleiro
+rectangle PerkTabuleiro
+rectangle Rota
+rectangle Casa
+rectangle Pecas
+rectangle Party
+Rectangle PerkParty
+rectangle PartyLog
+rectangle Item
+rectangle PerkItem
+rectangle PC
+rectangle Acampamento
+rectangle Stash
+rectangle NPC
+rectangle Fenomeno
+rectangle Corpo
+rectangle PerkCorpo
+rectangle Membro
+rectangle Stats
+rectangle Senses
+rectangle Skills
+
+GlobalState -> Partida
+Partida <-- Pecas
+Partida <-- Geografia
+Partida <-- Faccao
+Partida <-- Evento
+
+Pecas <-- Party
+Pecas <-- Item
+Pecas <-- NPC
+Pecas <-- Fenomeno
+
+Geografia <-- Tabuleiro
+Geografia <-- Rota
+Tabuleiro <-- Casa
+
+Party <-- PC
+Party <-- Acampamento
+Party <-- Stash
+Party <-- PartyLog
+
+PC <-- Corpo
+NPC <-- Corpo
+Corpo <-- Membro
+Corpo <-- Stats
+Corpo <-- Senses
+Corpo <-- Skills
+
+Corpo <- PerkCorpo
+Item <-- PerkItem
+Party <-- PerkParty
+PerkTabuleiro -> Tabuleiro
+
+@enduml

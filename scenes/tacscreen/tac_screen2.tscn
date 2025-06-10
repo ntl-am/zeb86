@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbb3tjjrk3kfs"]
+
+[ext_resource type="StyleBox" uid="uid://djey5taegiknu" path="res://scenes/tacscreen/new_style_box_flat.tres" id="1_2pr6c"]
+
+[sub_resource type="Theme" id="Theme_qwxlo"]
+
+[sub_resource type="Theme" id="Theme_2pr6c"]
+
+[sub_resource type="Theme" id="Theme_vcopy"]
+default_font_size = 16
+PanelContainer/styles/panel = ExtResource("1_2pr6c")
+
+[node name="TacScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="top" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.85
+anchor_bottom = 0.05
+
+[node name="HBoxContainer" type="HBoxContainer" parent="top"]
+layout_mode = 2
+theme = SubResource("Theme_qwxlo")
+
+[node name="Label" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+text = "turno3"
+
+[node name="Label2" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+text = "castelo periddo"
+
+[node name="Label3" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+text = "time 02:36"
+
+[node name="Label4" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "igt 1h21m"
+
+[node name="Label5" type="Label" parent="top/HBoxContainer"]
+layout_mode = 2
+text = "realtime 22:22"
+
+[node name="right" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83
+anchor_right = 1.0
+anchor_bottom = 0.235
+offset_left = 22.84
+offset_bottom = 495.72
+color = Color(0.808933, 0.411221, 0.0150289, 1)
+
+[node name="left" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.05
+offset_top = 32.0
+offset_bottom = 518.6
+theme = SubResource("Theme_2pr6c")
+
+[node name="Button" type="Button" parent="left"]
+layout_mode = 2
+text = "sys menu"
+
+[node name="Button2" type="Button" parent="left"]
+layout_mode = 2
+text = "party screen"
+
+[node name="Button3" type="Button" parent="left"]
+layout_mode = 2
+text = "template screen"
+autowrap_mode = 2
+
+[node name="Button4" type="Button" parent="left"]
+layout_mode = 2
+text = "log"
+
+[node name="Button5" type="Button" parent="left"]
+layout_mode = 2
+text = "review turns"
+
+[node name="Button6" type="Button" parent="left"]
+layout_mode = 2
+text = "encyclopedia"
+
+[node name="Button7" type="Button" parent="left"]
+layout_mode = 2
+text = "actor list"
+
+[node name="Button8" type="Button" parent="left"]
+layout_mode = 2
+text = "select PC"
+
+[node name="Button9" type="Button" parent="left"]
+layout_mode = 2
+text = "item list"
+
+[node name="Button10" type="Button" parent="left"]
+layout_mode = 2
+text = "map screen"
+
+[node name="bot" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123
+anchor_right = 0.123
+anchor_bottom = 0.15
+offset_left = -141.696
+offset_top = 551.0
+offset_right = 837.304
+offset_bottom = 550.84
+theme = SubResource("Theme_vcopy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bot"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="bot/HBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Panel" type="Panel" parent="bot/HBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="bot/HBoxContainer/GridContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "aaaaa"
+
+[node name="Panel2" type="Panel" parent="bot/HBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="bot/HBoxContainer/GridContainer/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "aaaaa"

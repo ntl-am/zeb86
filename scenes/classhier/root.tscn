@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp1a513vrb8mj"]
+
+[ext_resource type="Script" uid="uid://tnnf0nhydobf" path="res://scenes/classhier/root.gd" id="1_c57u7"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_c57u7")
