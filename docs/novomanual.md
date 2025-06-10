@@ -1,19 +1,85 @@
 # intro/manual
 ## sobre o que eh este manual
+o jogo!
 ## publico alvo
+### tutorial
+quero conhecer o jogo ou quero ajuda nas primeiras partidas ou conhecer mecanicas
+diferentes
+### jogadores mais experientes
+quer conhecer coisas mais obscuras e entender mais a mecanica
+### consulta dados objetivos
+explicacao seca de dados, formulas, fluxos
 ## como ler o manual, estrutura
+divido em capitulos. o capitulo final para iniciantes. conteudo tutorial/avancado/consulta
+dentro de uma mesma secao. apendices para hard data. secao dev para problemas
+de soft, i.e. instalar, rodar, compilar.
 
 # o jogo
 ## genero, inspo
+roguelike, xcom, mundos simulados.
+## estetica
+mistura de medieval, velho oeste; aliens etereais viajantes de tempo; guardioes
+roboticos tecnologicos e futuristas; monstros misteriosos e body horror; outer beings,
+cultistas; natureza muito rica e vasta, com bestas, plantas, fungos complexos.
+
+os diferentes biomas tem esteticas naturais, medievais, tecnologicas, goticas, demoniacas,
+dark fantasy.
+
+mundo perigoso mas rico. violencia eh comum. ferimentos podem ser permanentes. no decorrer 
+do jogo os pcs vao mudar muito. varias maneiras de resolver conflitos. interacao com faccoes 
+e outras pessoas. viajar eh perigoso e deve ser planejado. fome, doencas, ferimentos, emboscadas 
+sao perigos constantes.
+
+gonhecimento e reconhecimento eh importantes. conhecer biomas, saber onde estao 
+tesouros, onde eh perigoso, qual a agenda de faccoes sao. interacao com faccoes, npcs, quests, sao importantes e delicadas. estes podem desde oferecerem 
+ajuda, informacao, servicos, ate ativamente de cacarem.
+
+nao existe nivel nem XP. bonus costumam ser temporarios a partir de consumiveis, itens,
+etc. eh importante preservar os PCs e estar atento a possibilidades de melhorias atraves 
+de itens, perks, etc. conhecimento tambem eh poder.
 ## fluxo, partes do jogo
 ## desafios, mecanincas, puzzles, o q gerenciar
 ## filosofia, design, o que preparamos
 
 # uma partida (superficialmente)
 ## criando um novo jogo
+### configurando template de criacao
+#### geografia, biomas, eventos
+#### raridade de geracao de itens
+#### nivel de violencia e perigo
+#### qtd e forca de faccoes
+### party e PCs iniciais
+#### escolhendo skills, perks, corpos
+#### itens iniciais
 ## comeco, meio, fim
+### comeco
+sobreviver no comeco eh relativamente dificil. tentar preservar pcs enquanto explora 
+e adquire itens importantes basicos. conhecer faccoes e geografia.
+### meio
+adquirir mais poder e planejar builds. definir objetivo wincon. interacao mais drastica 
+com faccoes. arriscar atras de itens e coisas importantes.
+### late
+mundo mais perigoso. planejar realizacao wincon. tarefas high risk high reward. 
+tentar atingir wincon ou viver sandbox. empoderar ou derrubar faccoes e civs.
 ## game loop
+### modo tatico
+acoes dentro de um tabuleiro. interacao npcs, combate, explorar, loot. tambem aqui 
+acampar e sair em jobs. tabuleiros tem rotas para outros tabuleiros
+### acampamento
+descansar, passar tempo, acessar stash. acoes de camp. emboscadas. reorganizar 
+inventorios de pcs.
+### viajando por rotas
+tempo de viagem. perigos. se perder. achar items ou npcs no caminho e interagir.
+### party screen
+checar quests, standing c faccoes, coisas conhecidas (mapas, aonde estao coisas, etc). 
+splitar party. sair em jobs. acoes PC-PC, trocar itens.
 ## conceitos importantes
+### Corpo, Stats, Membros
+### Skills, Senses
+### Movimentacao, interacao 
+### Combate, exploracao
+### viajar e acampar
+
 ## telas e input
 
 # mundo
