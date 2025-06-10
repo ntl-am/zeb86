@@ -84,8 +84,43 @@ splitar party. sair em jobs. acoes PC-PC, trocar itens.
 
 # mundo
 ## tabuleiros e grafo de rotas
-## tabuleiros, casas, biomas
+## tabuleiros, casas, biomaso
+### tabuleiros
+grids a la xcom/rogue. aqui o tempo passa em turnos e turnphases. colecao de casas.
+#### modifiers
+modifiers e.g. escuridao, calor, pouco ar, radiacao, absorcao som, assombracoes,
+### casas
+cada parte discreta de um tabuleiro.
+#### tileshapes
+floor, wall, buraco SM, debris SML, pocoMLG, mureta. pocos podem ter pool de liquido, e cair pode machucar. sair eh dificil. modos de movimento interagem diferente com tileshapes, e.g. nao da pra rolar por debris, nem pular sobrewall.
+#### material e integridade de cada casa
+#### see thru, move thru, movimentos diferentes.
+#### armadilhas
+parede falsa. chao que vira poco. trapdoor. traps ativadas ao pisar num floor.
+### biomas
+#### humanos
+cidades, vilas, fortalezas, assentamentos
+#### natureza
+florestas, desertos, pantanos, lagoas, montanhas, etc
+#### outer beings
+acampamentos cultistas. templos, altares, holy sites.
+#### guardioes
+torres e estruturas subterraneas super tecnologicas. maquinaria. eletronics.
+#### montros
+ninhos, calaboucos, ruinas misteriosas de pedra.
+#### aliens
+ruinas de cristal. nao euclidean. teleporting. shifiting room connections.
 ## civs, faccoes, quests
+### humanos
+#### faccoes, religioes
+### natureza
+no geral neutra. fonte de ingredientes bons. o perigo as vezes se esconde.
+### monstros
+extremamente agresivo contra qqr coisa q n seja monstros. formas diferentes, todas perigosas. parecem nao precisam comer, e nao parecem se reproduzir; eles so surgem. corpo body horror. causam maldicoes. muito territorialistas, mas as vezes raidam humanos, natureza, ou guardioes. unico objetivo parece matar. seus cadaveres sao fonte de ingredientes alquimicos e body parts podem servir como armas ou ferramentas. cuidado com curses.
+### guardioes
+robos criados ha milhares de anos atras pela humanidade. servem como guerreiros, trabalhadores, construtores, cientistas. ainda executam as tarefas que lhe foram programadas milenios apos o fim da sociedade. podem ser neutrais, aggro ou aliados. tarefas diferentes e.g. patrulhar e matar, construir estruturas, fazer items, etc. continuam servindo mestres que morreram.
+### outer beings
+ouer beings sao seres abstratos e conscientes que existem no espaco imaterial entre as realidades. cerca de 5 obs diferentes, cada um com sua agenda. eles nao podem entrar na nossa realidade, entao influenciam cultistas para seguir seus rituais, objetivos, codigos de conduta. seguidores fieis sao agraciados com pactos (perks), intercessoes (e.g. alimentar um cultista com fome, ou curar doencas, ou reenergizar um guerreiro) e regalos (itens fisicos, como armas, consumiveis, ekips). cultos ob sao mal vistos por praticamente todos outros seres humanos, e mesmo a natureza nao os aceita. cultistas tambem desenvolvem uma aura de corrupcao, que fica perceptivel para os outros seres.
 ## eventos, global mods, ciclo dia noite
 
 # atores
