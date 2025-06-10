@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css" type="text/css">
+<!-- link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-vader.css" type="text/css" -->
+<!-- link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Kimeiga/kacit/kacit.min.css" type="text/css">
+<!-- link rel="stylesheet" href="https://davidpaulsson.github.io/no-class/css/no-class.min.css" type="text/css" -->
+<!-- link rel="stylesheet" href="https://vasanthv.github.io/stylize.css/stylize.css" type="text/css" -->
+<!-- link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yorha@1.2.0/dist/yorha.min.css" type="text/css" -->
+<style></style>
+
 # intro/manual
 ## sobre o que eh este manual
 o jogo!
