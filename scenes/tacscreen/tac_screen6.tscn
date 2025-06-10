@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5bc5onpfvofv"]
+
+[sub_resource type="Theme" id="Theme_spfhk"]
+HBoxContainer/constants/separation = 4
+
+[node name="TacScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.8
+anchor_bottom = 0.05
+theme = SubResource("Theme_spfhk")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "bomdia"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "flor do dia"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "raia o sol"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+text = "tchautchau"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "boa noite"
+vertical_alignment = 1
+
+[node name="RightBar" type="VSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+split_offset = 3
+
+[node name="ActorItemLists" type="TabContainer" parent="RightBar"]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="ActorList" type="ScrollContainer" parent="RightBar/ActorItemLists"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="Actors" type="VBoxContainer" parent="RightBar/ActorItemLists/ActorList"]
+layout_mode = 2
+
+[node name="ItemList" type="ScrollContainer" parent="RightBar/ActorItemLists"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Items" type="VBoxContainer" parent="RightBar/ActorItemLists/ItemList"]
+layout_mode = 2
+
+[node name="Log" type="ScrollContainer" parent="RightBar"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="LogList" type="VBoxContainer" parent="RightBar/Log"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomBar" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.8
+anchor_bottom = 1.0
+border_color = Color(0, 1, 0.15, 1)
+
+[node name="LeftBar" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.8
+border_color = Color(1, 0, 0.95, 1)

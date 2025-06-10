@@ -1,0 +1,293 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtl7tegsoj7w3"]
+
+[ext_resource type="StyleBox" uid="uid://cfcb40lr6hbhj" path="res://scenes/tacscreen/new_style_box_flat2.tres" id="1_wood7"]
+[ext_resource type="LabelSettings" uid="uid://gnxpayjq2bg4" path="res://scenes/tacscreen/actorlistlabel.tres" id="2_kpmmw"]
+[ext_resource type="LabelSettings" uid="uid://bbnenlt8g6vu1" path="res://scenes/tacscreen/logheaderlabelset.tres" id="3_8qefu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wood7"]
+bg_color = Color(0.6, 0.4608, 0.252, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjowf"]
+bg_color = Color(0.86, 0.738167, 0.129, 1)
+
+[node name="TacScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TopBar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.8
+anchor_bottom = 0.05
+theme_override_styles/panel = ExtResource("1_wood7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="TopBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "bom dia"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TopBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "flor do dia"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="TopBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "tudo bem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="TopBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+text = "tchautchau"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="TopBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "boa noite"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightBar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = ExtResource("1_wood7")
+
+[node name="RightBarSplit" type="VSplitContainer" parent="RightBar"]
+layout_mode = 2
+split_offset = 3
+
+[node name="ActorItemLists" type="TabContainer" parent="RightBar/RightBarSplit"]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="ActorList" type="ScrollContainer" parent="RightBar/RightBarSplit/ActorItemLists"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="Actors" type="VBoxContainer" parent="RightBar/RightBarSplit/ActorItemLists/ActorList"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LABEL CERTO" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ActorList/Actors"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO2" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ActorList/Actors"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "In eu faucibus neque.
+Suspendisse tellus ante, pharetra sed tellus et"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO3" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ActorList/Actors"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Phasellus posuere diam in 
+ sollicitudin cursus. Etiam luctus vel mauris"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO4" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ActorList/Actors"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Quisque eleifend gravida aliquam. Nam volutpat varius purus id feugiat.
+ Donec ut commodo nisi. "
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO5" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ActorList/Actors"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="ItemList" type="ScrollContainer" parent="RightBar/RightBarSplit/ActorItemLists"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Items" type="VBoxContainer" parent="RightBar/RightBarSplit/ActorItemLists/ItemList"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LABEL CERTO" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ItemList/Items"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO2" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ItemList/Items"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "In eu faucibus neque.
+Suspendisse tellus ante, pharetra sed tellus et"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO3" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ItemList/Items"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Phasellus posuere diam in 
+ sollicitudin cursus. Etiam luctus vel mauris"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO4" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ItemList/Items"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Quisque eleifend gravida aliquam. Nam volutpat varius purus id feugiat.
+ Donec ut commodo nisi. "
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO5" type="Label" parent="RightBar/RightBarSplit/ActorItemLists/ItemList/Items"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="Log" type="ScrollContainer" parent="RightBar/RightBarSplit"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="LogList" type="VBoxContainer" parent="RightBar/RightBarSplit/Log"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LogListHeader" type="Label" parent="RightBar/RightBarSplit/Log/LogList"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_tjowf")
+text = "LOG"
+label_settings = ExtResource("3_8qefu")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LABEL CERTO" type="Label" parent="RightBar/RightBarSplit/Log/LogList"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO5" type="Label" parent="RightBar/RightBarSplit/Log/LogList"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO2" type="Label" parent="RightBar/RightBarSplit/Log/LogList"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO4" type="Label" parent="RightBar/RightBarSplit/Log/LogList"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="LABEL CERTO3" type="Label" parent="RightBar/RightBarSplit/Log/LogList"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wood7")
+text = "Curabitur sodales molestie malesuada. Mauris faucibus, libero pulvinar pharetra efficitur"
+label_settings = ExtResource("2_kpmmw")
+autowrap_mode = 3
+
+[node name="BottomBar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.8
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomBar"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="BottomBar/HBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="LeftBar" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.8
+border_color = Color(1, 0, 0.95, 1)
