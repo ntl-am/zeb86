@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clh3ch5rj5frt"]
+
+[ext_resource type="Script" uid="uid://0mo5qypa3wok" path="res://scenes/entscenes/peca.gd" id="1_dtuvj"]
+
+[node name="Peca" type="Sprite2D"]
+script = ExtResource("1_dtuvj")
