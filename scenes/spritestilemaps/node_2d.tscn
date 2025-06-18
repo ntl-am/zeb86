@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://do8nyokmae6u3"]
+
+[ext_resource type="Texture2D" uid="uid://cp77fp7isfpie" path="res://assets/32x32_packed_EGA.png" id="1_faas1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdxj2"]
+atlas = ExtResource("1_faas1")
+region = Rect2(32, 0, 32, 32)
+filter_clip = true
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_pdxj2")
