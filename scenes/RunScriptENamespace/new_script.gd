@@ -21,6 +21,8 @@ class TreeNode extends Node:
 	var parent
 	var coords : Vector2i
 	var cost : int
+	func _to_string() -> String:
+		return "Tr"
 	func _init(n:StringName, c:Vector2i, parent):
 		parent = parent
 		name = n
@@ -34,9 +36,6 @@ func _run():
 	var layer = 1
 	var sibling = 1
 	for n in ons:
-		var cost =999
-		var nodename = StringName("<%d, %d> V2i(%s) cost: %d" % [layer, sibling, n, cost])
-		sibling += 1
-		o.add_child(TreeNode.new(nodename, n, o))
+		var nodename = StringName("<%s, %")
+		o.add_child(TreeNode.new(StringName(), n, o))
 	o.print_tree_pretty()
-	
