@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bua2abjggyeyg"]
+
+[ext_resource type="Texture2D" uid="uid://c6wyob2jde7bq" path="res://assetsnovo/tiles_30x30-export.png" id="1_xacgu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rxvxn"]
+texture = ExtResource("1_xacgu")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+
+[resource]
+tile_size = Vector2i(30, 30)
+sources/0 = SubResource("TileSetAtlasSource_rxvxn")
