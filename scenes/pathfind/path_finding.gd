@@ -29,4 +29,3 @@ func _ready():
 		print(pathcost(Vector2i(-5,3)))
 		print(pathcost(Vector2i(7,4)))
 		printt(s2.column, s2.line)
-	

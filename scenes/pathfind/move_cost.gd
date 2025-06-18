@@ -16,4 +16,3 @@ func pathcost(dv : Vector2i) -> int:
 	var orthos = dc - diags
 	var diagscost = diags + floori(diags / 2)
 	return diagscost + orthos
-	
