@@ -7,6 +7,7 @@
 - [x] nao gerar todo.html a partir do todo.md na raiz
 - [x] markdown lint
 - [x] dumpar manual antigo no novo
+- reorg manual: repensar ordem dos caps secoes etc
 - dumpar fichas no manual novo
 - dumpar papelada no manual novo
 - dumpar caderno no manual novo

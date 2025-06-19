@@ -13,10 +13,6 @@
 
 o jogo!
 
-## publico alvo
-- tutorial: intro basica, ensina comando
-- experiente: aprofunda mecanicas, filosofia design
-- consulta: texto seco objetivo das regras.
 
 ### tutorial
 
@@ -632,11 +628,10 @@ lugares (cidade, guardian ruin, demon camp, monster nest)
 
 1. [intro/manual](#intromanual)
    1. [sobre o que eh este manual](#sobre-o-que-eh-este-manual)
-   2. [publico alvo](#publico-alvo)
       1. [tutorial](#tutorial)
       2. [jogadores mais experientes](#jogadores-mais-experientes)
       3. [consulta dados objetivos](#consulta-dados-objetivos)
-   3. [como ler o manual, estrutura](#como-ler-o-manual-estrutura)
+   2. [como ler o manual, estrutura](#como-ler-o-manual-estrutura)
 2. [o jogo](#o-jogo)
    1. [genero, inspo](#genero-inspo)
    2. [comeco meio fim](#comeco-meio-fim)
