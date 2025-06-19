@@ -14,6 +14,9 @@
 o jogo!
 
 ## publico alvo
+- tutorial: intro basica, ensina comando
+- experiente: aprofunda mecanicas, filosofia design
+- consulta: texto seco objetivo das regras.
 
 ### tutorial
 
@@ -39,6 +42,12 @@ de soft, i.e. instalar, rodar, compilar.
 ## genero, inspo
 
 roguelike, xcom, mundos simulados.
+mistura de rpg, roguelike classico, xcom classico, e simulacoes
+
+## comeco meio fim
+- new game, templates, sobreviver
+- explorando, planeja build, busca recurso info
+- planeja endgame, ultimos dias, hi risk hi reward
 
 ## estetica
 
@@ -71,6 +80,25 @@ de itens, perks, etc. conhecimento tambem eh poder.
 # uma partida (superficialmente)
 
 ## criando um novo jogo
+
+### dump featherwiki
+
+
+templates eh config para gerar jogo. template define eg: wincon, losscon, starting party, world modifiers, stratgraph layout/gen, tac screens calibration/biome proportions, calibrar epoca (def cidades, populacoes human monster natureza etc), faccoes, proporcao itens/atores/monstros/value(+valor=mais coisa rara), eventos lineares/pontuais/ciclicos, banned itens/actors/skills/quests, randomizing factor, time limit, desafios e.g. codigo de conduta, pouca comida, todos hostis, noite eterna.
+
+wincon exemplos=juntar N artefatos, achar/matar a anja, erradicar monstros/humanidade. juntar muito ouro. ser levada pra dimensao demon. trazer demon. ser levado por aliens. tomar controle dos guardioes. voltar no tempo para epoca boa. empoderar alguma faccao. banir demonios. achar e matar nemesis (pessoa/monstro). achar item especifico. sobreviver n tempo.
+
+world = strat graph + tac maps. strat graph = tac maps e conexoes entre eles (inclui tempo, custo, perigos). tac map = a la rl grid, mas podem ser pequenas-bem grandes. podem ser cidades, calaboucos, florestas, pocket dims.
+
+strat graph: andar por rota pode trazer inimigos, ou pc podem eg achar itens, treinar etc.
+
+tac maps = npc tem "vida propria" com rotinas, faccoes, objetivos, necessidades, pertences, movimentos, acoes
+
+tempo: passa o tempo todo concurrentemeente em todos tacmaps. tempo passa globalmente para todos e atores/itens agem mesmo estando em outros tacs
+
+tac round flow: pc -> world -> npc -> world -> pc -> ....
+
+eventos: com passagem do tempo, podem acontecer eventos em tacs, globais, etc.
 
 ### configurando template de criacao
 
@@ -303,6 +331,52 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
 
 ## mecanismos
 
+### armadilhas dump featherwiki
+
+fake floor #
+
+chao falso que na realidade eh um poco.
+trapdoor
+
+chao falso que te joga para andar abaixo.
+crushing wall
+
+floor normal, mas que vai ficando tunel cada vez mais apertado ate esmagar
+bear trap
+
+fere e prende a vitima
+gas invisivel
+
+gas invisivel. e.g. inflamavel (explode qd qqr chama acesa), ou venenoso (tontura, veneno).
+tripwire
+
+andar sobre tripwire emite system. por exemplo, um barulho que chama inimigos ou uma luz que ofusca pcs.
+one-way door
+
+porta que abre normal, fecha sozinha, mas nao abre de dentro pra fora.
+moving walls
+
+paredes que se mexem p esmagar pcs
+mine trap
+
+armadilha no chao que emite e.g. explosao, gas venenoso, choque
+amnesia trap
+
+olhar para o espelho faz esquecer o que ja se sabia do mapa.
+mirror tricks
+
+posicionamento esperto de espelhos e objetos faz com que hologramas surjam. e.g. player ve tesouro, chega perto, mas eh apenas holograma. e.g. players tem medo de avancar corredor pois vem holograma de inimigo poderoso
+cage trap
+
+gaiola cai e prende PC. boa sorte.
+alcova secreta
+
+pisar na armadilha abre porta secreta (parece parede) para sala contendo monstros, perigos, npcs.
+gas vent
+
+vent invisivel emite gas provavelmente desagradavel
+
+
 ## usaveis, consumiveis, tesouro, talismans, artefatos, runas
 
 ## equipamentos
@@ -369,6 +443,9 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
 
 # telas, gui, input
 
+## input
+mouse + kb + mods (alt shift ctrl). m1 m2 m3 mwheel, doubleclick m1 m2, drag m1m2, mousoe hover, mods.
+
 ## telas
 
 ### tac
@@ -380,6 +457,110 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
 ### GUI help
 
 # historinha
+
+## feather wiki dump
+historia #
+singularidade tecnologica social
+guardioes
+humanos baseline e mutantes
+monstros
+demonios
+aliens
+catastrofe final
+hiato
+presente
+o presente
+civilizacoes
+humanos:
+
+humanos baseline e mutantes ou de especies proximas. vivem em vilas, fortes, ou ruinas. seu nivel de tecnologia eh algo entre o fim da idade media e o velho oeste. suscetiveis a mutacoes. os modifiers humanos sao mutacoes, e seus itens sao artigos. coexistem em vilas de tamanho pequeno (vilarejo/fazenda) ate cidades modestas de centenas de milhares de habitantes. outros tambem vivem em cavernas, ruinas, florestas. as cidades nao sao tao grandes mas sao em muito numero e bem espalhadas.
+faccoes
+humanos se dividem em faccoes. algumas sao inofensivas e meramente organizacionais, como membros de uma guilda de mercadores ou guardas de uma vila. outros sao guiados por crencas ou objetivos. algumas faccoes existem abertamente e outras sao secretas. algumas tem uma agenda positiva e outras procuram destruir. muitas faccoes oferecem servicos e ajuda a seus membros ou nao-membros bem quistos. certas faccoes mais malignas sao proibidas e cacadas abertamente. nao eh incomum participar de mais de uma faccao.
+
+variantes cultitas demoniacos
+
+cultistas demoniacos se juntam para seguir a agenda de algum demonio especifico. hostis e perigosas, buscam destruicao e poder. basicamente todas faccoes benignas e neutras preferes destruir cultistas.
+historiadores dos guardioes
+
+buscam entender os guardioes com o proposito de fazelos ajudar humanidade. tambem se interessam em adquirir dispositivos e maquinaria. estudam os guardioes e seus fortes. nao tem mt taboo de receber implantes. sao amigaveis mas certas pessoas acham seus estudos perigosos, e que guardiaos deviam ser deixados em paz.
+hagioneiros
+
+grupos fragmentados de pessoas que receberam o sonho do anjo e da deusa, e tem como objetivo encontrar o que o sonho mostrou. alguns grupos preferem matar outros (competicao) ou trabalhar junto. nao sao muito bem vistos por pessoas normais, mas nao sao maltratados ou prejudiced. acreditam que a deusa vai conceder transcendencia desse plano material imperfeito repleto de morte e dor.
+alienistas
+
+buscam manter contato com aliens e aproximar as civilizacoes. nao tem muito sucesso. interessados em doutrinas, a mente humana e reliquias, e pagam caro por itens e informacoes. outras faccoes n tem nada contra, so os acham meio lunaticos.
+reconstrutores
+
+buscam reorganizar a humanidade aa sua gloria antiga ...................
+evolucionistas
+
+acreditam que humanos baseline estao ficando obsoletos e buscam transcender atraves de mutacoes.
+faccoes locais
+
+muitas cidades, vilas, etc se organizam em faccoes para se ajudar e logisticar.
+monstristas
+
+extremistas que acreditam que a terra pertence de verdade aos monstros. praticam ataques terroristas com intuito de destruir a civilizacao e jogar monstros contra as pesssoas.
+bandidage
+
+grupos soltos de bandidos que predam a sociedade organizada. ladroes, assassinos, extortores, traficantes. eh comum que facam e desfacam aliancas e lutem entre si. no geral operam numa area de sua influencia.
+guildas comerciais
+
+eg. guildas de ferreiros, alquimistas. se ajudam para ter materia prima e controlam a venda. faccoes puramente logisticas e comerciais. por vezes contratam mercenarios para se proteger em viagens.
+nova nobreza
+
+pequenos grupos que se organizam de modo quase feudal em cidades estratificadas e desiguais. analogo ao feudalismo. lordes sao servidos por camponeses em troco de protecao realizada por tropas dos lordes. as relacoes entre as casas mudam as vezes, e pequenas guerras ja aconteceram no passado. aceitam bem outsideres mas nao gostam que seu estilo de organizacao seja criticado.
+menistas
+
+humanos que rejeitam organizacoes sociais complexas e tecnologias. tambem rejeitam aliens, demonios, guardioes. no geral vivem em lugares naturais sobrevivendo do que coletam. conhecem bem a natureza para subsistir e se defender. se preocupam muito com monstros e bandidage. acreditam que a arrogancia da antiga civilizacao causou nossa queda e querem viver como parte da natureza. sao neutros e amigaveis no geral, mas desconfiam de outsiders. em conflitos, sao mais perigosos do que aparentam.
+mercenarios
+
+bandos de soldados de aluguel. sao amigaveis para com outros humanos e sao relativalmente benquistos por proteger as pesssoas. oferecem servicos de protecao para nobres, mercantes, e contra ataques monstros. pacificos mas trabalham apenas mediante pagamento generoso. relativamente nomadicos, viajam de cidade em cidade atras de emprego.
+apocalipsistas
+
+sociedade extremamanete secreta e incutida na sociedade. acreditam que a terra eh um erro que deve ser retificado atraves da sua destruicao. buscam a destruicao de todas pessoas, naturezas, monstros, aliens, demonios. trabalham atraves de planos bizantinos e estao em varias partes da sociedade e outras faccoes. eles esperam pacientemente boas oportunidades para causar o maximo de destruicao possivel contra tudo. se organizam em pequenas celulas independentes. responsaveis por varias catastrofes, conflitos, destruicao de natureza. muitos nem acreditam na existencia dessa faccao
+igrejas
+
+no geral, igrejas nao sao muito presentes. oferecem sociedade e alento a seus membros mas exigem um codigo de conduta.
+Gozagistas
+
+acreditam que o objetivo eh enriquecer de forma honesta e doar para igreja. seus membros tem acesso a networking e servicos financeiros. seu codigo de conduta eh simples e proibe crimes, assassinatos, hedonismo excessivo, e lucro que abuse de outro.
+vizinhos da vila
+
+acreditam que devem ajudar os outros e viver uma vida frugal. costumam viver em cidades de forma conjunta e se dedicam a ajudar os mais desafortunados. seu codigo de conduta proibe qualquer violencia e qualquer tipo de riqueza que nao seja extremamente necessaria. bem proselitistas.
+os que lembram
+
+acreditam na volta profetizada de uma pessoa que vai unir a humanidade numa sociedade perfeita e benefica. dedicam muito tempo a oracoes e rituais buscando chamar seu messia. proselitistas, acreditam que o messias vira quando pessoas suficientes pedirem. seu codigo de conduta eh muito pacifista e humilde, mas blasfemar contra sua fe eh muito mau visto. membros mais extremistas ja mataram por isso.
+purgadores
+
+acreditam que monstros sao o mal encarnado e costumam proteger pessoas contra monstros e raidar nests. boa parte sao guerreiros, medicos, etc. usar tecnologia alien ou guardia nao eh tabu. por vezes trabalham como guardas para financiar a igreja. seu codigo de conduta exige aprender a lutar, nao fugir de lutas, e atacar apenas monstros. acreditam que destruir monstros aqui garante um pos-vida de paz e conforto. acreditam que matar todos monstros vai trazer balanco para terra e a humanidade vai florecer de novo.
+pedra superior
+
+sociedade secreta que busca unir as pessoas mais ricas e poderosas de forma a formar um cartel e controlar a sociedade para garantir suas proprias riquezas e a continuacao da raca humana. nao sao particularmente crueis ou violentos, mas o poder sempre vai vir em primeiro lugar. seus membros sao convertidos e infiltrados em cargos de poder.
+guardioes
+
+robos muito antigos. vem em varias formas diferentes. alguns ainda seguem suas missoes passadas ha muitos milenios. vivem nas ruinas de estruturas de aco e cristal. podem ser agressivos ou neutros. suas missoes sao bizantinas, e certas atitudes podem ser entendidas como agressivas por eles. em seus ninhos ainda existe maquinaria de alta tecnologia, capazes de criar dispositvos, implantes, fazer cirurgias, controlar esses fortes. seus modifiers sao implantes e seus items sao dispositivos.
+demonios
+seres abstratos de outra dimensao. seu objetivo eh predar a nossa realidade causando assassinato, sofrimento, destruicao, rituais, sacrificio e violencia. demonios nao podem entrar na nossa realidade, entao agem influenciando cultistas atraves de sonhos, pactos, mentiras. os cultistas eh que servem a agenda demoniaca. seus modifiers sao pactos e items sao regalos.
+aliens
+seres etereos, raros e misteriosos. suas agendas sao desconhecidas. no geral sao neutros e dificeis de se ofender. sao ligados fortemente ao psiquico, e usam isso para se comunicar e agir no mundo real. por vezes passam quests bizantinas para humanos e os recompensam. suas modificacoes sao doutrinas e items sao reliquias.
+natureza
+animais
+
+como os que conhecemos ainda existem de forma diferente. cachorros, topeiras, e outros seres novos sao relativamente neutros e se preocupam apenas em comer e se reproduzir.
+plantas
+
+sao muito mais diversos, e tem variacoes boas (e.g. dao frutos) ate algumas sao perigosos e quase inteligentes.
+fungos
+
+passaram por um processo de singularidade. eles se dividem em clans que nao guerream entre si, mas operam em locais diferentes. estes clans sao basicamente hivemind e fazem simbiose com animais, plantas e pessoas por vezes. sao pacificos no geral (alguns ate secretam remedios) mas se defendem violentamente se atacados.
+monstros
+
+monstros sao algo novo. o resultado de milenios de mutacoes, guerras, doencas, etc. monstros sao extremamanete agressivos e carnivoros. ha uma grande variedade de monstros, mas todos odeiam humanos e sao perigosos. diferem completamente de animais porque aparentemente tem como agenda a destruicao da humanidade. seres perigosos, crueis, e que vivem escondidos ermo ou em centros populacoes. nao eh raro uma cidadezinha ser atacada por um bando, e nem pessoas desavisadas sendo cacadas em lugares mais ermos. felizmente monstros sao territorialistas e raramente saem de perto de seu territorio. alem disso monstros sao diferentes uns dos outros: desde cobras com pernas que cospem veneno, lesmas que atordoam vitimas, morcegos enormes, humanoides que matam e se disfarcam pobremente de suas vitimas. monstros sao um perigo constante para aventureiros.
+o mundo
+geografia
+biomas
+lugares (cidade, guardian ruin, demon camp, monster nest)
 
 ## o passado
 
@@ -458,21 +639,23 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
    3. [como ler o manual, estrutura](#como-ler-o-manual-estrutura)
 2. [o jogo](#o-jogo)
    1. [genero, inspo](#genero-inspo)
-   2. [estetica](#estetica)
-   3. [fluxo, partes do jogo](#fluxo-partes-do-jogo)
-   4. [desafios, mecanincas, puzzles, o q gerenciar](#desafios-mecanincas-puzzles-o-q-gerenciar)
-   5. [filosofia, design, o que preparamos](#filosofia-design-o-que-preparamos)
+   2. [comeco meio fim](#comeco-meio-fim)
+   3. [estetica](#estetica)
+   4. [fluxo, partes do jogo](#fluxo-partes-do-jogo)
+   5. [desafios, mecanincas, puzzles, o q gerenciar](#desafios-mecanincas-puzzles-o-q-gerenciar)
+   6. [filosofia, design, o que preparamos](#filosofia-design-o-que-preparamos)
 3. [uma partida (superficialmente)](#uma-partida-superficialmente)
    1. [criando um novo jogo](#criando-um-novo-jogo)
-      1. [configurando template de criacao](#configurando-template-de-criacao)
+      1. [dump featherwiki](#dump-featherwiki)
+      2. [configurando template de criacao](#configurando-template-de-criacao)
          1. [geografia, biomas, eventos](#geografia-biomas-eventos)
          2. [raridade de geracao de itens](#raridade-de-geracao-de-itens)
          3. [nivel de violencia e perigo](#nivel-de-violencia-e-perigo)
          4. [qtd e forca de faccoes](#qtd-e-forca-de-faccoes)
-      2. [party e PCs iniciais](#party-e-pcs-iniciais)
+      3. [party e PCs iniciais](#party-e-pcs-iniciais)
          1. [escolhendo skills, perks, corpos](#escolhendo-skills-perks-corpos)
          2. [itens iniciais](#itens-iniciais)
-   2. [comeco, meio, fim](#comeco-meio-fim)
+   2. [comeco, meio, fim](#comeco-meio-fim-1)
       1. [comeco](#comeco)
       2. [meio](#meio)
       3. [late](#late)
@@ -532,6 +715,7 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
    3. [valor, raridade](#valor-raridade)
    4. [objetos estaticos](#objetos-estaticos)
    5. [mecanismos](#mecanismos)
+      1. [armadilhas dump featherwiki](#armadilhas-dump-featherwiki)
    6. [usaveis, consumiveis, tesouro, talismans, artefatos, runas](#usaveis-consumiveis-tesouro-talismans-artefatos-runas)
    7. [equipamentos](#equipamentos)
 7. [sentidos, emissoes](#sentidos-emissoes)
@@ -565,13 +749,15 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
       3. [processos](#processos)
       4. [sistemas](#sistemas)
 10. [telas, gui, input](#telas-gui-input)
-    1. [telas](#telas)
+    1. [input](#input)
+    2. [telas](#telas)
        1. [tac](#tac)
        2. [party](#party)
        3. [inspect item, actor, casa](#inspect-item-actor-casa)
        4. [GUI help](#gui-help)
 11. [historinha](#historinha)
-    1. [o passado](#o-passado)
+    1. [feather wiki dump](#feather-wiki-dump)
+    2. [o passado](#o-passado)
        1. [epoca de ouro](#epoca-de-ouro)
        2. [guardioes](#guardioes-2)
        3. [monstros](#monstros-1)
@@ -579,14 +765,14 @@ conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate recon
        5. [outer beings](#outer-beings-2)
        6. [aliens](#aliens-1)
        7. [fim da historia, hiato](#fim-da-historia-hiato)
-    2. [o agora](#o-agora)
+    3. [o agora](#o-agora)
        1. [o mundo novo](#o-mundo-novo)
        2. [humanos](#humanos-2)
        3. [natureza](#natureza-2)
        4. [outer beings](#outer-beings-3)
        5. [aliens](#aliens-2)
        6. [guardioes (robos)](#guardioes-robos)
-    3. [o futuro](#o-futuro)
+    4. [o futuro](#o-futuro)
        1. [voltar aa epoca de ouro](#voltar-aa-epoca-de-ouro)
        2. [um mundo sem humanos](#um-mundo-sem-humanos)
        3. [transcendencia umana](#transcendencia-umana)

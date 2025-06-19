@@ -6,12 +6,14 @@
 - [x] nao gerar readme.html a partir do readme.md na raiz
 - [x] nao gerar todo.html a partir do todo.md na raiz
 - [x] markdown lint
-- dumpar manual antigo no novo
+- [x] dumpar manual antigo no novo
 - dumpar fichas no manual novo
 - dumpar papelada no manual novo
 - dumpar caderno no manual novo
 - organizar manual novo
 - incluid suporte mermaidjs no manual
+- consertar TOC no manual
+- remover glossario ?
 
 ## ASSETS
 
