@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://ddyga5d2o3o15"]
+[gd_scene load_steps=8 format=4 uid="uid://ddyga5d2o3o15"]
 
 [ext_resource type="Script" uid="uid://metteofw7rmr" path="res://scenes/pixoto/pixoto_main.gd" id="1_ki8qp"]
 [ext_resource type="TileSet" uid="uid://bxq2qlc2sokqa" path="res://scenes/pixoto/tileset_cp437.tres" id="1_v10f7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6tq6353ain2p" path="res://scenes/pixoto/sprite_arroba.tres" id="3_p7o62"]
 [ext_resource type="Script" uid="uid://3tggakaxxmx3" path="res://scenes/pixoto/coords_label.gd" id="5_axjsm"]
 [ext_resource type="Theme" uid="uid://bi35ufvskrebt" path="res://scenes/pixoto/new_theme.tres" id="5_oeedh"]
+[ext_resource type="Script" uid="uid://ds638hm2c874r" path="res://scenes/pixoto/ui.gd" id="6_amqae"]
 
 [node name="PixotoMain" type="Node"]
 script = ExtResource("1_ki8qp")
@@ -28,6 +29,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("5_oeedh")
+script = ExtResource("6_amqae")
 
 [node name="CoordsLabel" type="Label" parent="UI"]
 layout_mode = 0
