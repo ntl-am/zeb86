@@ -133,6 +133,52 @@ ouer beings sao seres abstratos e conscientes que existem no espaco imaterial en
 ## eventos, global mods, ciclo dia noite
 
 # atores
+## manualantigodump 
+
+Racionalidade
+Skills
+
+Determinam acoes possiveis, identificar objetos, saber coisas, auto controle etc.
+
+O nivel de uma skill nao afeta o nivel da outra, mas certas acoes e testes necessitam ou se beneficiam de mais de uma skill.
+
+No geral eh muito dificil ganhar skills permanente, mas existem maneiras de bonus temporarios. Eh possivel perder skills perma ou temporariamente.
+
+Certas skills concedem acoes por si so.
+
+Skills nao sao limitadas a seres racionais; por exemplo, algum monstro irracional pode ter skill em hide, sprint, hand to thand.
+Requisitos
+
+Algumas skills estao disponiveis apenas para certos atores. e.g. apenas aliens podem ter skill em viagem temporal; apenas monstros ditto podem ter skill em metamorfose.
+Nivel
+
+Variam de 0 a +3:
+
+    0: nunca ouviu falar nem usou nem tentou
+    1: amador conhece teoria basica, conhece ferramentas, ja fez algumas vezes
+    2: pro ampla experiencia, conhece bem a teoria, ja usou varias ferramentas. poderia ser seu emprego
+    3: mestre ja lidou com muitas situacoes incluindo edge cases, conhece teoria ampla e profunda, conhece muitas ferramentas. certas tarefas ja lhe sao triviais.
+
+faccoes e standing
+
+dependendo das accoes, certas faccoes podem te ajudar ou agressivar
+corpo
+
+o humano baseline tem cabeca, tronco, pes, mainhand, offhand. mas mutantes podem ter membros diferentes como 2 cabecas, asas, cauda ao inves de pes. ou tambem tamanhos diferentes.
+stats
+
+o corpo tem seu conjunto de stats:
+
+    LP life points, o quao proximo da morte esta. quando LP = 0, ator fica incapacitado e o dano que recebe agora reserva ao inves de spent. quando tudo reserva, ele morre. corpos reanimados continuam com seus pontos reservados, e o processo para telos de volta costuma ser lento e custoso.
+    MP mind points. uma medida da disciplina, auto controle, frieza, trnquildade do ator. MP costumam ser gastos por e.g. medo, ferimentos, falhar em acoes, se desconcentrar. perder mt MP de uma vez pode causar traumas. ter MP=0 causa surto e o jogador nao controla o pc, que age sozinho e.g. fugir, berzerk, esconder, catatonico.
+    SP stamina points. medida da energia fisica e mental necessaria para agir. SP regenera sempre, mas consome NP no processo. pode se deixar SP negativo ate um certo ponto, mas isso tem consequencias como danar MP, gastar LP, ou devagarar regen.
+    NP nutritiion points. eh gasto passivamente com tempo e usado para regenerar LP e SP. pouca nutrition impacta a velocidade dos regens. NP=0 comeca a drenar LP, MP, SP.
+    Corrupcao: Um valor de -3 a +3 que indica o quanto o ator esta em contato com as forcas demoniacas. Valores pequenos sao menos demoniacos que positivos. certas acoes violentas e crueis aumentam corrupcao, e o contrario diminui. usar regalos ou pactos demoniacos tb causam corrupcao. quanto mais corrupto mais poderosas suas acoes demoniacas, mas mais fragil vc eh contra elas.
+
+membros
+skills
+
+conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate reconhecer monstros, usar escudos. cada skill tem nivel de proficiencia de 0 ate 3. ganhar skills eh raro e normalmente temporario (e.g. uma bota que aumenta seu sprint e sneak), mas existem formas mais comuns de perder skills (e.g. trauma temporario diminui 1hand wep, uma ferida diminui capacidade de roll e climb)
 ## racionais, bestas, 
 ## gases, liquidos, fenomenos,
 ## perks
@@ -297,12 +343,13 @@ ouer beings sao seres abstratos e conscientes que existem no espaco imaterial en
       5. [outer beings](#outer-beings-1)
    4. [eventos, global mods, ciclo dia noite](#eventos-global-mods-ciclo-dia-noite)
 5. [atores](#atores)
-   1. [racionais, bestas,](#racionais-bestas)
-   2. [gases, liquidos, fenomenos,](#gases-liquidos-fenomenos)
-   3. [perks](#perks)
-   4. [npcs, interagindo](#npcs-interagindo)
-   5. [pcs, party](#pcs-party)
-   6. [corpo](#corpo)
+   1. [manualantigodump](#manualantigodump)
+   2. [racionais, bestas,](#racionais-bestas)
+   3. [gases, liquidos, fenomenos,](#gases-liquidos-fenomenos)
+   4. [perks](#perks)
+   5. [npcs, interagindo](#npcs-interagindo)
+   6. [pcs, party](#pcs-party)
+   7. [corpo](#corpo)
       1. [sentidos](#sentidos)
       2. [tamanho](#tamanho)
       3. [membros](#membros)

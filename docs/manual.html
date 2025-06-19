@@ -1,372 +1,716 @@
-<!doctype html> <html lang=en-US> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1"> <title>Zeb86 Manual</title>  <meta name=application-name content="Feather Wiki"> <meta name=version content=1.8.1> <style id=s>html{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif}html,button,input,select,option,textarea{font-size:12pt;background:#fff;color:#000}html,body{margin:0;padding:0}:focus{outline:2px solid #000}*{box-sizing:border-box;position:relative;max-width:100vw}*+*,p,li>ul,li>ol,.ed-uc>*:not(:first-child){margin:.5rem 0}main>*{padding:1rem 1.5rem 2rem}#g:not([open]),.sb .n{display:none}input,select,textarea{padding:.5rem;tab-size:4}h1,h2,h3,h4,h5,h6,.t{font-weight:700;margin:.5rem 0}h1{font-size:1.8rem}h2{font-size:1.65rem}h3,.t{font-size:1.5rem}h4{font-size:1.35rem}h5{font-size:1.2rem}h6{font-size:1.05rem}.np{max-width:8rem}button,summary:is(.np,.b){text-align:center;color:#fff;padding:5px 12px;background-color:#65a;border:0;border-radius:1rem;z-index:2}a,button,summary,.noti{cursor:pointer}a{text-decoration:none;color:#65a}:is(a,button):is(:hover,:active,:visited){opacity:.8}a.e{color:red}a.l{visibility:hidden}:is(h1,h2,h3,h4,h5,h6):hover a.l,a.l:is(:focus,:active){visibility:visible}a:is([target=_blank],.e):after{font-size:70%;vertical-align:top;margin-left:3px}a[target=_blank]:after{content:"\29c9"}a.e:after{content:"!"}nav ul{list-style:none}ul,ol{padding:0 0 0 1rem}nav li summary{text-indent:-1rem}label{display:block}blockquote{margin-left:2rem;padding-left:1rem;border-left:3px solid #888}.uc pre{font-size:80%;padding:1em;border-radius:6px;background-color:#eee;line-height:1.5;overflow-x:auto}abbr[title]{cursor:help}.sb{background:#ddd}.w1,.w34,.w12,.w14,.r,main{width:100%}.tabs>*{border:2px solid #65A;border-bottom:0;border-radius:.5rem .5rem 0 0;margin:0}.a{background:#87c;color:#fff}@media (min-width:50rem){.r,main{display:table;border-spacing:1rem 0}.r.ns,main{border-spacing:0}.c,main>*{display:table-cell!important;vertical-align:top}.sb{width:20%;min-width:200px;max-width:500px;height:100vh;overflow-y:auto}.sb .n{display:unset}.sbt{display:none}.w34{width:75%}.w12{width:50%}.w13{width:33%}.w14{width:25%}body>footer{position:absolute;inset:auto 1.5rem 0}form,.mw,#g,input,select,textarea,.ed{max-width:1000px}.tr{text-align:right}.fr{float:right}}.sr{visibility:hidden;height:0;width:0;position:absolute}.tr:not(.ml){text-align:right}.fr:not(.ml){float:right}.chg,.del{background:red}.del{opacity:.8}.h,.del{font-size:.8rem}.db{display:block}.il{display:inline}.ib{display:inline-block}.at{vertical-align:top}.pb{margin:0 0 1.5rem!important}.uc a{text-decoration:underline}.notis{position:fixed;inset:1vw 40vw auto}.noti{padding:1em;box-shadow:3px 3px 5px #555}#g,input,select,textarea,.ed,.noti{border:1px solid #000;border-radius:3px}.ed *{margin:unset}.ed-uc,textarea,#g,.g{width:100%;overflow-y:auto;padding:10px;margin:0 auto}.ed-uc,textarea{height:50vh;min-height:300px;max-height:600px}.ed-uc nowiki{background:#eee}:is(.ed-uc,textarea,.uc) *{max-width:100%}.ed-bar{border-bottom:1px solid #000}.ed-btn{background:transparent;color:#000;vertical-align:middle}.ed-sel{background:#ddd} </style> <style id=c>/* general style comes here (mobile first) */
-
-@media screen and (max-width: 599px) {   
-    /* extra small device screens only < 600 */
-}
-@media screen and (min-width: 600px) {
-    /* small device screens: 600-899 */
-}
-@media screen and (min-width: 900px) {
-    /* "normal" device screens: 900-1199 */ 
-}
-@media screen and (min-width: 1200px) {
-    /* large device screens: 1200-1799 */ 
-}
-@media screen and (min-width: 1800px) {
-    /* extra large device screens: 1800+ */ 
-}
-/* ************************ */
-
-/* DEFAULT FEATHER WIKI CSS */
-html {
-  font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif
-}
-html,
-button,
-input,
-select,
-option,
-textarea {
-  font-size:12pt;
-  background:#fff;
-  color:#000
-}
-html,
-body {
-  margin:0;
-  padding:0
-}
-:focus {
-  outline:2px solid #000
-}
-* {
-  box-sizing:border-box;
-  position:relative;
-  max-width:100vw
-}
-*+*,
-p,
-li>ul,
-li>ol,
-.ed-uc>*:not(:first-child) {
-  margin:.5rem 0
-}
-main>* {
-  padding:1rem 1.5rem 2rem
-}
-#g:not([open]),
-.sb .n {
-  display:none
-}
-input,
-select,
-textarea {
-  padding:.5rem;
-  tab-size:4
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.t {
-  font-weight:700;
-  margin:.5rem 0
-}
-h1 {
-  font-size:1.8rem
-}
-h2 {
-  font-size:1.65rem
-}
-h3,
-.t {
-  font-size:1.5rem
-}
-h4 {
-  font-size:1.35rem
-}
-h5 {
-  font-size:1.2rem
-}
-h6 {
-  font-size:1.05rem
-}
-.np {
-  max-width:8rem
-}
-button,
-summary:is(.np,
-.b) {
-  text-align:center;
-  color:#fff;
-  padding:5px 12px;
-  background-color:#65a;
-  border:0;
-  border-radius:1rem;
-  z-index:2
-}
-a,
-button,
-summary,
-.noti {
-  cursor:pointer
-}
-a {
-  text-decoration:none;
-  color:#65a
-}
-:is(a,
-button):is(:hover,
-:active,
-:visited) {
-  opacity:.8
-}
-a.e {
-  color:red
-}
-a.l {
-  visibility:hidden
-}
-:is(h1,
-h2,
-h3,
-h4,
-h5,
-h6):hover a.l,
-a.l:is(:focus,
-:active) {
-  visibility:visible
-}
-a:is([target=_blank],
-.e):after {
-  font-size:70%;
-  vertical-align:top;
-  margin-left:3px
-}
-a[target=_blank]:after {
-  content:"\29c9"
-}
-a.e:after {
-  content:"!"
-}
-nav ul {
-  list-style:none
-}
-ul,
-ol {
-  padding:0 0 0 1rem
-}
-nav li summary {
-  text-indent:-1rem
-}
-label {
-  display:block
-}
-blockquote {
-  margin-left:2rem;
-  padding-left:1rem;
-  border-left:3px solid #888
-}
-.uc pre {
-  font-size:80%;
-  padding:1em;
-  border-radius:6px;
-  background-color:#eee;
-  line-height:1.5;
-  overflow-x:auto
-}
-abbr[title] {
-  cursor:help
-}
-.sb {
-  background:#ddd
-}
-.w1,
-.w34,
-.w12,
-.w14,
-.r,
-main {
-  width:100%
-}
-.tabs>* {
-  border:2px solid #65A;
-  border-bottom:0;
-  border-radius:.5rem .5rem 0 0;
-  margin:0
-}
-.a {
-  background:#87c;
-  color:#fff
-}
-@media (min-width:50rem) {
-  .r,
-  main {
-    display:table;
-    border-spacing:1rem 0
-  }
-  .r.ns,
-  main {
-    border-spacing:0
-  }
-  .c,
-  main>* {
-    display:table-cell!important;
-    vertical-align:top
-  }
-  .sb {
-    width:20%;
-    min-width:200px;
-    max-width:500px;
-    height:100vh;
-    overflow-y:auto
-  }
-  .sb .n {
-    display:unset
-  }
-  .sbt {
-    display:none
-  }
-  .w34 {
-    width:75%
-  }
-  .w12 {
-    width:50%
-  }
-  .w13 {
-    width:33%
-  }
-  .w14 {
-    width:25%
-  }
-  body>footer {
-    position:absolute;
-    inset:auto 1.5rem 0
-  }
-  form,
-  .mw,
-  #g,
-  input,
-  select,
-  textarea,
-  .ed {
-    max-width:1000px
-  }
-  .tr {
-    text-align:right
-  }
-  .fr {
-    float:right
-  }
-}
-.sr {
-  visibility:hidden;
-  height:0;
-  width:0;
-  position:absolute
-}
-.tr:not(.ml) {
-  text-align:right
-}
-.fr:not(.ml) {
-  float:right
-}
-.chg,
-.del {
-  background:red
-}
-.del {
-  opacity:.8
-}
-.h,
-.del {
-  font-size:.8rem
-}
-.db {
-  display:block
-}
-.il {
-  display:inline
-}
-.ib {
-  display:inline-block
-}
-.at {
-  vertical-align:top
-}
-.pb {
-  margin:0 0 1.5rem!important
-}
-.uc a {
-  text-decoration:underline
-}
-.notis {
-  position:fixed;
-  inset:1vw 40vw auto
-}
-.noti {
-  padding:1em;
-  box-shadow:3px 3px 5px #555
-}
-#g,
-input,
-select,
-textarea,
-.ed,
-.noti {
-  border:1px solid #000;
-  border-radius:3px
-}
-.ed * {
-  margin:unset
-}
-.ed-uc,
-textarea,
-#g,
-.g {
-  width:100%;
-  overflow-y:auto;
-  padding:10px;
-  margin:0 auto
-}
-.ed-uc,
-textarea {
-  height:50vh;
-  min-height:300px;
-  max-height:600px
-}
-.ed-uc nowiki {
-  background:#eee
-}
-:is(.ed-uc,
-textarea,
-.uc) * {
-  max-width:100%
-}
-.ed-bar {
-  border-bottom:1px solid #000
-}
-.ed-btn {
-  background:transparent;
-  color:#000;
-  vertical-align:middle
-}
-.ed-sel {
-  background:#ddd
-}
-/* ************************ */</style> <script id=p type=application/json>{"A":"Zeb86 Manual","B":"","I":[{"C":"1t=\"`c{*}","A":"0. Este Manual","D":"0-_este_manual","E":1749330080068,"F":"md","G":1749412866360,"H":"## partes para cada leitor:\n- tutorial: introducao basica, conceitual, incompleta\n- experiente: aprofunda conceitos, mecanicas, filosofia design\n- consulta: texto seco e objetivo contendo hard numbers e processos. nao feito para ser lido como prosa.\n\n## como ler\n\n## como procurar conteudo\n\n## o que nao eh contemplado\n\n## como nos avisar erros e inconsistencias\n\n## objetivo do manual"},{"C":"=H*<:l)?f","A":"1. Tabela de Conteudos","D":"1-_tabela_de_conteudos","E":1749329543532,"F":"md","G":1749412925706},{"C":"DZ?J} rPL","A":"2. O Jogo","D":"2-_o_jogo","E":1749329597745,"F":"md","G":1749412938091,"H":"## genero\nmistura de rpg, roguelike classico, xcom classico, e simulacoes\n\n## comeco, meio, e fim do jogo\n### comeco\nnew game, templates, primeiros dias.\n### meio\nexplorando o mundo, planejando builds, buscando recursos e info\n### fim\nplanejando o endgame, preparando os ultimos dias, high risk high reward.\n\n## o que planejamos pro jogador\n### habilidades, desafios, conflitos\n### duracao da partida\n### replayability\n\n## interagindo com o jogo\n\n## inspiracoes e filosofia de design"},{"C":"WZO_4)d,L","A":"3. Telas e Input","D":"3-_telas_e_input","E":1749329664707,"F":"md","G":1749412947939,"H":"## input\nmouse+kb\n\nM1, M2, M3, MWheelUp, MWheelDown, doubleclick M1, doubleclick M2  \nM1 drag, M2 drag, mouse hover  \nmodifiers Alt Shift Control\n\n## telas\n- actor inspect\n- item inspect\n- tabuleirocasa inspect\n- party screen\n- tabuleiro screen\n- actor/item lists\n- strat graph + events\n- log\n- new game screen\n- encyclopedia\n- main menu\n- pause screen\n- config screen\n- save/load screen\n"},{"C":"!w>?HUNT9","A":"4. Mundo","D":"4-_mundo","E":1749329723987,"F":"md","G":1749413638803,"H":"# Relogio\n\n# Global modifiers\n\n# eventos\n\n# Graph Strat\n## Rooms e Rotas\n\n# Tabuleiros\n## Casas\n## Tileshapes"},{"C":"6!P~vbyn>","A":"7. Items","D":"7-_items","E":1749329767710,"F":"md","G":1749413551825,"H":"# Objetos\n\n# Items \nusaveis\n\n# equipamento"},{"C":"-MYWRu5pb","A":"6. Atores","D":"6-_atores","E":1749330139983,"G":1749493707743,"H":"## Racionalidade\n\n## Skills\nDeterminam acoes possiveis, identificar objetos, saber coisas, auto controle etc.\n\nO nivel de uma skill nao afeta o nivel da outra, mas certas acoes e testes necessitam ou se beneficiam de mais de uma skill.\n\nNo geral eh muito dificil ganhar skills permanente, mas existem maneiras de bonus temporarios. Eh possivel perder skills perma ou temporariamente.\n\nCertas skills concedem acoes por si so.\n\nSkills nao sao limitadas a seres racionais; por exemplo, algum monstro irracional pode ter skill em hide, sprint, hand to thand.\n\n### Requisitos\nAlgumas skills estao disponiveis apenas para certos atores. e.g. apenas aliens podem ter skill em viagem temporal; apenas monstros ditto podem ter skill em metamorfose.\n\n### Nivel\nVariam de 0 a +3:\n- 0: nunca ouviu falar nem usou nem tentou\n- 1: amador conhece teoria basica, conhece ferramentas, ja fez algumas vezes\n- 2: pro ampla experiencia, conhece bem a teoria, ja usou varias ferramentas. poderia ser seu emprego\n- 3: mestre ja lidou com muitas situacoes incluindo edge cases, conhece teoria ampla e profunda, conhece muitas ferramentas. certas tarefas ja lhe sao triviais.\n\n### faccoes e standing\ndependendo das accoes, certas faccoes podem te ajudar ou agressivar\n\n### corpo\no humano baseline tem cabeca, tronco, pes, mainhand, offhand. mas mutantes podem ter membros diferentes como 2 cabecas, asas, cauda ao inves de pes. ou tambem tamanhos diferentes.\n\n#### stats\no corpo tem seu conjunto de stats:\n- LP life points, o quao proximo da morte esta. quando LP = 0, ator fica incapacitado e o dano que recebe agora reserva ao inves de spent. quando tudo reserva, ele morre. corpos reanimados continuam com seus pontos reservados, e o processo para telos de volta costuma ser lento e custoso.\n- MP mind points. uma medida da disciplina, auto controle, frieza, trnquildade do ator. MP costumam ser gastos por e.g. medo, ferimentos, falhar em acoes, se desconcentrar. perder mt MP de uma vez pode causar traumas. ter MP=0 causa surto e o jogador nao controla o pc, que age sozinho e.g. fugir, berzerk, esconder, catatonico.\n- SP stamina points. medida da energia fisica e mental necessaria para agir. SP regenera sempre, mas consome NP no processo. pode se deixar SP negativo ate um certo ponto, mas isso tem consequencias como danar MP, gastar LP, ou devagarar regen.\n- NP nutritiion points. eh gasto passivamente com tempo e usado para regenerar LP e SP. pouca nutrition impacta a velocidade dos regens. NP=0 comeca a drenar LP, MP, SP.\n- Corrupcao: Um valor de -3 a +3 que indica o quanto o ator esta em contato com as forcas demoniacas. Valores pequenos sao menos demoniacos que positivos. certas acoes violentas e crueis aumentam corrupcao, e o contrario diminui. usar regalos ou pactos demoniacos tb causam corrupcao. quanto mais corrupto mais poderosas suas acoes demoniacas, mas mais fragil vc eh contra elas.\n\n#### membros\n\n#### skills\nconhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate reconhecer monstros, usar escudos. cada skill tem nivel de proficiencia de 0 ate 3. ganhar skills eh raro e normalmente temporario (e.g. uma bota que aumenta seu sprint e sneak), mas existem formas mais comuns de perder skills (e.g. trauma temporario diminui 1hand wep, uma ferida diminui capacidade de roll e climb)","F":"md"},{"C":"P r#daOtD","A":"8. Perks","D":"8-_perks","E":1749330165215,"G":1749413380958,"H":"perks sao pecas imateriais vinculadas a outras pecas materiais. afetam seus parente e tem world procs e oferecem acoes. nem sempre o portador do perk sabe que o porta.\n\n## propriedades comuns\n- nome do perk\n- classe e.g. doenca, curse, skill, ekip, item, pacto, ferida, trauma, buff/debuff, potion, corpo, membro, especie\n- granter: o que concede perk. e.g esspada magica, implante, maldicao\n- data de criacao: quando o perk foi 'contraido'\n- world proc: acao executada a cada turno world\n- parent effect: o q muda em stats, skills, emitir sense,\n- duracao: qt tempo ate perk sumir. pode ser infinto ou desconhecido \n- acoes garantidas: perks podem conceder a seus parentes.\n\n","F":"md"},{"C":"mn[Q:pk3(","A":"11. Lore","D":"11-_lore","E":1749330237010,"G":1749411780622,"H":"## historia\n### singularidade tecnologica social\n### guardioes\n### humanos baseline e mutantes\n### monstros\n### demonios\n### aliens\n### catastrofe final\n### hiato\n### presente\n## o presente\n\n## civilizacoes\n### humanos:\nhumanos baseline e mutantes ou de especies proximas. vivem em vilas, fortes, ou ruinas. seu nivel de tecnologia eh algo entre o fim da idade media e o velho oeste. suscetiveis a mutacoes. os modifiers humanos sao mutacoes, e seus itens sao artigos. coexistem em vilas de tamanho pequeno (vilarejo/fazenda) ate cidades modestas de centenas de milhares de habitantes. outros tambem vivem em cavernas, ruinas, florestas. as cidades nao sao tao grandes mas sao em muito numero e bem espalhadas.\n#### faccoes\nhumanos se dividem em faccoes. algumas sao inofensivas e meramente organizacionais, como membros de uma guilda de mercadores ou guardas de uma vila. outros sao guiados por crencas ou objetivos. algumas faccoes existem abertamente e outras sao secretas. algumas tem uma agenda positiva e outras procuram destruir. muitas faccoes oferecem servicos e ajuda a seus membros ou nao-membros bem quistos. certas faccoes mais malignas sao proibidas e cacadas abertamente. nao eh incomum participar de mais de uma faccao.\n \n\n##### variantes cultitas demoniacos\ncultistas demoniacos se juntam para seguir a agenda de algum demonio especifico. hostis e perigosas, buscam destruicao e poder. basicamente todas faccoes benignas e neutras preferes destruir cultistas.\n\n##### historiadores dos guardioes\nbuscam entender os guardioes com o proposito de fazelos ajudar humanidade. tambem se interessam em adquirir dispositivos e maquinaria. estudam os guardioes e seus fortes. nao tem mt taboo de receber implantes. sao amigaveis mas certas pessoas acham seus estudos perigosos, e que guardiaos deviam ser deixados em paz.\n\n##### hagioneiros\ngrupos fragmentados de pessoas que receberam o sonho do anjo e da deusa, e tem como objetivo encontrar o que o sonho mostrou. alguns grupos preferem matar outros (competicao) ou trabalhar junto. nao sao muito bem vistos por pessoas normais, mas nao sao maltratados ou prejudiced. acreditam que a deusa vai conceder transcendencia desse plano material imperfeito repleto de morte e dor.\n\n##### alienistas\nbuscam manter contato com aliens e aproximar as civilizacoes. nao tem muito sucesso. interessados em doutrinas, a mente humana e reliquias, e pagam caro por itens e informacoes. outras faccoes n tem nada contra, so os acham meio lunaticos.\n\n##### reconstrutores\nbuscam reorganizar a humanidade aa sua gloria antiga ...................\n\n##### evolucionistas\nacreditam que humanos baseline estao ficando obsoletos e buscam transcender atraves de mutacoes.\n\n##### faccoes locais\nmuitas cidades, vilas, etc se organizam em faccoes para se ajudar e logisticar.\n\n##### monstristas\nextremistas que acreditam que a terra pertence de verdade aos monstros. praticam ataques terroristas com intuito de destruir a civilizacao e jogar monstros contra as pesssoas.\n\n##### bandidage\ngrupos soltos de bandidos que predam a sociedade organizada. ladroes, assassinos, extortores, traficantes. eh comum que facam e desfacam aliancas e lutem entre si. no geral operam numa area de sua influencia.\n\n##### guildas comerciais \neg. guildas de ferreiros, alquimistas. se ajudam para ter materia prima e controlam a venda. faccoes puramente logisticas e comerciais. por vezes contratam mercenarios para se proteger em viagens.\n\n##### nova nobreza\npequenos grupos que se organizam de modo quase feudal em cidades estratificadas e desiguais. analogo ao feudalismo. lordes sao servidos por camponeses em troco de protecao realizada por tropas dos lordes. as relacoes entre as casas mudam as vezes, e pequenas guerras ja aconteceram no passado. aceitam bem outsideres mas nao gostam que seu estilo de organizacao seja criticado.\n\n##### menistas\nhumanos que rejeitam organizacoes sociais complexas e tecnologias. tambem rejeitam aliens, demonios, guardioes. no geral vivem em lugares naturais sobrevivendo do que coletam. conhecem bem a natureza para subsistir e se defender. se preocupam muito com monstros e bandidage. acreditam que a arrogancia da antiga civilizacao causou nossa queda e querem viver como parte da natureza. sao neutros e amigaveis no geral, mas desconfiam de outsiders. em conflitos, sao mais perigosos do que aparentam.\n\n##### mercenarios\nbandos de soldados de aluguel. sao amigaveis para com outros humanos e sao relativalmente benquistos por proteger as pesssoas. oferecem servicos de protecao para nobres, mercantes, e contra ataques monstros. pacificos mas trabalham apenas mediante pagamento generoso. relativamente nomadicos, viajam de cidade em cidade atras de emprego.\n\n##### apocalipsistas\nsociedade extremamanete secreta e incutida na sociedade. acreditam que a terra eh um erro que deve ser retificado atraves da sua destruicao. buscam a destruicao de todas pessoas, naturezas, monstros, aliens, demonios. trabalham atraves de planos bizantinos e estao em varias partes da sociedade e outras faccoes. eles esperam pacientemente boas oportunidades para causar o maximo de destruicao possivel contra tudo. se organizam em pequenas celulas independentes. responsaveis por varias catastrofes, conflitos, destruicao de natureza. muitos nem acreditam na existencia dessa faccao\n\n### igrejas\nno geral, igrejas nao sao muito presentes. oferecem sociedade e alento a seus membros mas exigem um codigo de conduta.\n\n#### Gozagistas\nacreditam que o objetivo eh enriquecer de forma honesta e doar para igreja. seus membros tem acesso a networking e servicos financeiros. seu codigo de conduta eh simples e proibe crimes, assassinatos, hedonismo excessivo, e lucro que abuse de outro.\n\n#### vizinhos da vila\nacreditam que devem ajudar os outros e viver uma vida frugal. costumam viver em cidades de forma conjunta e se dedicam a ajudar os mais desafortunados. seu codigo de conduta proibe qualquer violencia e qualquer tipo de riqueza que nao seja extremamente necessaria. bem proselitistas.\n\n#### os que lembram\nacreditam na volta profetizada de uma pessoa que vai unir a humanidade numa sociedade perfeita e benefica. dedicam muito tempo a oracoes e rituais buscando chamar seu messia. proselitistas, acreditam que o messias vira quando pessoas suficientes pedirem. seu codigo de conduta eh muito pacifista e humilde, mas blasfemar contra sua fe eh muito mau visto. membros mais extremistas ja mataram por isso.\n\n#### purgadores\nacreditam que monstros sao o mal encarnado e costumam proteger pessoas contra monstros e raidar nests. boa parte sao guerreiros, medicos, etc. usar tecnologia alien ou guardia nao eh tabu. por vezes trabalham como guardas para financiar a igreja. seu codigo de conduta exige aprender a lutar, nao fugir de lutas, e atacar apenas monstros. acreditam que destruir monstros aqui garante um pos-vida de paz e conforto. acreditam que matar todos monstros vai trazer balanco para terra e a humanidade vai florecer de novo.\n\n#### pedra superior\nsociedade secreta que busca unir as pessoas mais ricas e poderosas de forma a formar um cartel e controlar a sociedade para garantir suas proprias riquezas e a continuacao da raca humana. nao sao particularmente crueis ou violentos, mas o poder sempre vai vir em primeiro lugar. seus membros sao convertidos e infiltrados em cargos de poder.\n\n### guardioes\nrobos muito antigos. vem em varias formas diferentes. alguns ainda seguem suas missoes passadas ha muitos milenios. vivem nas ruinas de estruturas de aco e cristal. podem ser agressivos ou neutros. suas missoes sao bizantinas, e certas atitudes podem ser entendidas como agressivas por eles. em seus ninhos ainda existe maquinaria de alta tecnologia, capazes de criar dispositvos, implantes, fazer cirurgias, controlar esses fortes. seus modifiers sao implantes e seus items sao dispositivos.\n\n### demonios\n seres abstratos de outra dimensao. seu objetivo eh predar a nossa realidade causando assassinato, sofrimento, destruicao, rituais, sacrificio e violencia. demonios nao podem entrar na nossa realidade, entao agem influenciando cultistas atraves de sonhos, pactos, mentiras. os cultistas eh que servem a agenda demoniaca. seus modifiers sao pactos e items sao regalos.\n\n### aliens\n seres etereos, raros e misteriosos. suas agendas sao desconhecidas. no geral sao neutros e dificeis de se ofender. sao ligados fortemente ao psiquico, e usam isso para se comunicar e agir no mundo real. por vezes passam quests bizantinas para humanos e os recompensam. suas modificacoes sao doutrinas e items sao reliquias.\n\n### natureza\n#### animais\ncomo os que conhecemos ainda existem de forma diferente. cachorros, topeiras, e outros seres novos sao relativamente neutros e se preocupam apenas em comer e se reproduzir.\n\n#### plantas\nsao muito mais diversos, e tem variacoes boas (e.g. dao frutos) ate algumas sao perigosos e quase inteligentes.\n\n#### fungos\npassaram por um processo de singularidade. eles se dividem em clans que nao guerream entre si, mas operam em locais diferentes. estes clans sao basicamente hivemind e fazem simbiose com animais, plantas e pessoas por vezes. sao pacificos no geral (alguns ate secretam remedios) mas se defendem violentamente se atacados.\n\n### monstros\nmonstros sao algo novo. o resultado de milenios de mutacoes, guerras, doencas, etc. monstros sao extremamanete agressivos e carnivoros. ha uma grande variedade de monstros, mas todos odeiam humanos e sao perigosos. diferem completamente de animais porque aparentemente tem como agenda a destruicao da humanidade. seres perigosos, crueis, e que vivem escondidos ermo ou em centros populacoes. nao eh raro uma cidadezinha ser atacada por um bando, e nem pessoas desavisadas sendo cacadas em lugares mais ermos. felizmente monstros sao territorialistas e raramente saem de perto de seu territorio. alem disso monstros sao diferentes uns dos outros: desde cobras com pernas que cospem veneno, lesmas que atordoam vitimas, morcegos enormes, humanoides que matam e se disfarcam pobremente de suas vitimas. monstros sao um perigo constante para aventureiros.\n\n\n\n## o mundo\n### geografia\n### biomas\n### lugares (cidade, guardian ruin, demon camp, monster nest)","F":"md"},{"C":"2Q@Wm.#@u","A":"Glossário A-Z","D":"glossário_a-z","E":1749330770253,"G":1749330772910},{"C":"oHbR(S\\tY","A":"A1. Telas","D":"a1-_telas","E":1749330373523,"G":1749330405077},{"C":"vL,bbOka1","A":"A2. Tiles","D":"a2-_tiles","E":1749330433166,"G":1749330434685},{"C":"O63_q?Tl_","A":"A3. Materiais","D":"a3-_materiais","E":1749330449949,"G":1749330452190},{"C":"ixy9\\x0@C","A":"A4. Monstros","D":"a4-_monstros","E":1749330495375,"G":1749330496639},{"C":"T+:l1R%9&","A":"A5. Corpos e Membros","D":"a5-_corpos_e_membros","E":1749330517984,"G":1749330726325},{"C":"`m4u[=Zu>","A":"A7. Civilizações e Facções","D":"a7-_civilizações_e_facções","E":1749330653316,"G":1749330655251},{"C":"%uLCK<Qo2","A":"A8. Perks","D":"a8-_perks","E":1749330678275,"G":1749330679747},{"C":"r[61Ia\\'K","A":"A9. Items","D":"a9-_items","E":1749330692458,"G":1749330702780},{"C":"j1#LN$D-b","A":"A10. Equipamentos","D":"a10-_equipamentos","E":1749330875712,"G":1749331197336,"F":"md"},{"C":"&`-]VLhsK","A":"A11. Fenômenos","D":"a11-_fenômenos","E":1749331212903,"F":"md","G":1749331214888},{"C":"YKjq{.e',","A":"DEV1. Feather Resources","D":"dev1-_feather_resources","E":1749328853020,"H":"[markdown syntax](https://www.markdownguide.org/basic-syntax/)  \n[feather wiki markdown](https://feather.wiki/?page=markdown_support)  \n[feather wiki page creation](https://feather.wiki/?page=create_a_page)  \n[feather wiki settings](https://feather.wiki/?page=wiki_settings)  \n[feather wiki editing](https://feather.wiki/?page=editing_pages)  \n[feather extension next/prev page](https://feather.wiki/?page=extensions_simple_navigation)  \n[feather extension auto toc](https://feather.wiki/?page=extensions_auto_table_of_contents)  \n[feather extension full search](https://feather.wiki/?page=extension_full_search)  \n[feather extension search](https://feather.wiki/?page=extensions_search) ","F":"md","G":1749331143574},{"C":"]zRZ(G^.*","A":"DEV2. Tech Stack","D":"dev2-_tech_stack","E":1749330306035,"G":1749330308129},{"C":"0%fN'OJBj","A":"DEV3. Download and Build","D":"dev3-_download_and_build","E":1749330328434,"G":1749330331594},{"C":"$_>5p'P[4","A":"DEV4. Arquitetura","D":"dev4-_arquitetura","E":1749331054155,"G":1749331055692},{"C":"zwE\"tVoys","A":"R. Skills","D":"skills","E":1749341910245,"H":"Variam de 0 a +3: nunca ouviu falar - amador - vivido e estudado - mestre.\n\nDeterminam acoes possiveis, identificar objetos, saber coisas, auto controle etc.\n\nNao ha sinergia entre skills, mas certas acoes ou testes precisam de mais de um skill com forcas diferentes.\n\nNo geral eh muito dificil ganhar skills permanente. Ja certas situacoes podem dar bonus temporario. No entanto, eh possivel perder skills perma ou temporariamente.\n\nCertas acoes concedem acoes por si so.\n\n\n#### marcial\nhabilidades relacionadas a combate. normalmente aprendidas por soldados, duelistas, guerreiros. um marcial forte eh um adversario perigoso e resistente.\n\n###### 1 hand wep\nidentifca e usa armas de uma mao de producao humana.\n\n###### 2 hand wep\nidentifca e usa armas de 2 mao de producao humana.\n\n###### firearm\nidentifca e usa armas de fogo de producao humana.\n\n###### throw\nlanca com precisao e distancia objetos. por exemplo, pedras, frascos, bombas. Tambem serve para atirar objetos de forma nao hostil e.g. jogar uma pocao para um aliado. Tambem serve para atirar objetos em lugares especificos, e.g. jogar um talisman exatamente dentro de um poco a distancia.\n\n###### escudo\nsabe usar com habilidade e facilidade escudos. escudos variam de tamanho e funcao: alguns menores servem para defletir golpes rapidamente, outros maiores contra projeteis, e escudos grandes podem proteger tambem outros ou serem usados como armas improvisadas.\n\n###### armour\ncapacidade de suportar armaduras pesadas e conseguir se mover bem. armaduras pesadas sao fortes, mas atrapalham a agilidade e nao necessariamente protegem contra danos e.g. eletricos ou biologicos.\n\n###### dodge\ncapacidade de desviar de golpes meelee. especialmente util se tiver AP no turno do oponente, assim um desvio reativo tem chance maior de funcionar e pode ate desorientar um atacante\n\n###### mano a mano\nnao serve para lutar de soco/chute, mas sim empurrar/puxar/imobilizar/desarmar oponentes.\n\n\n#### atletico\n\n###### sprint\num burst de velocidade que torna dificil tocar ou mirar no corredor.\n\n###### roll\numa manobra de salto e rolamento. nao se move para longe, mas pode passar por obstaculos e dificulta acertar o rolador\n\n###### climb\nescalar construcoes humanas e naturais. tambem ajuda a descer\n\n###### crawl\ncapacidade de rastejar ou passar por lugares apertados e pequenos. como buracos, tuneis, janelas.\n\n###### Jump\npular a distancia, evitando perigos no chao. certas acoes funcionam diferentes apos um pulo, e.g. pular e atacar com lanca.\n\n###### nadar\nnadar acima dagua eg crawl e tambem debaixo dagua. tb relacionado a segurar respiracao\n\n###### marchar\nabdica de senses e stat regen em troco de andar gastando menos NP\n\n#### mental\n\n###### disciplina\nmelhora MP. mais pontos maximos, mais regen, menor chance de dano traumatizante.\n\n###### fortitude\nmelhora LP. mais pontos maximos, mais regen, menor chance de dano traumatizante. tambem protege contra doencas.\n\n###### vigour\nmelhora LP. mais pontos maximos, mais regen. diminui debuffs por SP baixo e diminui consequencias de SP<0.\n\n###### meditar\ndiminui sentidos, menos regen de SP, LP. mas diminui gasto NP e regenera MP devagar. pode ser usado enquanto anda (nao correr), mas fica relativamente indefeso.\n\n###### focar sentido\ndiminui todos sentidos mas aumenta um deles temporariamente. precisa estar parado e calmo e nao perturbado. pode demorar um pouco para fazer efeito. indefeso enquanto foca.\n\n#### academia\n\n###### ler e escrever\nle e escreve textos. mais pontos permitem ler mais rapido, e ler textos mais fragmentados e arcaicos.\n\n###### linguagem XYZ\num pra cada lingua. capacidade de se comunicar na lingua. 1=conversas de sim/nao e palavras importantes. 2=conversar normais, mas nada tecnico ou expressoes ou dialetos. 3=conversas tecnicas, entende dialetos e expressoes e mentiras,\n\n###### identificar monstros\nidentifica monstros. mais pontos = conhece vulnerabilidades, habitos, habitat.\n\n###### identificar lugar\nconhece fatos sobre a cidade ou calabouco atual\n\n#### apotecario\n\n###### primeiros socorros\ntrata de forma rapida mas temporaria ferimentos. tambem ajuda com LP e SP. tais tratamentos sao sempre temporarios e nao curam totalmente, mas podem salvar vidas numa situacao perigosa.\n\n###### identificar doencas\nidentifica doencas, suas causas, consequencias e curas. tb pode dizer a gravidade da doenca.\n\n###### curar ferimentos\nusa unguentos, talas, gazes, produtos etc para curar feridas ou doencas profundas. o processo eh lento mas a cura pode ser completa\n\n###### profilaxia\nusa produtos e unguentos etc para evitar doencas e feridas. concede goodrolls contra certas doencas ou ataques\n\n###### examinar status\ndetermina LP MP SP NP, sanidade, ferimentos e senses de outrem. util pois certos enfermos nao sao mais capazes de sentir dor por exemplo, ou venenos que nao tem sintomas obvios\n\n#### artesao\n\n###### reparar artigos humanos\nreparadores noobs recuperam durabilidae mas diminuem durab max.\n\n###### alquimia\ncapaz de encontrar ingredientes e fazer pocoes, frascos(p jogar e soltar fumaca liquido etc), graxa (buff armour), e cera (buffa armas). bons alquimistas fazem coisas com efeitos fortes e menos efeitos colaterais. tambem serve para identificar itens alquimicos.\n\n###### trapping\nidentifica, constroi, acha, e arma armadilhas que ferem, imobilizam, ou avisam da presenca.\n\n#### naturalista\n\n###### identificar bestas, plantas, fungos\nreconhece periculosidade, ninho, habitos, e comebilidade.\n\n###### search\nprocura por um objeto ou ator especifico numa area. bom quando voce quer algo que esta escondido\n\n###### track\nacha e segue rastros de pessoas, monstros, animais, etc. tambem serve para esconder proprios rastros.\n\n###### lockpick\nabre delicadamente trancas que nao deveriam ser abertas.\n\n###### hide/sneak\ncapaz de se camuflar parado por longos periodos de tempo, e se mover sem ser visto ou ouvido.\n\n###### culinaria improvisada\ncapaz de cozinhar pratos usando animais e plantas improvaveis. nao eh gostoso mas n eh perigoso.\n\n###### scout\nexplora discretamente os lugares e produz mapas simples.\n\n\n#### malandro \n\n###### Appraise\ncapacidade de dizer com precisao a raridade e valor de objetos.\n\n###### lockpick\nabre delicadamente (ou nao) trancas que nao deveriam ser abertas.\n\n###### enrolar\ncapaz de convencer pessoas atraves de enrolacao ou coercao.\n\n###### procure\nprocura mercadorias ou informacoes especificas em lugares que cidadaos normais nao conhecem.\n\n###### disfarce\ncom os aderecos e conhecimentos certos, se passa por pessoas de outras faccoes.\n\n###### saquear\npor vezes encontra itens uteis aonde outros nao procuram ou prestam atencao.\n\n###### identificar faccao\nconhece faccoes. identifica membros. conhece suas ideologias e regras e agenda.\n\n#### demonologista\n\n###### id cultos e demonios\nconhece os demonios e seus cultistas\n\n###### id e usar regalos\ncapaz de reconhecer e operar regalos\n\n###### entender e fechar pactos\ncapaz de entender as nuances de pactos e controlar os que se tem.\n\n###### espirito flexivel\nfacilidade de mudar nivel de espirito atraves de concentracao.\n\n###### id e realizar rituais\nconhece rituais de cultistas e pode realizar alguns. no geral atos de muito mau gosto. costumam ser feitos a troco de pactos, regalos, ou informacao\n\n#### alienista\n\n###### id e operar reliquias\nconhece e sabe usar reliquias aliens. nem sempre da certo.\n\n###### aceitar e controlar doutrinas\nentende as consequencias de certas doutrinas. capacidade de recebe-las e controla-las.\n\n###### afinidade psiquica\nconcede resistencia PSI, esconde assinatura PSI, e aumenta chance de contato com aliens etereos.\n\n###### identificar e conversar com aliens\nreconhece a mente e a agenda de certos aliens. por vezes ate consegue se comunicar.\n\n#### techie\n\n###### id guardioes\nreconhece guardioes, suas missoes e sua zona de operacao\n\n###### id e operar dispositivos\nreconhece e opera dispositivos roboticos\n\n###### reconhecer e operar maquinas \nreconhecer e operar maquinas arcaicas dos guardioes, que controlam suas fortalezas e guardioes.\n\n###### id e install implantes\ncapacidade de reconhecer e instalar implantes com poucas consequencias negativas\n","F":"md","G":1749408731885},{"C":"<&U(h_m)l","A":"R. templates, win, loss","D":"templates-_win-_loss","E":1749407513181,"H":"templates eh config para gerar jogo. template define eg: wincon, losscon, starting party, world modifiers, stratgraph layout/gen, tac screens calibration/biome proportions, calibrar epoca (def cidades, populacoes human monster natureza etc), faccoes, proporcao itens/atores/monstros/value(+valor=mais coisa rara), eventos lineares/pontuais/ciclicos, banned itens/actors/skills/quests, randomizing factor, time limit, desafios e.g. codigo de conduta, pouca comida, todos hostis, noite eterna.\n\nwincon exemplos=juntar N artefatos, achar/matar a anja, erradicar monstros/humanidade. juntar muito ouro. ser levada pra dimensao demon. trazer demon. ser levado por aliens. tomar controle dos guardioes. voltar no tempo para epoca boa. empoderar alguma faccao. banir demonios. achar e matar nemesis (pessoa/monstro). achar item especifico. sobreviver n tempo.\n\nworld = strat graph + tac maps. strat graph = tac maps e conexoes entre eles (inclui tempo, custo, perigos). tac map = a la rl grid, mas podem ser pequenas-bem grandes. podem ser cidades, calaboucos, florestas, pocket dims.\n\nstrat graph: andar por rota pode trazer inimigos, ou pc podem eg achar itens, treinar etc.\n\ntac maps = npc tem \"vida propria\" com rotinas, faccoes, objetivos, necessidades, pertences, movimentos, acoes\n\ntempo: passa o tempo todo concurrentemeente em todos tacmaps. tempo passa globalmente para todos e atores/itens agem mesmo estando em outros tacs \n\ntac round flow: pc -> world -> npc -> world -> pc -> ....\n\neventos: com passagem do tempo, podem acontecer eventos em tacs, globais, etc.","F":"md","G":1749408765526},{"C":"nK+'^X83@","A":"9. Acoes e Processos","D":"9-_acoes_e_processos","E":1749413406756,"F":"md","G":1749413408102},{"C":"67</&Snc`","A":"9. Fisica","D":"9-_fisica","E":1749413673492,"H":"# Materiais\n\n# Reacoes\n\n# Estados materia\n## solido\n## liquido\n## gasoso","F":"md","G":1749413709525},{"C":"-=l4xv^Lh","A":"A12. Skills","D":"a12-_skills","E":1749413750238,"F":"md","G":1749413794903,"H":"### Lista de skill\nDividas em familias. Nao faz diferenca mecanica mas ajuda a organizar.\n\n#### marcial\nhabilidades relacionadas a combate. normalmente aprendidas por soldados, duelistas, guerreiros. um marcial forte eh um adversario perigoso e resistente.\n\n##### 1 hand wep\nidentifca e usa armas de uma mao de producao humana.\n\n##### 2 hand wep\nidentifca e usa armas de 2 mao de producao humana.\n\n##### firearm\nidentifca e usa armas de fogo de producao humana.\n\n##### throw\natirar com precisao e distancia objetos. por exemplo, pedras, frascos, bombas. Tambem serve para atirar objetos de forma nao hostil e.g. jogar uma pocao para um aliado. Tambem serve para atirar objetos em lugares especificos, e.g. jogar um talisman exatamente dentro de um poco a distancia.\n\n##### escudo\nsabe usar com habilidade e facilidade escudos. escudos variam de tamanho e funcao: alguns menores servem para defletir golpes rapidamente, outros maiores contra projeteis, e escudos grandes podem proteger tambem outros ou serem usados como armas improvisadas.\n\n##### armour\ncapacidade de suportar armaduras pesadas e conseguir se mover bem. armaduras pesadas sao fortes, mas atrapalham a agilidade e nao necessariamente protegem contra danos e.g. eletricos ou biologicos.\n\n##### dodge\ncapacidade de desviar de golpes meelee. especialmente util se tiver AP no turno do oponente, assim um desvio reativo tem chance maior de funcionar e pode ate desorientar um atacante\n\n##### mano a mano\nnao serve para lutar de soco/chute, mas sim empurrar/puxar/imobilizar/desarmar oponentes.\n\n\n#### atletico\ncapacidade de usar o corpo \n\n##### sprint\num burst de velocidade que torna dificil tocar ou mirar no corredor.\n\n##### roll\numa manobra de salto e rolamento. nao se move para longe, mas pode passar por obstaculos e dificulta acertar o rolador\n\n##### climb\nescalar construcoes humanas e naturais. tambem ajuda a descer\n\n##### crawl\ncapacidade de rastejar ou passar por lugares apertados e pequenos. como buracos, tuneis, janelas.\n\n##### Jump\npular a distancia, evitando perigos no chao. certas acoes funcionam diferentes apos um pulo, e.g. pular e atacar com lanca.\n\n##### nadar\nnadar acima dagua eg crawl e tambem debaixo dagua. tb relacionado a segurar respiracao\n\n##### marchar\nabdica de senses e stat regen em troco de andar gastando menos NP\n\n#### mental\ncapacidade mental nao ligada a inteligencia, mas a autocontrole, autoconhecimento, esforco.\n\n##### disciplina\nmelhora MP. mais pontos maximos, mais regen, menor chance de dano traumatizante.\n\n##### fortitude\nmelhora LP. mais pontos maximos, mais regen, menor chance de dano traumatizante. tambem protege contra doencas.\n\n##### vigour\nmelhora LP. mais pontos maximos, mais regen. diminui debuffs por SP baixo e diminui consequencias de SP<0.\n\n##### meditar\ndiminui sentidos, menos regen de SP, LP. mas diminui gasto NP e regenera MP devagar. pode ser usado enquanto anda (nao correr), mas fica relativamente indefeso.\n\n##### focar sentido\ndiminui todos sentidos mas aumenta um deles temporariamente. precisa estar parado e calmo e nao perturbado. pode demorar um pouco para fazer efeito. indefeso enquanto foca.\n\n#### academia\nconhecimento de livros, estorias, lugares.\n\n##### ler e escrever\nle e escreve textos. mais pontos permitem ler mais rapido, e ler textos mais fragmentados e arcaicos.\n\n##### linguagem XYZ\num pra cada lingua. capacidade de se comunicar na lingua. 1=conversas de sim/nao e palavras importantes. 2=conversar normais, mas nada tecnico ou expressoes ou dialetos. 3=conversas tecnicas, entende dialetos e expressoes e mentiras,\n\n##### identificar monstros\nidentifica monstros. mais pontos = conhece vulnerabilidades, habitos, habitat.\n\n##### identificar lugar\nconhece fatos sobre a cidade ou calabouco atual\n\n#### apotecario\nrelacionado a medicina. diagnostico, cura, profilaxia\n\n##### primeiros socorros\ntrata de forma rapida mas temporaria ferimentos. tambem ajuda com LP e SP. tais tratamentos sao sempre temporarios e nao curam totalmente, mas podem salvar vidas numa situacao perigosa.\n\n##### identificar doencas\nidentifica doencas, suas causas, consequencias e curas. tb pode dizer a gravidade da doenca.\n\n##### curar ferimentos\nusa unguentos, talas, gazes, produtos etc para curar feridas ou doencas profundas. o processo eh lento mas a cura pode ser completa\n\n##### profilaxia\nusa produtos e unguentos etc para evitar doencas e feridas. concede goodrolls contra certas doencas ou ataques\n\n##### examinar status\ndetermina LP MP SP NP, sanidade, ferimentos e senses de outrem. util pois certos enfermos nao sao mais capazes de sentir dor por exemplo, ou venenos que nao tem sintomas obvios\n\n#### artesao\nidentificar, criar, e usar artigos craftados.\n\n##### reparar artigos humanos\nreparadores noobs recuperam durabilidae mas diminuem durab max.\n\n##### alquimia\ncapaz de encontrar ingredientes e fazer pocoes, frascos(p jogar e soltar fumaca liquido etc), graxa (buff armour), e cera (buffa armas). bons alquimistas fazem coisas com efeitos fortes e menos efeitos colaterais. tambem serve para identificar itens alquimicos.\n\n##### trapping\nidentifica, constroi, acha, e arma armadilhas que ferem, imobilizam, ou avisam da presenca.\n\n#### naturalista\nconhecimento do mundo natural e sua capacidade de navegar, sobreviver e obter recursos la.\n\n##### identificar bestas, plantas, fungos\nreconhece periculosidade, ninho, habitos, e comebilidade.\n\n##### search\nprocura por um objeto ou ator especifico numa area. bom quando voce quer algo que esta escondido\n\n##### track\nacha e segue rastros de pessoas, monstros, animais, etc. tambem serve para esconder proprios rastros.\n\n##### lockpick\nabre delicadamente trancas que nao deveriam ser abertas.\n\n##### hide/sneak\ncapaz de se camuflar parado por longos periodos de tempo, e se mover sem ser visto ou ouvido.\n\n##### culinaria improvisada\ncapaz de cozinhar pratos usando animais e plantas improvaveis. nao eh gostoso mas n eh perigoso.\n\n##### scout\nexplora discretamente os lugares e produz mapas simples.\n\n#### malandro \nespecialista em certas habilidades mais obscuras e geralmente mal vistas socialmente.\n\n##### Appraise\ncapacidade de dizer com precisao a raridade e valor de objetos.\n\n##### lockpick\nabre delicadamente (ou nao) trancas que nao deveriam ser abertas.\n\n##### enrolar\ncapaz de convencer pessoas atraves de enrolacao ou coercao.\n\n##### procure\nprocura mercadorias ou informacoes especificas em lugares que cidadaos normais nao conhecem.\n\n##### disfarce\ncom os aderecos e conhecimentos certos, se passa por pessoas de outras faccoes.\n\n##### saquear\npor vezes encontra itens uteis aonde outros nao procuram ou prestam atencao.\n\n##### identificar faccao\nconhece faccoes. identifica membros. conhece suas ideologias e regras e agenda.\n\n#### demonologista\nconhecimento e conexao dos demonios que vivem entre as realidades, e da sua influencia no nosso mundoo\n\n##### id cultos e demonios\nconhece os demonios e seus cultistas\n\n##### id e usar regalos\ncapaz de reconhecer e operar regalos\n\n##### entender e fechar pactos\ncapaz de entender as nuances de pactos e controlar os que se tem.\n\n##### espirito flexivel\nfacilidade de mudar nivel de espirito atraves de concentracao.\n\n##### id e realizar rituais\nconhece rituais de cultistas e pode realizar alguns. no geral atos de muito mau gosto. costumam ser feitos a troco de pactos, regalos, ou informacao\n\n#### alienista\nconhecimento sobre os alienigenas misteriosos. tambem envolvem controle e talentos psiquicos.\n\n##### id e operar reliquias\nconhece e sabe usar reliquias aliens. nem sempre da certo.\n\n##### aceitar e controlar doutrinas\nentende as consequencias de certas doutrinas. capacidade de recebe-las e controla-las.\n\n##### afinidade psiquica\nconcede resistencia PSI, esconde assinatura PSI, e aumenta chance de contato com aliens etereos.\n\n##### identificar e conversar com aliens\nreconhece a mente e a agenda de certos aliens. por vezes ate consegue se comunicar.\n\n#### techie\nafinidade com guardioes, seus dispositivos, estruturas e maquinaria\n\n##### id guardioes\nreconhece guardioes, suas missoes e sua zona de operacao\n\n##### id e operar dispositivos\nreconhece e opera dispositivos roboticos\n\n##### reconhecer e operar maquinas \nreconhecer e operar maquinas arcaicas dos guardioes, que controlam suas fortalezas e guardioes.\n\n##### id e install implantes\ncapacidade de reconhecer e instalar implantes com poucas consequencias negativas\n"},{"C":".b>\"a.f4Q","A":"sentidos","D":"sentidos","E":1749490099434,"H":"# Sentidos\nEscala de sentidos: -, +, ++, +++\n\n## visao\ndeteca luz, movimento, formatos. certas coisas bloqueiam line of sight. tem range p enxergar tabuleiro, =/= atores\n- -: quase cego. percebe apenas luz a curtas distancias\n- +: enxerga mal. primariamente luz e movimento. e formatos a curta distancia\n- ++: enxerga na media. bem sensivel p detect luz e movimento. perde formato a longas distancias\n- +++: muito bem. enxerga luz e movimento a mts distancias, e formatos bem de longe.\n\n## audicao\ndetecta volume, direcao, tipo de som (eg explosao, grito, vidro estilhaca). coisas entre a origem do som e o ouvidor diminuem o volume e imprecisam direcao\n- -: quase surto. percebe apenas volume a curtisimas distancias e nao diferencia tipo.\n- +: capaz de ouvir ok a curtas distancias, mas dificuldade com direcao\n- ++: ouve bem, precisa direcao +- e identifica tipo de som\n- +++: ouve mesmo ruidos baixos, com precisao de direcao e tipo de som\n\n## olfato\ndetecta odores num pequeno raio em volta. detecta intensidade do odor e tipo (eg. sangue, fumaca, bicho, gas). alguns odores podem se sobrepor a outros e deixarem imperceptiveis. historico de odores sentidos permite ter nocao do caminho do que estava cheirando\n\n## psi\ndetecta inteligencias. descobre distancia, potencia mental, inclinacao (neutro,hostil,amigo). tb percebe se propria mente foi detectada por psic. casas e objs e atores fisicos nao atrapalham a deteccao\n\n## emp\ndeeteca fluxo eletrico (eg fios, guardioes vivos), campo magn (certas coisas emitem assinatura mag) e carga (e.g. armadilha eletrizada, dispostivo com bateeria ,etc). normalmente o alcance deste sentido eh curto\n\n# emissao de sentidos\nsystemas e pecas podem emitir zuada pontualmente ou permante. e.g. uma pessoa sempre emite sua silhueta, mas um tiro emite som e odor pontual.\n\n# sentidos e o tabuleiro\nsentidos funcionam de forma diferente tabuleiro/atores/sys. atores automaticamente sabem o formato da casa na quao estao e podem tatear ao redor. alem disso, casas dentro do range sempre tem seu tileshape detectado.","F":"md","G":1749491032712},{"C":"7W:K7KSMU","A":"casas","D":"casas","E":1749491066226,"H":"cada tabuleiro tem uma matriz de casas.\n\ncasas tem tileshape (chao, parede, debris[SML], tunel[TSM], poco[SMLG]). tileshapes tem integridades diferentes. destruir tileshapes vai mudando shape: parede->debris->chao->poco.\n\ncasas tem material solido que determina see thru, move thru, e resists.\n\ncasas com tileshape concedem cover a atores dependendo do tileshape e tamanho do ator. e.g. um ator M tem cobertura 3/4 num debris L, ou 1/4 em debris S.\n\napenas chao pode ter pocas, mas o resto pode ter gas.\n\nentrar e sair de pocos eh um movimento mais custoso. pocos podem estar cheios de fluidos e gas. a dificuldade e profundidade dos fluidos depende da profundidade do poco e tambem do tamanho do ator. pocos G sao considerados mais fundos que qualquer ator, e podem causar afogamento (se fluidos) ou machucar na queda. sair precisa de atletics, algum item, ou ajuda de um amigo. pocos mais rasos podem ser usados como esconderijo ou cover.\n\nexecucao movimentos diferentes eg sprint, crawl, jump, roll dependem do tileshape e do tamanho do ator. sprintar sobre debris eh perigoso e dficil. pular sobre pocos eh viavel. rolar atraves de tunel depende do tamanho do tunel e do ator. um ator M pode crawl um tunel S, mas muito devagar e indefeso.\n\n","F":"md","G":1749491744423},{"C":"Gf* K+IY?","A":"armadilhas","D":"armadilhas","E":1749491758134,"H":"## fake floor\nchao falso que na realidade eh um poco.\n\n## trapdoor\nchao falso que te joga para andar abaixo.\n\n## crushing wall\nfloor normal, mas que vai ficando tunel cada vez mais apertado ate esmagar\n\n## bear trap\nfere e prende a vitima\n\n## gas invisivel\ngas invisivel. e.g. inflamavel (explode qd qqr chama acesa), ou venenoso (tontura, veneno).\n\n## tripwire\nandar sobre tripwire emite system. por exemplo, um barulho que chama inimigos ou uma luz que ofusca pcs.\n\n## one-way door\nporta que abre normal, fecha sozinha, mas nao abre de dentro pra fora.\n\n## moving walls\nparedes que se mexem p esmagar pcs\n\n## mine trap\narmadilha no chao que emite e.g. explosao, gas venenoso, choque\n\n## amnesia trap\nolhar para o espelho faz esquecer o que ja se sabia do mapa.\n\n## mirror tricks\nposicionamento esperto de espelhos e objetos faz com que hologramas surjam. e.g. player ve tesouro, chega perto, mas eh apenas holograma. e.g. players tem medo de avancar corredor pois vem holograma de inimigo poderoso\n\n## cage trap\ngaiola cai e prende PC. boa sorte.\n\n## alcova secreta\npisar na armadilha abre porta secreta (parece parede) para sala contendo monstros, perigos, npcs.\n\n## gas vent\nvent invisivel emite gas provavelmente desagradavel\n\n","F":"md","G":1749492323014}],"J":{},"K":false,"L":false,"M":"1t=\"`c{*}","_":{"A":"name","B":"desc","C":"id","D":"slug","E":"cd","F":"editor","G":"md","H":"content","I":"pages","J":"img","K":"static","L":"published","M":"home"}}</script> <script id=a>(()=>{var de=Object.defineProperty,wr=Object.defineProperties,Er=Object.getOwnPropertyDescriptor,Tr=Object.getOwnPropertyDescriptors,xr=Object.getOwnPropertyNames,Ue=Object.getOwnPropertySymbols;var Ge=Object.prototype.hasOwnProperty,_r=Object.prototype.propertyIsEnumerable;var je=(e,t,r)=>t in e?de(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r,q=(e,t)=>{for(var r in t||(t={}))Ge.call(t,r)&&je(e,r,t[r]);if(Ue)for(var r of Ue(t))_r.call(t,r)&&je(e,r,t[r]);return e},U=(e,t)=>wr(e,Tr(t));var ee=(e,t)=>()=>(e&&(t=e(e=0)),t);var L=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),B=(e,t)=>{for(var r in t)de(e,r,{get:t[r],enumerable:!0})},Ar=(e,t,r,n)=>{if(t&&typeof t=="object"||typeof t=="function")for(let a of xr(t))!Ge.call(e,a)&&a!==r&&de(e,a,{get:()=>t[a],enumerable:!(n=Er(t,a))||n.enumerable});return e};var pe=e=>Ar(de({},"__esModule",{value:!0}),e);var _e=(e,t,r)=>new Promise((n,a)=>{var i=s=>{try{o(r.next(s))}catch(u){a(u)}},l=s=>{try{o(r.throw(s))}catch(u){a(u)}},o=s=>s.done?n(s.value):Promise.resolve(s.value).then(i,l);o((r=r.apply(e,t)).next())});var Ne=L((jn,Be)=>{"use strict";Be.exports=function(t,r,n){var a,i=t.length;if(!(r>=i||n===0)){n=r+n>i?i-r:n;var l=i-n;for(a=r;a<l;++a)t[a]=t[a+n];t.length=l}}});var J=L((Gn,Je)=>{j.notEqual=Fr;j.notOk=Lr;j.equal=Sr;j.ok=j;Je.exports=j;function Sr(e,t,r){j(e==t,r)}function Fr(e,t,r){j(e!=t,r)}function Lr(e,t){j(!e,t)}function j(e,t){if(!e)throw new Error(t||"AssertionError")}});var Ke=L((Bn,ze)=>{var Cr=J(),Wr=typeof window!="undefined";function kr(){var e;return Wr?(window._nanoScheduler||(window._nanoScheduler=new se(!0)),e=window._nanoScheduler):e=new se,e}function se(e){this.hasWindow=e,this.hasIdle=this.hasWindow&&window.requestIdleCallback,this.method=this.hasIdle?window.requestIdleCallback.bind(window):this.setTimeout,this.scheduled=!1,this.queue=[]}se.prototype.push=function(e){Cr.equal(typeof e,"function","nanoscheduler.push: cb should be type function"),this.queue.push(e),this.schedule()};se.prototype.schedule=function(){if(!this.scheduled){this.scheduled=!0;var e=this;this.method(function(t){for(var r;e.queue.length&&t.timeRemaining()>0;)r=e.queue.shift(),r(t);e.scheduled=!1,e.queue.length&&e.schedule()})}};se.prototype.setTimeout=function(e){setTimeout(e,0,{timeRemaining:function(){return 1}})};ze.exports=kr});var Qe=L((Nn,Xe)=>{var Ye=Ke()(),Ir=J(),N;he.disabled=!0;try{N=window.performance,he.disabled=window.localStorage.DISABLE_NANOTIMING==="true"||!N.mark}catch(e){}Xe.exports=he;function he(e){if(Ir.equal(typeof e,"string","nanotiming: name should be type string"),he.disabled)return Or;var t=(N.now()*1e4).toFixed()%Number.MAX_SAFE_INTEGER,r="start-"+t+"-"+e;N.mark(r);function n(a){var i="end-"+t+"-"+e;N.mark(i),Ye.push(function(){var l=null;try{var o=e+" ["+t+"]";N.measure(o,r,i),N.clearMarks(r),N.clearMarks(i)}catch(s){l=s}a&&a(l,e)})}return n.uuid=t,n}function Or(e){e&&Ye.push(function(){e(new Error("nanotiming: performance API unavailable"))})}});var et=L((Jn,Ze)=>{var Rr=Ne(),qr=Qe(),P=J();Ze.exports=O;function O(e){if(!(this instanceof O))return new O(e);this._name=e||"nanobus",this._starListeners=[],this._listeners={}}O.prototype.emit=function(e){P.ok(typeof e=="string"||typeof e=="symbol","nanobus.emit: eventName should be type string or symbol");for(var t=[],r=1,n=arguments.length;r<n;r++)t.push(arguments[r]);var a=qr(this._name+"('"+e.toString()+"')"),i=this._listeners[e];return i&&i.length>0&&this._emit(this._listeners[e],t),this._starListeners.length>0&&this._emit(this._starListeners,e,t,a.uuid),a(),this};O.prototype.on=O.prototype.addListener=function(e,t){return P.ok(typeof e=="string"||typeof e=="symbol","nanobus.on: eventName should be type string or symbol"),P.equal(typeof t,"function","nanobus.on: listener should be type function"),e==="*"?this._starListeners.push(t):(this._listeners[e]||(this._listeners[e]=[]),this._listeners[e].push(t)),this};O.prototype.prependListener=function(e,t){return P.ok(typeof e=="string"||typeof e=="symbol","nanobus.prependListener: eventName should be type string or symbol"),P.equal(typeof t,"function","nanobus.prependListener: listener should be type function"),e==="*"?this._starListeners.unshift(t):(this._listeners[e]||(this._listeners[e]=[]),this._listeners[e].unshift(t)),this};O.prototype.once=function(e,t){P.ok(typeof e=="string"||typeof e=="symbol","nanobus.once: eventName should be type string or symbol"),P.equal(typeof t,"function","nanobus.once: listener should be type function");var r=this;this.on(e,n);function n(){t.apply(r,arguments),r.removeListener(e,n)}return this};O.prototype.prependOnceListener=function(e,t){P.ok(typeof e=="string"||typeof e=="symbol","nanobus.prependOnceListener: eventName should be type string or symbol"),P.equal(typeof t,"function","nanobus.prependOnceListener: listener should be type function");var r=this;this.prependListener(e,n);function n(){t.apply(r,arguments),r.removeListener(e,n)}return this};O.prototype.removeListener=function(e,t){if(P.ok(typeof e=="string"||typeof e=="symbol","nanobus.removeListener: eventName should be type string or symbol"),P.equal(typeof t,"function","nanobus.removeListener: listener should be type function"),e==="*")return this._starListeners=this._starListeners.slice(),r(this._starListeners,t);return typeof this._listeners[e]!="undefined"&&(this._listeners[e]=this._listeners[e].slice()),r(this._listeners[e],t);function r(n,a){if(n){var i=n.indexOf(a);if(i!==-1)return Rr(n,i,1),!0}}};O.prototype.removeAllListeners=function(e){return e?e==="*"?this._starListeners=[]:this._listeners[e]=[]:(this._starListeners=[],this._listeners={}),this};O.prototype.listeners=function(e){var t=e!=="*"?this._listeners[e]:this._starListeners,r=[];if(t)for(var n=t.length,a=0;a<n;a++)r.push(t[a]);return r};O.prototype._emit=function(e,t,r,n){if(typeof e!="undefined"&&e.length!==0){r===void 0&&(r=t,t=null),t&&(n!==void 0?r=[t].concat(r,n):r=[t].concat(r));for(var a=e.length,i=0;i<a;i++){var l=e[i];l.apply(l,r)}}}});var rt=L((zn,tt)=>{var Ae=J(),Pr=/(noopener|noreferrer) (noopener|noreferrer)/,Dr=/^[\w-_]+:/;tt.exports=Mr;function Mr(e,t){Ae.notEqual(typeof window,"undefined","nanohref: expected window to exist"),t=t||window.document,Ae.equal(typeof e,"function","nanohref: cb should be type function"),Ae.equal(typeof t,"object","nanohref: root should be type object"),window.addEventListener("click",function(r){if(!(r.button&&r.button!==0||r.ctrlKey||r.metaKey||r.altKey||r.shiftKey||r.defaultPrevented)){var n=function a(i){if(!(!i||i===t))return i.localName!=="a"||i.href===void 0?a(i.parentNode):i}(r.target);n&&(window.location.protocol!==n.protocol||window.location.hostname!==n.hostname||window.location.port!==n.port||n.hasAttribute("data-nanohref-ignore")||n.hasAttribute("download")||n.getAttribute("target")==="_blank"&&Pr.test(n.getAttribute("rel"))||Dr.test(n.getAttribute("href"))||(r.preventDefault(),e(n)))}})}});var it=L((Kn,nt)=>{nt.exports=["onclick","ondblclick","onmousedown","onmouseup","onmouseover","onmousemove","onmouseout","onmouseenter","onmouseleave","ontouchcancel","ontouchend","ontouchmove","ontouchstart","ondragstart","ondrag","ondragenter","ondragleave","ondragover","ondrop","ondragend","onkeydown","onkeypress","onkeyup","onunload","onabort","onerror","onresize","onscroll","onselect","onchange","onsubmit","onreset","onfocus","onblur","oninput","onanimationend","onanimationiteration","onanimationstart","oncontextmenu","onfocusin","onfocusout"]});var st=L((Yn,lt)=>{var at=it(),Vr=at.length,Hr=1,Ur=3,jr=8;lt.exports=Gr;function Gr(e,t){var r=e.nodeType,n=e.nodeName;r===Hr&&Br(e,t),(r===Ur||r===jr)&&t.nodeValue!==e.nodeValue&&(t.nodeValue=e.nodeValue),n==="INPUT"?zr(e,t):n==="OPTION"?Jr(e,t):n==="TEXTAREA"&&Kr(e,t),Nr(e,t)}function Br(e,t){for(var r=t.attributes,n=e.attributes,a=null,i=null,l=null,o=null,s=null,u=n.length-1;u>=0;--u)s=n[u],o=s.name,a=s.namespaceURI,i=s.value,a?(o=s.localName||o,l=t.getAttributeNS(a,o),l!==i&&t.setAttributeNS(a,o,i)):t.hasAttribute(o)?(l=t.getAttribute(o),l!==i&&(i==="null"||i==="undefined"?t.removeAttribute(o):t.setAttribute(o,i))):t.setAttribute(o,i);for(var m=r.length-1;m>=0;--m)s=r[m],s.specified!==!1&&(o=s.name,a=s.namespaceURI,a?(o=s.localName||o,e.hasAttributeNS(a,o)||t.removeAttributeNS(a,o)):e.hasAttributeNS(null,o)||t.removeAttribute(o))}function Nr(e,t){for(var r=0;r<Vr;r++){var n=at[r];e[n]?t[n]=e[n]:t[n]&&(t[n]=void 0)}}function Jr(e,t){Se(e,t,"selected")}function zr(e,t){var r=e.value,n=t.value;Se(e,t,"checked"),Se(e,t,"disabled"),e.indeterminate!==t.indeterminate&&(t.indeterminate=e.indeterminate),t.type!=="file"&&(r!==n&&(t.setAttribute("value",r),t.value=r),r==="null"&&(t.value="",t.removeAttribute("value")),e.hasAttributeNS(null,"value")?t.type==="range"&&(t.value=r):t.removeAttribute("value"))}function Kr(e,t){var r=e.value;if(r!==t.value&&(t.value=r),t.firstChild&&t.firstChild.nodeValue!==r){if(r===""&&t.firstChild.nodeValue===t.placeholder)return;t.firstChild.nodeValue=r}}function Se(e,t,r){e[r]!==t[r]&&(t[r]=e[r],e[r]?t.setAttribute(r,""):t.removeAttribute(r))}});var dt=L((Xn,ct)=>{var Fe=J(),Yr=st(),Xr=3;ct.exports=Qr;function Qr(e,t,r){return Fe.equal(typeof e,"object","nanomorph: oldTree should be an object"),Fe.equal(typeof t,"object","nanomorph: newTree should be an object"),r&&r.childrenOnly?(ft(t,e),e):(Fe.notEqual(t.nodeType,11,"nanomorph: newTree should have one root node (which is not a DocumentFragment)"),me(t,e))}function me(e,t){return t?e?e.isSameNode&&e.isSameNode(t)?t:e.tagName!==t.tagName||ot(e)!==ot(t)?e:(Yr(e,t),ft(e,t),t):null:e}function ot(e){return e.dataset?e.dataset.nanomorphComponentId:void 0}function ft(e,t){for(var r,n,a,i,l=0,o=0;r=t.childNodes[o],n=e.childNodes[o-l],!(!r&&!n);o++)if(!n)t.removeChild(r),o--;else if(!r)t.appendChild(n),l++;else if(ut(n,r))a=me(n,r),a!==r&&(t.replaceChild(a,r),l++);else{i=null;for(var s=o;s<t.childNodes.length;s++)if(ut(t.childNodes[s],n)){i=t.childNodes[s];break}i?(a=me(n,i),a!==i&&l++,t.insertBefore(a,r)):!n.id&&!r.id?(a=me(n,r),a!==r&&(t.replaceChild(a,r),l++)):(t.insertBefore(n,r),l++)}}function ut(e,t){return e.id?e.id===t.id:e.isSameNode?e.isSameNode(t):e.tagName!==t.tagName?!1:e.type===Xr?e.nodeValue===t.nodeValue:!1}});var mt=L((Qn,ht)=>{"use strict";var pt=J();ht.exports=Zr;function Zr(e,t){pt.equal(typeof e,"function","nanoraf: render should be a function"),pt.ok(typeof t=="function"||typeof t=="undefined","nanoraf: raf should be a function or undefined"),t||(t=window.requestAnimationFrame);var r=!1,n=null;return function(){n===null&&!r&&(r=!0,t(function(){r=!1;for(var l=n.length,o=new Array(l),s=0;s<l;s++)o[s]=n[s];e.apply(e,o),n=null})),n=arguments}}});var Le,ge,ve=ee(()=>{Le=(e,t,r={})=>{var{events:n}=e,{showDelete:a=!1,showUsed:i=!1,insert:l=null}=r,o=s();return html`<section> <h1>Embedded Images</h1> ${o.map(c=>html`<div class="ib at ed w14"> <div class=g> <img src=${c.img} class=w1 aria-describedby=${c.id}_alt> <span id=${c.id}_alt class=db>${c.alt} (${c.size[0]}x${c.size[1]}px)</span> <div class=pb> <button type=button onclick=${d=>u(c.img)}>View</button> ${a?html`<button type=button onclick=${d=>m(c)}>Edit Alt</button>`:""} ${a?html`<button type=button class=del onclick=${d=>p(c)}>Delete</button>`:""} ${l?html`<button type=button onclick=${d=>l(d,c)}>Insert</button>`:""} </div> ${i?[html`<details> <summary class=b>Used in ${c.pgs.length} pages</summary> <ul> ${c.pgs.map(d=>html`<li><a href="?page=${d.slug}">${d.name}</a></li>`)} </ul> </details>`]:""} </div> </div>`)} </section>`;function s(){var{pages:c,img:d}=e.p;return Object.keys(d).map(h=>U(q({id:h},d[h]),{pgs:i?c.filter(g=>{var w;return(w=g.content)==null?void 0:w.includes(`img:${h}:img`)}):[]}))}function u(c){var d=new Image;d.src=c;var h=window.open("");h.document.write(d.outerHTML)}function m(c){var d;e.p.img[c.id].alt=(d=prompt("Alt text:",c.alt))!=null?d:c.alt,t(n.CHECK_CHANGED)}function p(c){if(!confirm("Permanently delete image from all pages in wiki?"))return!1;delete e.p.img[c.id],c.pgs.length>0&&(e.p.pages=e.p.pages.map(d=>(d.content&&(d.content=d.content.replaceAll(`img:${c.id}:img`,"deleted")),d))),t(n.CHECK_CHANGED)}},ge=(e,t)=>html`<dialog id=g> <form class=fr method=dialog> <button>Close</button> </form> ${Le(e,()=>{},{insert:(r,n)=>FW.img.put(r,n,t)})} </dialog>`});var Ce,wt,We=ee(()=>{Ce=e=>{var u;var{img:t,pg:r,out:n,hLink:a}=FW.inject,i=[],l=0,o=((u=e.content)!=null?u:"").replace(new RegExp("(<nowiki>.*<\\/nowiki>)","gs"),(m,p)=>(i[l]=p,`{nowiki-${l++}}`));o=r(FW.img.fix(o)),o=e.editor==="md"?md(o!=null?o:""):o,o=t(a(n(o)));for(var s=0;s<l;s++)o=o.replace(`{nowiki-${s}}`,i[s]);return o},wt=e=>{var n;var t=Ce(e),r=FW.getChildren(e,!0);return[!(e!=null&&e.e)&&((n=e==null?void 0:e.tags)!=null&&n.length)?html`<aside class="db r"> <b class=c>Tagged:</b> <dd class=c> ${e.tags.replace(/,/g,", ")} </dd> </aside>`:"",html`<article class=uc> ${t?html.raw(t):"No Page Content"} </article>`,r.length>0?html`<footer> <h2>Sub Pages</h2> <ul> ${r.map(a=>FW.getChildList(a,!0))} </ul> </footer>`:null]}});var Et={};B(Et,{editor:()=>an});var an,Tt=ee(()=>{We();ve();an=e=>{var t=html`<div class="ed ed-c" style=display:none></div>`,r=i=>{e.edits.content=i.target.value,clearTimeout(e.debounce),e.debounce=setTimeout(()=>{t.innerHTML=Ce(U(q({},e.edits),{editor:"md"}))},500)},n=html`<textarea oninput=${r}>${e.edits.content}</textarea>`;return r({target:n}),[n,html`<button onclick=${i=>{i.preventDefault(),t.style.display=t.style.display=="none"?"block":"none"}}>Preview</button>`,html`<button onclick=${i=>{i.preventDefault(),FW.img.upload(e,a)}}>Insert Image from File</button>`,html`<button onclick=${i=>{i.preventDefault(),document.getElementById("g").showModal()}}>Add Existing Image</button>`,t,ge(e,a)];function a({id:i}){var l=`![](img:${i}:img)`;if(document.activeElement!==n&&n.focus(),document.selection){var o=document.selection.createRange();o.text=l}else if(n.selectionStart||n.selectionStart===0){var s=n.selectionStart,u=n.selectionEnd;n.value=n.value.substring(0,s)+l+n.value.substring(u,n.value.length),n.selectionStart=s+l.length,n.selectionEnd=s+l.length}else n.value+=l;r({target:n})}}});var xt={};B(xt,{editor:()=>ln});var ln,_t=ee(()=>{ve();ln=(e,t)=>{var o;var{init:r}=ed,{src:n,edits:a}=e,{content:i}=a,l;return n?l=html`<textarea onchange=${s=>e.edits.content=s.target.value}>${FW.img.abbr(i)}</textarea>`:(l=r({onChange:s=>e.edits.content=s}),l.isSameNode=()=>!0,l.edUc.innerHTML=i.includes("<img ")?FW.inject.img(i,!0):i),[l,html`<div class="w1 tr pb"> <button type=button onclick=${()=>{e.src=!n,t(e.events.RENDER)}}> ${n?"Show Editor":"Show HTML"} </button> </div>`,ge(e,(o=l.edUc)==null?void 0:o.ins)]}});var Nt=L((Ii,Bt)=>{Bt.exports=_n;var Gt={class:"className",for:"htmlFor","http-equiv":"httpEquiv"};function _n(e){return function(t,r,n){for(var a in r)a in Gt&&(r[Gt[a]]=r[a],delete r[a]);return e(t,r,n)}}});var zt=L((Oi,Jt)=>{var An=Nt(),te=0,M=1,k=2,ye=3,D=4,S=5,De=6,K=7,C=8,ne=9,ie=10,ue=11,Y=12,re=13;Jt.exports=function(e,t){t||(t={});var r=t.concat||function(a,i){return String(a)+String(i)};return t.attrToProp!==!1&&(e=An(e)),function(a){for(var i=M,l="",o=arguments.length,s=[],u=0;u<a.length;u++)if(u<o-1){var m=arguments[u+1],p=V(a[u]),c=i;c===ie&&(c=C),c===ne&&(c=C),c===K&&(c=C),c===D&&(c=S),c===k?l==="/"?(p.push([k,"/",m]),l=""):p.push([k,m]):c===re&&t.comments?l+=String(m):c!==re&&p.push([te,c,m]),s.push.apply(s,p)}else s.push.apply(s,V(a[u]));for(var d=[null,{},[]],h=[[d,-1]],u=0;u<s.length;u++){var g=h[h.length-1][0],p=s[u],w=p[0];if(w===k&&/^\//.test(p[1])){var v=h[h.length-1][1];h.length>1&&(h.pop(),h[h.length-1][0][2][v]=e(g[0],g[1],g[2].length?g[2]:void 0))}else if(w===k){var T=[p[1],{},[]];g[2].push(T),h.push([T,g[2].length-1])}else if(w===S||w===te&&p[1]===S){for(var E="",W;u<s.length;u++)if(s[u][0]===S)E=r(E,s[u][1]);else if(s[u][0]===te&&s[u][1]===S)if(typeof s[u][2]=="object"&&!E)for(W in s[u][2])s[u][2].hasOwnProperty(W)&&!g[1][W]&&(g[1][W]=s[u][2][W]);else E=r(E,s[u][2]);else break;s[u][0]===ue&&u++;for(var y=u;u<s.length;u++)if(s[u][0]===C||s[u][0]===S)g[1][E]?s[u][1]===""||(g[1][E]=r(g[1][E],s[u][1])):g[1][E]=n(s[u][1]);else if(s[u][0]===te&&(s[u][1]===C||s[u][1]===S))g[1][E]?s[u][2]===""||(g[1][E]=r(g[1][E],s[u][2])):g[1][E]=n(s[u][2]);else{E.length&&!g[1][E]&&u===y&&(s[u][0]===ye||s[u][0]===Y)&&(g[1][E]=E.toLowerCase()),s[u][0]===ye&&u--;break}}else if(w===S)g[1][p[1]]=!0;else if(w===te&&p[1]===S)g[1][p[2]]=!0;else if(w===ye){if(Ln(g[0])&&h.length){var v=h[h.length-1][1];h.pop(),h[h.length-1][0][2][v]=e(g[0],g[1],g[2].length?g[2]:void 0)}}else if(w===te&&p[1]===M)p[2]===void 0||p[2]===null?p[2]="":p[2]||(p[2]=r("",p[2])),Array.isArray(p[2][0])?g[2].push.apply(g[2],p[2]):g[2].push(p[2]);else if(w===M)g[2].push(p[1]);else if(!(w===ue||w===Y))throw new Error("unhandled: "+w)}if(d[2].length>1&&/^\s*$/.test(d[2][0])&&d[2].shift(),d[2].length>2||d[2].length===2&&/\S/.test(d[2][1])){if(t.createFragment)return t.createFragment(d[2]);throw new Error("multiple root elements must be wrapped in an enclosing tag")}return Array.isArray(d[2][0])&&typeof d[2][0][0]=="string"&&Array.isArray(d[2][0][2])&&(d[2][0]=e(d[2][0][0],d[2][0][1],d[2][0][2])),d[2][0];function V(G){var x=[];i===K&&(i=D);for(var A=0;A<G.length;A++){var f=G.charAt(A);i===M&&f==="<"?(l.length&&x.push([M,l]),l="",i=k):f===">"&&!Sn(i)&&i!==re?(i===k&&l.length?x.push([k,l]):i===S?x.push([S,l]):i===C&&l.length&&x.push([C,l]),x.push([ye]),l="",i=M):i===re&&/-$/.test(l)&&f==="-"?(t.comments&&x.push([C,l.substr(0,l.length-1)]),l="",i=M):i===k&&/^!--$/.test(l)?(t.comments&&x.push([k,l],[S,"comment"],[ue]),l=f,i=re):i===M||i===re?l+=f:i===k&&f==="/"&&l.length||(i===k&&/\s/.test(f)?(l.length&&x.push([k,l]),l="",i=D):i===k?l+=f:i===D&&/[^\s"'=/]/.test(f)?(i=S,l=f):i===D&&/\s/.test(f)?(l.length&&x.push([S,l]),x.push([Y])):i===S&&/\s/.test(f)?(x.push([S,l]),l="",i=De):i===S&&f==="="?(x.push([S,l],[ue]),l="",i=K):i===S?l+=f:(i===De||i===D)&&f==="="?(x.push([ue]),i=K):(i===De||i===D)&&!/\s/.test(f)?(x.push([Y]),/[\w-]/.test(f)?(l+=f,i=S):i=D):i===K&&f==='"'?i=ie:i===K&&f==="'"?i=ne:i===ie&&f==='"'?(x.push([C,l],[Y]),l="",i=D):i===ne&&f==="'"?(x.push([C,l],[Y]),l="",i=D):i===K&&!/\s/.test(f)?(i=C,A--):i===C&&/\s/.test(f)?(x.push([C,l],[Y]),l="",i=D):(i===C||i===ne||i===ie)&&(l+=f))}return i===M&&l.length?(x.push([M,l]),l=""):i===C&&l.length?(x.push([C,l]),l=""):i===ie&&l.length?(x.push([C,l]),l=""):i===ne&&l.length?(x.push([C,l]),l=""):i===S&&(x.push([S,l]),l=""),x}};function n(a){return typeof a=="function"||typeof a=="string"||a&&typeof a=="object"||a==null?a:r("",a)}};function Sn(e){return e===ne||e===ie}var Fn=RegExp("^("+["area","base","basefont","bgsound","br","col","command","embed","frame","hr","img","input","isindex","keygen","link","meta","param","source","track","wbr","!--","animate","animateTransform","circle","cursor","desc","ellipse","feBlend","feColorMatrix","feComposite","feConvolveMatrix","feDiffuseLighting","feDisplacementMap","feDistantLight","feFlood","feFuncA","feFuncB","feFuncG","feFuncR","feGaussianBlur","feImage","feMergeNode","feMorphology","feOffset","fePointLight","feSpecularLighting","feSpotLight","feTile","feTurbulence","font-face-format","font-face-name","font-face-uri","glyph","glyphRef","hkern","image","line","missing-glyph","mpath","path","polygon","polyline","rect","set","stop","tref","use","view","vkern"].join("|")+")(?:[.#][a-zA-Z0-9\x7F-\uFFFF_:-]+)*$");function Ln(e){return Fn.test(e)}});var Zt=L((Ri,Qt)=>{"use strict";var $e=/\n[\s]+$/,we=/^\n[\s]+/,Kt=/[\s]+$/,Yt=/^[\s]+/,Ee=/[\n\s]+/g,Xt=["a","abbr","b","bdi","bdo","br","cite","data","dfn","em","i","kbd","mark","q","rp","rt","rtc","ruby","s","amp","small","span","strong","sub","sup","time","u","var","wbr"],Te=["code","pre","textarea"];Qt.exports=function e(t,r){if(Array.isArray(r))for(var n=t.nodeName.toLowerCase(),a=!1,i,l,o=0,s=r.length;o<s;o++){var u=r[o];if(Array.isArray(u)){e(t,u);continue}(typeof u=="number"||typeof u=="boolean"||typeof u=="function"||u instanceof Date||u instanceof RegExp)&&(u=u.toString());var m=t.childNodes[t.childNodes.length-1];if(typeof u=="string")a=!0,m&&m.nodeName==="#text"?m.nodeValue+=u:(u=t.ownerDocument.createTextNode(u),t.appendChild(u),m=u),o===s-1&&(a=!1,Xt.indexOf(n)===-1&&Te.indexOf(n)===-1?(i=m.nodeValue.replace(we,"").replace(Kt,"").replace($e,"").replace(Ee," "),i===""?t.removeChild(m):m.nodeValue=i):Te.indexOf(n)===-1&&(l=o===0?"":" ",i=m.nodeValue.replace(we,l).replace(Yt," ").replace(Kt,"").replace($e,"").replace(Ee," "),m.nodeValue=i));else if(u&&u.nodeType){a&&(a=!1,Xt.indexOf(n)===-1&&Te.indexOf(n)===-1?(i=m.nodeValue.replace(we,"").replace($e," ").replace(Ee," "),i===""?t.removeChild(m):m.nodeValue=i):Te.indexOf(n)===-1&&(i=m.nodeValue.replace(Yt," ").replace(we,"").replace($e," ").replace(Ee," "),m.nodeValue=i));var p=u.nodeName;p&&(n=p.toLowerCase()),t.appendChild(u)}}}});var tr=L((qi,er)=>{"use strict";er.exports=["svg","altGlyph","altGlyphDef","altGlyphItem","animate","animateColor","animateMotion","animateTransform","circle","clipPath","color-profile","cursor","defs","desc","ellipse","feBlend","feColorMatrix","feComponentTransfer","feComposite","feConvolveMatrix","feDiffuseLighting","feDisplacementMap","feDistantLight","feFlood","feFuncA","feFuncB","feFuncG","feFuncR","feGaussianBlur","feImage","feMerge","feMergeNode","feMorphology","feOffset","fePointLight","feSpecularLighting","feSpotLight","feTile","feTurbulence","filter","font","font-face","font-face-format","font-face-name","font-face-src","font-face-uri","foreignObject","g","glyph","glyphRef","hkern","image","line","linearGradient","marker","mask","metadata","missing-glyph","mpath","path","pattern","polygon","polyline","radialGradient","rect","set","stop","switch","symbol","text","textPath","title","tref","tspan","use","view","vkern"]});var nr=L((Pi,rr)=>{"use strict";rr.exports=["async","autofocus","autoplay","checked","controls","default","defaultchecked","defer","disabled","formnovalidate","hidden","ismap","loop","multiple","muted","novalidate","open","playsinline","readonly","required","reversed","selected"]});var ar=L((Di,ir)=>{"use strict";ir.exports=["indeterminate"]});var sr=L((Mi,lr)=>{"use strict";var Cn=zt(),Wn=Zt(),kn=tr(),In=nr(),On=ar(),Rn="http://www.w3.org/2000/svg",qn="http://www.w3.org/1999/xlink",Pn="!--";lr.exports=function(e){function t(a,i,l){var o;kn.indexOf(a)!==-1&&(i.namespace=Rn);var s=!1;i.namespace&&(s=i.namespace,delete i.namespace);var u=!1;if(i.is&&(u=i.is,delete i.is),s)u?o=e.createElementNS(s,a,{is:u}):o=e.createElementNS(s,a);else{if(a===Pn)return e.createComment(i.comment);u?o=e.createElement(a,{is:u}):o=e.createElement(a)}for(var m in i)if(i.hasOwnProperty(m)){var p=m.toLowerCase(),c=i[m];if(p==="classname"&&(p="class",m="class"),m==="htmlFor"&&(m="for"),In.indexOf(p)!==-1){if(String(c)==="true")c=p;else if(String(c)==="false")continue}p.slice(0,2)==="on"||On.indexOf(p)!==-1?o[m]=c:s?m==="xlink:href"?o.setAttributeNS(qn,m,c):/^xmlns($|:)/i.test(m)||o.setAttributeNS(null,m,c):o.setAttribute(m,c)}return Wn(o,l),o}function r(a){for(var i=e.createDocumentFragment(),l=0;l<a.length;l++)a[l]!=null&&(Array.isArray(a[l])?i.appendChild(r(a[l])):(typeof a[l]=="string"&&(a[l]=e.createTextNode(a[l])),i.appendChild(a[l])));return i}var n=Cn(t,{comments:!0,createFragment:r});return n.default=n,n.createComment=t,n}});var ur=L((Vi,or)=>{or.exports=sr()(document)});var cr=L((Hi,fr)=>{"use strict";function Dn(e){var t=document.createElement("div");return t.innerHTML=e,Mn(t.childNodes)}function Mn(e){return Array.isArray(e)?e:[].slice.call(e)}fr.exports=Dn});var hr={};B(hr,{bar:()=>Ve,default:()=>Vn,init:()=>pr});var X,Me,dr,ae,F,R,Ve,pr,Vn,mr=ee(()=>{X="formatBlock",Me=(e,t,r)=>e.addEventListener(t,r),dr=(e,t)=>e.appendChild(t),ae=e=>document.queryCommandState(e),F=(e,t=null)=>document.execCommand(e,!1,t),Ve=[{icon:"\u2612",title:"Clear Formatting",result:()=>F("removeFormat")},{icon:"<b>B</b>",title:"Bold",state:()=>ae("bold"),result:()=>F("bold")},{icon:"<i>I</i>",title:"Italic",state:()=>ae("italic"),result:()=>F("italic")},{icon:"<u>U</u>",title:"Underline",state:()=>ae("underline"),result:()=>F("underline")},{icon:"<b>H</b>",title:"Heading",result:()=>F(X,"<h2>")},{icon:"<b>H<sub>2</sub></b>",title:"Sub-Heading",result:()=>F(X,"<h3>")},{icon:"\xB6",title:"Paragraph",result:()=>F(X,"<p>")},{icon:"\u21A6",title:"Align Left",state:()=>ae("justifyLeft"),result:()=>F("justifyLeft")},{icon:"\u2194",title:"Align Center",state:()=>ae("justifyCenter"),result:()=>F("justifyCenter")},{icon:"\u21A4",title:"Align Right",state:()=>ae("justifyRight"),result:()=>F("justifyRight")},{icon:"#",title:"Number List",result:()=>F("insertOrderedList")},{icon:"\u2022",title:"Bulvar List",result:()=>F("insertUnorderedList")},{icon:"\u201C \u201D",title:"Quote",result:()=>F(X,"<blockquote>")},{icon:"\u2015",title:"Separator",result:()=>F("insertHorizontalRule")},{icon:"\u{1F517}",title:"Link",result:()=>{var e=window.prompt("Link URL:");e&&F("createLink",e)}},{icon:"\u{1F5BC}\uFE0F",title:"Link External Image",result:()=>{var e=window.prompt("Image URL:");e&&F("insertImage",e)}},{icon:"\u{1F4F8}",title:"Insert Image from File",result:()=>FW.img.upload(FW.state,R.ins)},{icon:"\u{1F4CE}",title:"Add Existing Image",result:()=>FW.emit(FW.state.events.RENDER,()=>document.getElementById("g").showModal())}],pr=e=>{var a;var t=document.querySelector("#e");if(t&&!e.rebuild)return t;t==null||t.parentNode.removeChild(t);var r=html`<div id=e class=ed></div>`;R=r.edUc=html`<div class=ed-uc contenteditable=true oninput=${({target:{firstChild:i}})=>{i&&i.nodeType===3?F(X,"<p>"):R.innerHTML==="<br>"&&(R.innerHTML=""),e.onChange(R.innerHTML)}} onkeydown=${i=>{i.key==="Enter"&&document.queryCommandValue(X).match(/blockquote|h\d/)&&setTimeout(()=>F(X,"<p>"),0),i.key==="Tab"&&(i.preventDefault(),setTimeout(()=>F(i.shiftKey?"outdent":"indent"),0))}}></div>`,R.ins=i=>{document.activeElement!==R&&R.focus(),F("insertHTML",`<p><img src="${i.img}#${i.id}"></p>`)};var n=html`<div class=ed-bar role=toolbar> ${((a=ed.bar)!=null?a:Ve).map(i=>{var l=html`<button class=ed-btn type=button title=${i.title} onclick=${()=>i.result()&&R.focus()}> ${html.raw(i.icon)} </button>`;if(i.state){var o=()=>l.classList[i.state()?"add":"remove"]("ed-sel");Me(R,"keyup",o),Me(R,"mouseup",o),Me(l,"click",o)}return l})} </div>`;return dr(r,n),dr(r,R),F("defaultParagraphSeparator","p"),r},Vn={bar:Ve,init:pr}});var vr={};B(vr,{default:()=>gr});function gr(e){if(!e)return"";var t=[],r=0,n=[],a=0,i=e.length;e[i-1]!==`
-`&&e[i-2]!==`
-`&&(e+=`
-
-`),e=e.replace(/\\(.)/g,(p,c)=>xe[c]||p).replace(/```(.*)\n([^\0]+?)```(?!```)/gm,(p,c,d)=>(t[r]={lang:c,block:fe(d)},`{code-${r++}}`)).replace(/`([^`]+?)`/g,(p,c)=>`<code>${fe(c)}</code>`).replace(/<([^>\s]+(\/\/|@)[^>\s]+)>/g,(p,c,d)=>`[${c}](${d==="@"?"mailto:":""}${c})`).replace(/(!?)\[([^\]]*?)\]\(([^\s\n]*)(?:| "(.*)")\)/gm,(p,c,d,h,g)=>{d=fe(d);try{h=decodeURI(h)}catch(w){}return h=encodeURI(h),g=g?` title="${fe(g)}"`:"",c?`<img src="${h}" alt="${d}"${g}>`:`<a href="${h}"${g}>${d}</a>`}).replace(/(<\/?[a-zA-Z]+[^>]*>)/gm,(p,c)=>(n[a]=c,`{html-${a++}}`)).replace(/^[ \t]*>+ (.*)/gm,`<blockquote>
-$1
-</blockquote>`).replace(/(<\/blockquote>\n?<blockquote>)+?/g,"").replace(/^(#+) +(.*)/gm,(p,c,d)=>`<h${c.length}>${d}</h${c.length}>`).replace(/^([^\n\t ])(.*)\n====+/gm,"<h1>$1$2</h1>").replace(/^([^\n\t ])(.*)\n----+/gm,"<h2>$1$2</h2>").replace(/\n( *[-*]){3,}\n/gm,"<hr>").replace(/\[( |x)\]/g,(p,c)=>`<input type="checkbox" disabled${c.toLowerCase()==="x"?" checked":""}>`).replace(/  +\n/gm,"<br>").replace(/^([^-\+\*\d<\t \n])([^]*?)(?:\n\n)/gm,(p,c,d)=>`<p>${c}${d}</p>
-`);var l;e=e.replace(/^([\t ]*)(?:(-|\+|\*)|(\d+(?:\)|\.))) (.*)/gm,(p,c,d,h,g)=>{c.length>0&&!l?l=c.replace(/[^ ]/g,""):c.length===0&&l&&(l=void 0),l&&(c=c.replace(new RegExp(l,"g"),"	"));var w=h?"o":"u";return`${c}<${w}l><li>${g}</li></${w}l>`});for(var o=/<\/li><\/(u|o)l>\n(\t+)<(u|o)l><li>(.*)<\/li><\/(u|o)l>/;e.match(o);)e=e.replace(o,function(p,c,d,h,g,w){return d.length>0&&(d=d.substring(1),d.length>0&&(d=`
-`+d)),`${d}<${h}l><li>${g}</li></${w}l></li></${c}l>`});e=e.replace(/(<\/ul>\n?[ \t]*<ul>)+?/g,"").replace(/(<\/ol>\n?[ \t]*<ol>)+?/g,"").replace(/\*\*([^\n*]+?)\*\*/g,"<strong>$1</strong>").replace(/__([^\n_]+?)__/g,"<strong>$1</strong>").replace(/\*([^\n*]+?)\*/g,"<em>$1</em>").replace(/_([^\n_]+?)_/g,"<em>$1</em>").replace(/(?:~~)([^~]+?)(?:~~)/g,"<del>$1</del>");for(var s=0;s<a;s++)e=e.replace(`{html-${s}}`,n[s]);for(var s=0;s<r;s++){var{lang:u,block:m}=t[s];e=e.replace(`{code-${s}}`,`<pre><code${u?` class="language-${u}"`:""}>${fe(m)}</code></pre>`)}return e.trim()}var xe,Hn,fe,br=ee(()=>{xe={"<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;",$:"&#36;","&":"&amp;","[":"&#91;","]":"&#93;","(":"&#40;",")":"&#41;",_:"&#95;","*":"&ast;","`":"&#96;"},Hn=Object.keys(xe).filter(e=>e!="&").map(e=>xe[e].replace(e!="&"?"&":"","")),fe=e=>e.replace(/[<>$&\(\)\[\]"']/g,t=>xe[t]||t).replace(new RegExp(`&amp;(${Hn.join("|")})`,"g"),"&$1")});var en=et(),tn=rt(),gt=dt(),rn=mt(),vt=()=>{var e={};return new URLSearchParams(window.location.search).forEach((t,r,n)=>{t=n.getAll(r),e[r]=t.length>1?t:t[0]}),e},nn={};function z(){if(!(this instanceof z))return new z;this.ready=e=>{document.readyState==="complete"||document.readyState==="interactive"?e():document.addEventListener("DOMContentLoaded",e)},this._events={ONLOAD:"DOMContentLoaded",TITLE:"DOMTitleChange",RENDER:"render",GO:"go"},this._loaded=!1,this._tree=null,this._view=()=>{},this.emitter=en("choo.emit"),this.emit=this.emitter.emit.bind(this.emitter),this.state={events:this._events,title:document.title,query:vt()},this.emitter.prependListener(this._events.TITLE,e=>{this.state.title=document.title=e})}z.prototype.start=function(){var e=()=>{var r=document.getElementById(location.hash.substring(1));return r?(r==null||r.scrollIntoView(),!0):!1};this.emitter.prependListener(this._events.GO,(r=null,n="push")=>{r&&history[n+"State"](nn,this.state.title,r),this.state.query=vt(),this._loaded&&this.emit(this._events.RENDER,()=>{e()||window.scroll(0,0)})}),window.onpopstate=()=>{this.emit(this._events.GO)},tn(({href:r})=>{var n=window.location.href;r!==n&&this.emit(this._events.GO,r)});var t=()=>this._view(this.state,this.emit);return this._tree=t(),this._rq=[],this._rd=null,this.emitter.prependListener(this._events.RENDER,r=>{typeof r=="function"&&this._rq.push(r),this._rd!==null&&clearTimeout(this._rd),this._rd=setTimeout(rn(()=>{var n=t();for(gt(this._tree,n);this._rq.length>0;)this._rq.shift()()}),9)}),this.ready(()=>{this.emit(this._events.ONLOAD),this._loaded=!0,e()}),this._tree};z.prototype.mount=function(e){this.ready(()=>{var t=this.start();typeof e=="string"?this._tree=document.querySelector(e):this._tree=e,gt(this._tree,t)})};var bt=(e,t)=>{var{p:r}=e;return[html`<header> <h1>All Pages</h1> </header>`,html`<ul> ${r.pages.filter(n=>!n.parent).map(n=>FW.getChildList(n))} </ul>`]};ve();var yt=(e,t)=>{var p,c;var{events:r,p:n,c:a,j:i}=e,l=n.pages.map(d=>d.slug).join(`
-`);return[html`<header> <h1>Wiki Settings</h1> </header>`,html`<article class=mw> <form onsubmit=${o} class=pb> <label for=wTitle>Wiki Title</label> <input class=w1 id=wTitle value=${n.name} minlength=1 required> <label for=wDesc>Wiki Description</label> <input class=w1 id=wDesc value=${n.desc}> <label for=home>Home Page</label> <select id=home> <option value="" selected=${!n.home}>All Pages (default)</option> ${n.pages.map(d=>html`<option selected=${d.id===n.home} value=${d.id}>${d.name} (${d.slug})</option>`)} </select> <label for=wPo>Page Order</label> <textarea id=wPo class=notab>${l}</textarea> <label for=wCss>Custom CSS</label> <textarea id=wCss>${a}</textarea> <label for=wJs>Custom JS</label> <span class=h>Only runs once on wiki load. To test, save wiki & load that file.</span> <textarea id=wJs>${i}</textarea> <label for=wHead>Custom Head</label> <span class=h>Add HTML directly to head element. To test, save wiki & load that file. Be careful! Malformed HTML will break wiki.</span> <textarea id=wHead>${FW.inject.esc(n.head,!0)}</textarea> <label for=wOut>Include Static HTML</label> <input id=wOut type=checkbox checked=${(p=n.static)!=null?p:!1}> <span class=h>Include the wiki content in plain HTML for non-JS browsers. Nearly doubles output size.</span> <label for=wPub>Publish</label> <input id=wPub type=checkbox checked=${(c=n.published)!=null?c:!1}> <span class=h>Hides Save, New Page, & Wiki Settings buttons. Manually visit settings to unset this: <code>?page=s</code></span> <div class=tr> <button type=submit>Update</button> </div> </form> <div class=tr> <p class="pb h"> Feather Wiki Version: 1.8.1 (Meadowlark) </p> <p> <button class=del onclick=${()=>s()}>Import & Overwrite with Other Feather Wiki file</button> </p> </div> ${Le(e,t,{showDelete:!0,showUsed:!0})} </article>`];function o(d){d.preventDefault();var h=d.currentTarget,g=h.wTitle.value.trim();if(g.length<1)return alert("Title is required");e.p.name=g,e.p.desc=h.wDesc.value.trim(),h.home.value.length>1?e.p.home=h.home.value:delete e.p.home;var w=h.wPo.value.split(`
-`).map(v=>v.trim());e.p.pages.sort((v,T)=>w.indexOf(v.slug)<w.indexOf(T.slug)?-1:1),u(h.wCss.value),m(h.wJs.value),h.wHead.value.trim()?e.p.head=FW.inject.esc(h.wHead.value):delete e.p.head,e.p.static=h.wOut.checked,e.p.published=h.wPub.checked,t(r.CHECK_CHANGED),t(r.NOTIFY,"Settings updated")}function s(){FW.upload("text/html",d=>{FW.xtr(d,h=>{h&&(e.p=h[0],u(h[1]),m(h[2]),t(r.ONLOAD),t(r.CHECK_CHANGED),t(r.NOTIFY,"Wiki Loaded"))})})}function u(d){var h=document.getElementById("c");d.trim()?(e.c=d,h?h.innerHTML=d:document.head.innerHTML+=`<style id=c>${d}</style>`):(delete e.c,h&&document.head.removeChild(h))}function m(d){d.trim()?(e.j!==d&&alert("You must save & reload to run your JavaScript"),e.j=d):delete e.j}};var $t=(e,t)=>{var{p:r,query:n}=e,a=r.pages.filter(i=>{var l,o;return(o=(l=i.tags)==null?void 0:l.split(","))==null?void 0:o.includes(n.tag)});return[html`<header> <h1>Pages Tagged <code>${n.tag}</code></h1> </header>`,html`<article> ${a.length>0?html`<ul> ${a.map(i=>html`<li><a href="?page=${i.slug}">${i.name}</a></li>`)} </ul>`:"None Found"} </article>`]};We();var At=(e,t,r)=>{var{events:n,edits:a,p:i}=e,l=FW.getChildren(r).map(v=>v.id),o=!i.pages.some(v=>v.id===r.id),{useMd:s}=a;function u(v){v.preventDefault();var{useMd:T,content:E}=a;T?confirm(`Convert Markdown to HTML?
-("Cancel" to go without converting)`)&&(e.edits.content=md(E)):e.edits.content=FW.img.abbr(E),e.edits.useMd=!T,t(n.RENDER)}var m=[html`<div class="w1 tr"> <button onclick=${u}>${s?"Use Editor":"Use Markdown"}</button> </div>`,(s?(Tt(),pe(Et)):(_t(),pe(xt))).editor(e,t)];return html`<form onsubmit=${g}> <header> <h1>Edit Page</h1> <div class=r> <div class="c w12"> <label for=name>Page Title</label> <input id=name value=${a.name} required minlength=2 onchange=${c}> </div> <div class="c w12"> <label for=slug>Page Slug</label> <input id=slug value=${a.slug} required minlength=2 onchange=${c}> <button onclick=${p}>Slugify Title</button> </div> </div></header> <span class=h style=float:left>Internal links (hash optional): [[Page Title]] or [[text|page_slug#heading]].</span> ${m} <footer class=r> <div class="c w13"> <label for=tags>Page Tags</label> <input id=tags value=${a.tags} placeholder="Comma, Separated, List" onchange=${c}> <select onchange=${h}> <option value="" selected=selected disabled=disabled>Add Existing Tag</option> ${e.t.filter(v=>!a.tags.split(",").includes(v)).map(v=>html`<option>${v}</option>`)} </select> </div> <div class="c w13"> <label for=parent>Parent</label> <select id=parent onchange=${c}> <option value="" selected=${a.parent===""}>None</option> ${i.pages.filter(v=>v.id!==(r==null?void 0:r.id)&&!l.includes(v.id)).map(v=>html`<option selected=${v.id===a.parent} value=${v.id}>${v.name} (${v.slug})</option>`)} </select> <label>Hide Page <input type=checkbox id=hide onchange=${v=>e.edits.hide=v.target.checked} checked=${a.hide}></label> </div> <div class="c w13 tr"> <div class=pb><button type=submit>Save</button></div> ${o?"":[html`<div class=pb><button onclick=${v=>{v.preventDefault(),t(n.CANCEL_EDIT)}}>Cancel</button></div>`,html`<div><button class=del onclick=${v=>w(v)}>Delete</button></div>`]} </div> </footer> </form>`;function p(v){v.preventDefault(),document.getElementById("slug").value=FW.slug(document.getElementById("name").value.trim())}function c(v){var T=v.target;e.edits[T.id]=T.value,t(n.RENDER)}function d(){return FW.tidy(document.getElementById("tags").value.split(","))}function h(v){var T=v.target.value;if(T.length>0){var E=d();E.includes(T)||(a.tags+=(E.length>0?",":"")+T,t(n.RENDER))}v.target.value=""}function g(v){v.preventDefault();var T=v.currentTarget,E=T.name.value.trim();if(E.length<1)return alert("Page Title cannot be blank.");var W=T.slug.value.trim();if(W.length<2)return alert("Page Slug must be more than 1 character long.");var y=q({},r);y.name=E,y.slug=FW.slug(W),y.content=FW.img.fix(FW.img.abbr(e.edits.content),!0),y.tags=d().join(","),y.parent=T.parent.value,T.hide.checked?y.hide=!0:delete y.hide,a.useMd?y.editor="md":delete y.editor,t(n.UPDATE_PAGE,y)}function w(v){v.preventDefault(),confirm("You can't undo this after saving your wiki! Delete this page?")&&t(n.DELETE_PAGE,r.id)}};var St=(e,t,r)=>{var{edit:n,p:a,events:i}=e,{cd:l,md:o}=r;if(n)return At(e,t,r);for(var s=g=>a.pages.find(w=>w.id===(g==null?void 0:g.parent)),u=[],m=s(r);m;)u.unshift(m),m=s(m);var p=new Date(l),c=FW.date(p),d=new Date(o!=null?o:l),h=FW.date(d);return[html`<header> ${html.raw(u.map(g=>`<a href="?page=${g.slug}">${g.name}</a> /`).join(" "))} <div class="r ns"> <h1 class=c>${r.name}</h1> ${r.e?"":html`<div class="c tr" style=width:300px> <div class="tr ib at"> <time datetime=${d.toISOString()}>${h}</time> ${c!==h?html`<span class="db h"> Created: <time datetime=${p.toISOString()}>${c}</time> </span>`:""} </div> ${a.published?"":html`<button onclick=${()=>t(i.START_EDIT)}>Edit</button>`} </div>`} </div> </header>`,wt(r)]};var Ft=(e,t)=>{var r=FW.missing();return[html`<header> <h1>Missing Pages</h1> </header>`,html`<article> <p>Referenced but not created:</p> <ul> ${r.map(n=>html`<li>${n}</li>`)} </ul> </article>`]};var Lt=e=>{var r,n,a,i;e.root=location.pathname||"/",e.sb=!1,e.sbTab="Pages",e.sbx=new Set,e.recent=[],e.edit=!1,e.edits=null,e.keep=!1,e.src=!1,e.notis={},e.canPut=!1,e.events=U(q({},e.events),{HANDLE_404:"404",CREATE_PAGE:"cp",START_EDIT:"se",CANCEL_EDIT:"ce",UPDATE_PAGE:"up",DELETE_PAGE:"dp",COLLECT_TAGS:"ct",CHECK_CHANGED:"cc",SAVE_WIKI:"sw",NOTIFY:"n",REMOVE_NOTI:"rn",PUT_SAVE_WIKI:"psw",DETECT_PUT_SUPPORT:"dps"}),e.views={a:bt,s:yt,t:$t,p:St,m:Ft},e.c=(n=(r=document.querySelector("style#c"))==null?void 0:r.innerHTML)!=null?n:"",e.j=FW.parseJs((i=(a=document.querySelector("script#j"))==null?void 0:a.innerHTML)!=null?i:"");try{e.p=FW.json.decompress(JSON.parse(document.querySelector("script#p").innerHTML))}catch(l){e.p={name:"New Wiki",desc:"",pages:[],img:{}}}e.pg=FW.getPage();var t=e.p.pages.find(l=>{var o;return l.id===((o=e.recent[0])==null?void 0:o.p)});return e.useMd=(t==null?void 0:t.editor)==="md",e.t=[],e.prev=FW.hash.object(e.p),e.now=e.prev,e.changed=!1,e};function Ct(e){if(e.key==="Tab"){var t=this,r=T=>{var E=document.activeElement;E!==t&&t.focus();var W=T===""?document.execCommand("delete"):document.execCommand("insertText",!1,T);W||(t.setRangeText(T,t.selectionStart||0,t.selectionEnd||0,"end"),t.dispatchEvent(new InputEvent("input",{text:T,inputType:"insertText"})))},{selectionStart:n,selectionEnd:a,value:i}=t,l=i.lastIndexOf(`
-`,n-1)+1;if(e.shiftKey){var o=i.lastIndexOf(`
-`,a-1)+1,s=i.charAt(o)!=="	"?a:o+1,u=t.value.slice(l,s),m=u.replace(/(^|\n)(\t| {1,2})/g,"$1"),p=u.length-m.length;t.setSelectionRange(l,s),r(m);var c=/\t| {1,2}/.exec(i.slice(l,n)),d=c?c[0].length:0,h=n-d;t.setSelectionRange(n-d,Math.max(h,a-p))}else{var g,w=i.slice(n,a),v=(g=/\n/g.exec(w))===null||g===void 0?void 0:g.length;if(v>0){var u=t.value.slice(l,a-1),m=u.replace(/^|\n/g,"$&	"),p=m.length-u.length;t.setSelectionRange(l,a-1),r(m),t.setSelectionRange(n+1,a+p)}else r("	")}e.preventDefault()}}var Wt=(e,t)=>{var{root:r,views:n}=e,{ONLOAD:a,TITLE:i,RENDER:l,GO:o,HANDLE_404:s,CREATE_PAGE:u,START_EDIT:m,CANCEL_EDIT:p,UPDATE_PAGE:c,DELETE_PAGE:d,COLLECT_TAGS:h,CHECK_CHANGED:g,SAVE_WIKI:w,PUT_SAVE_WIKI:v,DETECT_PUT_SUPPORT:T,NOTIFY:E,REMOVE_NOTI:W}=e.events,y=(...f)=>t.emit(...f),V=()=>y(i,e.p.name+(e.pg?" | "+e.pg.name:"")),G=()=>setTimeout(()=>document.querySelectorAll("textarea:not(.notab)").forEach(f=>f.onkeydown=Ct),300),x=()=>e.edits&&!confirm("Lose unsaved changes?"),A=()=>{e.edit=!1,e.edits=null};return t.on(a,()=>{y(s),V(),e.recent=e.p.pages.map(f=>{var b;return{p:f.id,t:(b=f.md)!=null?b:f.cd}}).sort((f,b)=>f.t>b.t?-1:1),y(h),e.t.length?y(l):G(),y(T)}),t.on(l,G),t.on(s,()=>{var{page:f}=e.query;if((f==null?void 0:f.length)>1){var b=FW.slug(f),$=FW.find(b);if(!$&&!n[b]){var _=f.split("_").map(I=>I[0].toUpperCase()+I.substring(1)).join(" ");y(u,_,!1)}}else(f==null?void 0:f.length)>0&&!n[f]&&(e.pg={e:!0,name:"404",content:"<p>Page not found</p>"},y(l))}),t.on(o,()=>{var I;var{p:f,pg:b}=e,$=(I=e.query.page)!=null?I:null,_=(b==null?void 0:b.slug)===$||!$&&(b==null?void 0:b.id)===f.home;if(!_&&x())return history.go(-1);_||(A(),e.pg=FW.getPage(),y(s),V())}),t.on(u,(f,b=!0)=>{if(!(f.length<2)&&!x()){A();var{p:$,query:_}=e,I=()=>{for(var Z=[],He=0;He<9;He++){var $r=Math.round(Math.random()*94)+32;Z.push(String.fromCharCode($r))}return Z.join("")},H;do H=I();while($.pages.findIndex(Z=>Z.id===H)>=0);var Q=0,yr=FW.slug(f),le;do le=yr+(Q>0?"_"+Q:""),Q++;while($.pages.some(Z=>Z.slug===le));var ce={id:H,name:f,slug:le,cd:Date.now()};e.showNewPageField=!1,b?(e.p.pages.push(ce),e.recent.unshift({p:ce.id,t:ce.cd}),y(g),y(o,r+"?page="+le,_.page!==le?"replace":"push")):e.pg=ce,y(m)}}),t.on(m,()=>{var $,_,I,H,Q;var{pg:f}=e;e.edit=!0;var b={name:($=f.name)!=null?$:"",slug:(_=f.slug)!=null?_:"",content:FW.img.fix((I=f.content)!=null?I:""),tags:(H=f.tags)!=null?H:"",parent:(Q=f.parent)!=null?Q:"",hide:!!f.hide};b.useMd=f.editor==="md"||!b.content&&e.useMd,e.edits=b,e.src=!1,y(l)}),t.on(p,()=>{x()||(A(),y(l))}),t.on(c,f=>{var{p:b}=e;if(b.pages.some(_=>_.slug===f.slug&&_.id!==f.id))return alert(`A page with the slug "${f.slug}" already exists!`);var $=b.pages.findIndex(_=>_.id===f.id);Object.keys(f).forEach(_=>{f[_].length<1&&delete f[_]}),f.md=Date.now(),$>-1?b.pages[$]=f:b.pages.push(f),e.recent=[{p:f.id,t:f.md},...e.recent.filter(_=>_.p!==f.id)],A(),e.useMd=f.editor==="md",y(h),e.pg=FW.getPage(),y(g)}),t.on(d,f=>{e.p.pages=e.p.pages.map(b=>(b.parent===f&&delete b.parent,b)).filter(b=>b.id!==f),e.recent=e.recent.filter(b=>b.p!==f),A(),y(h),delete e.pg,y(o,r),y(g)}),t.on(h,()=>{e.t=FW.tidy(e.p.pages.reduce((f,b)=>{var $,_;return[...f,...(_=($=b.tags)==null?void 0:$.split(","))!=null?_:[]]},[]))}),t.on(g,f=>{e.now=FW.hash.object(e.p),e.changed=e.prev!==e.now,y(l,f)}),t.on(E,(f,b=5e3,$="background:#ddd; color:#000")=>{var _=Date.now(),I=()=>y(W,_),H=html`<div class=noti style=${$} id=${_} onclick=${()=>I()} title="Click to close"> <span role=alert>${f}</span><span class=fr>×</span> </div>`;e.notis[_]=H,b>0&&setTimeout(I,b),document.querySelector(".notis").appendChild(H)}),t.on(W,f=>{var b=e.notis[f];b==null||b.parentNode.removeChild(b),delete e.notis[f]}),t.on(w,()=>{var f=FW.gen(e),{p:b}=e,$=document.createElement("a");$.setAttribute("href","data:text/html;charset=utf-8,"+encodeURIComponent(f));var _=/\/$/.test(r)?"index.html":decodeURI(r.substring(r.lastIndexOf("/")+1));$.setAttribute("download",_),document.body.appendChild($),$.click(),document.body.removeChild($),e.canPut||(e.prev=FW.hash.object(b),y(g))}),t.on(v,()=>{var f=FW.gen(e),{p:b}=e;fetch(r,{method:"PUT",body:f}).then($=>$.text().then(_=>({ok:$.ok,status:$.status,text:_}))).then($=>{if(!$.ok)throw $.text?$.text:`Status ${$.status}.`;y(E,"Saved"),e.prev=FW.hash.object(b),y(g)}).catch($=>{y(E,`Save failed! ${$}`,9999,"background:#e88")})}),t.on(T,()=>{!location.protocol.startsWith("http")||e.canPut||fetch(r,{method:"OPTIONS"}).then(f=>{f.ok&&f.headers.get("dav")&&(e.canPut=!0,y(l))}).catch(f=>{})}),t};var be=(e,t)=>{var G,x;var{root:r,pg:n,p:a,t:i,recent:l,events:o,query:s,changed:u,sb:m,sbTab:p,views:c,notis:d}=e,h=!a.published||s.page==="s",g=a.pages.filter(A=>!A.parent),w=l.map(A=>a.pages.find(f=>f.id===A.p)),v=n?c.p(e,t,n):((x=c[(G=s.page)!=null?G:"a"])!=null?x:()=>{})(e,t);s.tag&&(v=c.t(e,t));var T=[u?html`<div>Wiki has changed!</div>`:""];if(e.canPut){var E=location.origin+r;T.push(html`<div> <button class=${u?"chg":""} title="Save wiki to ${E}" onclick=${()=>t(o.PUT_SAVE_WIKI)}> Save Wiki to Server </button> </div>`)}return T.push(html`<div> <button class=${!e.canPut&&u?"chg":""} title="Download wiki in its current state" onclick=${()=>t(o.SAVE_WIKI)}> ${e.canPut?"Save Wiki Locally":"Save Wiki"} </button> </div>`),html`<body> <main> <div class=sb> <span class=db><a href=? class=t>${a.name}</a></span> ${a.desc?html`<p class=pb>${a.desc}</p>`:""} ${h?T:""} <button class=sbt onclick=${()=>y()}>${m?"Hide Menu":"Show Menu"}</button> <nav class=${m?"":"n"}> ${h?[html`<p><a href="?page=s">Wiki Settings</a></p>`,html`<details class=pb ontoggle=${()=>document.getElementById("np").focus()}> <summary class=np>New Page</summary> <form onsubmit=${W}> <label class=sr for=np>New Page Title</label> <input id=np placeholder="New Page Title" autocomplete=off> <button type=submit>Create</button> </form> </details>`]:""} <div class=tabs> <button class=${p==="Pages"&&"a"} onclick=${V}>Pages</button> ${i.length>0?html`<button class=${p==="Tags"&&"a"} onclick=${V}>Tags</button>`:""} <button class=${p==="Recent"&&"a"} onclick=${V}>Recent</button> </div> ${p==="Pages"?html`<ul> ${g.map(A=>FW.getChildList(A,!0))} <li><a href="?page=a">All Pages</a></li> ${FW.missing().length>0?html`<li><a href="?page=m">Missing Pages</a></li>`:""} </ul>`:""} ${p==="Tags"?html`<ul> ${i.map(A=>html`<li><a href="?tag=${A}">${A}</a></li>`)} </ul>`:""} ${p==="Recent"?html`<ul style=padding:0> ${w.map(A=>{var f;return html`<li> <a href="?page=${A.slug}">${A.name}</a> <p class=h style=margin:0>${FW.date(new Date((f=A.md)!=null?f:A.cd))}</p> </li>`})} </ul>`:""} </nav> </div> <section>${v}</section> </main> <footer> <span class=fr>Powered by <a href=https://feather.wiki title="Version: 1.8.1 (Meadowlark)" target=_blank rel="noopener noreferrer">Feather Wiki</a></span> </footer> <div class=notis> ${Object.values(d)} </div> </body>`;function W(A){A.preventDefault();var f=A.currentTarget.np.value.trim();if(f.length<2)return alert("Enter more than 1 character to create a new page.");t(o.CREATE_PAGE,f.trim())}function y(){e.sb=!e.sb,t(o.RENDER)}function V(A){e.sbTab=A.target.innerText,t(o.RENDER)}};function kt(e,t=()=>{}){var r=new FileReader;r.onload=n=>_e(this,null,function*(){var a=n.target.result,i=ke(a,"script","p type=application/json");if(!i.length||i[0]!=="{")return alert("Could not find Feather Wiki data.");var l=FW.json.decompress(JSON.parse(i));l.img=yield sn(l.img),t([l,ke(a,"style","c"),FW.parseJs(ke(a,"script","j"))])}),r.onerror=function(n){t(null)},r.readAsText(e)}function ke(e,t,r){var n=`\\s<${t} id=${r}>`,a=e.match(new RegExp(n+`.+?(?=</${t}>)`,"s"));return(a!=null?a:[]).length?a[0].replace(n.replace("\\s",""),"").trim():""}function sn(e){return _e(this,null,function*(){var t=Object.keys(e);return t.length&&!e[t[0]].img&&(yield Promise.all(t.map(r=>new Promise(n=>{var a=new Image;a.src=e[r],a.onload=()=>{e[r]={img:e[r],alt:"image",size:[a.width,a.height]},n()}})))),e})}function It(e){var{c:t,p:r,j:n}=e;return`<!doctype html> <html lang=en-US> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1"> <title>${r.name}</title> ${r.desc?`<meta name="description" content="${r.desc.replace(/"/g,'\\"')}">`:""} <meta name=application-name content="Feather Wiki"> <meta name=version content=1.8.1> <style id=s>${document.getElementById("s").innerHTML}</style> ${t?`<style id=c>${t}</style>`:""} <script id=p type=application/json>${JSON.stringify(FW.json.compress(r))}<\/script> <script id=a>${document.getElementById("a").innerHTML}<\/script> ${FW.inject.esc(r.head,!0)} </head> <body> ${a()} <footer><a href=https://src.feather.wiki/#browser-compatibility>JavaScript is required</a></footer> ${n?`<script id=j>FW.ready(()=>{/**/${n}/**/});<\/script>`:""} </body> </html>`;function a(){var l=U(q({},e),{edit:!1,sb:!0,sbx:new Set,pg:void 0,query:{page:"a"},p:U(q({},r),{published:!0})}),o=be(l);if(o.querySelector(".sb .tabs").remove(),r.static){var s=o.querySelector("main>section");s.parentElement.replaceChild(i(l),s),o.querySelector(".sb>nav>ul>li:last-child,.sbt").remove()}return o.querySelectorAll("a").forEach(u=>{u.classList.remove("a"),u.href=u.href.includes("#")?u.href.replace(/.+(#.+)$/,"$1"):u.href.includes("page=")?u.href.replace(/.+(page=.+)(\&.+)*?$/,r.static?"#$1":"?$1"):u.href.replace(location.toString().split("?")[0],"")}),o.querySelector("main").outerHTML}function i(l){return html`<section> ${r.pages.map(o=>{var s=e.views.p(l,"",o);return s[0].querySelector("h1").id="page="+o.slug,html`<article> ${s[0]} <div class=uc>${html.raw(s[1][1].innerHTML)}</div> </article>`})} </section>`}}var Ie={};B(Ie,{abbr:()=>fn,fix:()=>cn,put:()=>un,resizeImage:()=>Ot,upload:()=>on});function on(e,t=()=>{}){confirm("Inserting images increases your wiki's file size. Continue?")&&FW.upload("image/*",r=>{Ot(r,(n,a,i)=>{if(n){var l=FW.hash.string(n);e.p.img[l.toString()]={alt:prompt("Alt text:",r.name),size:[a,i],img:n},t({img:n,id:l})}})})}function un(e,t,r=()=>{}){e.preventDefault(),document.getElementById("g").close(),r(t)}function fn(e){return e.replace(/(?:<img src=")[^"]+#([-\d]+)(?=")/g,'<img src="img:$1:img')}function cn(e,t){return t?e.replace(/<img /g,"<im "):e.replace(/<im /g,"<img ")}function Ot(e,t=()=>{}){var r=new FileReader;r.onload=n=>{var a=new Image;a.src=n.target.result,a.onload=()=>{var i=document.createElement("canvas"),l=a.width,o=a.height,s=prompt("Max width pixels:","400");s=s!=null&&s.length?parseInt(s):400;var u=prompt("Max height pixels:","350");u=u!=null&&u.length?parseInt(u):350,l>o?l>s&&(o*=s/l,l=s):o>u&&(l*=u/o,o=u),i.width=l,i.height=o;var m=i.getContext("2d");m.drawImage(a,0,0,l,o),t(i.toDataURL(e.type),l,o)}},r.onerror=n=>{t(null)},r.readAsDataURL(e)}var Oe={};B(Oe,{object:()=>dn,string:()=>Rt});function Rt(e){var t=0,r,n;if(e.length===0)return t;for(r=0;r<e.length;r++)n=e.charCodeAt(r),t=(t<<5)-t+n,t|=0;return t}function dn(e){return Rt(JSON.stringify(e))}var Re={};B(Re,{esc:()=>vn,hLink:()=>gn,img:()=>hn,out:()=>mn,pg:()=>pn});function pn(e){var r;var t=e!=null?e:null;return t&&((r=e==null?void 0:e.match(/\[\[.+?(?=\]\])/g))!=null?r:[]).forEach(n=>{var s;var a=n.replace("[[","").split("|"),i=a[1]?a[0]:a[0].split("#")[0],l=((s=a[1])!=null?s:a[0]).trim().split("#");a[1]||(l[0]=FW.slug(l[0]));var o=FW.state.p.pages.some(u=>u.slug===l[0])||typeof FW.state.views[l[0]]!="undefined";t=t.replace(`${n}]]`,`<a internal href="?page=${l.join("#")}"${o?"":" class=e"}>${i}</a>`)}),t}function hn(e,t=!1){var n;var r=e!=null?e:null;return r&&((n=e==null?void 0:e.match(/img:.+?(?=:img)/g))!=null?n:[]).forEach(a=>{id=a.replace("img:","");var i=FW.state.p.img[id];typeof i!="undefined"&&(r=r.replace(`${a}:img`,i.img+(t?`#${id}`:"")+`" alt="${i.alt}`))}),r}function mn(e){var r;var t=e!=null?e:null;return t&&((r=e==null?void 0:e.match(/<a href="[^"]+">/gi))!=null?r:[]).forEach(n=>{t=t.replace(n,n.replace(">",'target="_blank" rel="noopener noreferrer">'))}),t}function gn(e){var r;var t=e!=null?e:null;return t&&((r=e==null?void 0:e.match(/<h\d>.+?<\/h\d>/gi))!=null?r:[]).forEach(n=>{var a=n.match(/<h(\d)>(.+)<\/h\d>/i),i=FW.slug(a[2]);t=t.replace(n,`<h${a[1]} id=${i}>${a[2]} <a class=l href=#${i}>#</a></h${a[1]}>`)}),t}function vn(e,t=!1){var r;return(r=t?e==null?void 0:e.replace(/&[lg]t;/g,n=>{var a;return(a={"&lt;":"<","&gt;":">"}[n])!=null?a:n}):e==null?void 0:e.replace(/[<>]/g,n=>{var a;return(a={"<":"&lt;",">":"&gt;"}[n])!=null?a:n}))!=null?r:""}var Pe={};B(Pe,{compress:()=>qt,decompress:()=>Pt});var oe=-1;function qt(e,t,r){typeof t=="boolean"?(r=t,t=void 0):r=typeof r!="undefined"?r:!1,typeof t=="undefined"&&(oe=-1);var n=t||[],a;return qe(e)?(wn(e,n,r),a=e):a=En(e,n,r),a}function Pt(e){var t,r=JSON.parse(JSON.stringify(e));return qe(r)?Tn(r):t=xn(r),t?JSON.parse(t):r}function Dt(e,t){var r,n=e.length;for(r=0;r<n;r++)if(e[r][1]===t)return!0;return!1}function Mt(e){var t,r=e.length,n=[];for(t=0;t<r;t++)Dt(n,e[t][1])||n.push(e[t]);return n}function bn(e){return e.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&")}function yn(e){return(e==null?void 0:e.constructor)===Object}function qe(e){return Array.isArray(e)}function $n(e){return e.reduce((t,r)=>(t[r[0]]=r[1],t),{})}function Vt(e,t,r=0){var n="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=_!?()*",a=[],i=e;for(t=t||n.length;i>=t;)a.push(n.charCodeAt(i%t+r)),i=Math.floor(i/t-1);return a.push(n.charCodeAt(i+r)),a.reverse()}function Ht(e){return String.fromCharCode.apply(String,e)}function Ut(e,t){var r,n,a;for(n in e)typeof e[n]!="undefined"&&(a=e[n],(yn(a)||qe(a))&&(t=t.concat(Mt(Ut(a,t)))),isNaN(Number(n))&&(Dt(t,n)||(oe+=1,r=[Ht(Vt(oe)),n],t.push(r))));return t}function jt(e){var t,r=e.length,n={};for(t=0;t<r;t++){var a=e[t][0];n[a]=t}for(t=0;t<r;t++){var i=e[t][1];if(typeof n[i]!="undefined"){var l=n[i];return oe+=1,e[l][0]=Ht(Vt(oe)),n[l]=e[l][0],delete n[i],jt(e)}}return e}function wn(e,t,r){var n,a;for(n=0,a=e.length;n<a;n++)e[n]=qt(e[n],t,r)}function En(e,t,r){var n,a,i,l,o;for(t=Mt(Ut(e,t)),r===!0&&(t=jt(t)),a=JSON.stringify(e),i=t.length,l=0;l<i;l++)n=t[l],a=a.replace(new RegExp('(?:"'+bn(n[1])+'"):',"g"),'"'+n[0]+'":');return o=JSON.parse(a),o._=$n(t),o}function Tn(e){var t,r;for(t=0,r=e.length;t<r;t++)e[t]=Pt(e[t])}function xn(e){var t,r,n;t=JSON.parse(JSON.stringify(e._)),delete e._,r=JSON.stringify(e);for(n in t)typeof t[n]!="undefined"&&(r=r.replace(new RegExp('(?:"'+n+'"):',"g"),'"'+t[n]+'":'));return r}window.html=ur();html.raw=cr();window.ed=(mr(),pe(hr)).default;window.md=(br(),pe(vr)).default;window.FW=z();FW.slug=e=>e==null?void 0:e.toLowerCase().replace(/\s/g,"_").replace(/[\x00-\x2F\x3A-\x40[\\\]^`\x7B-\x7F]/g,"-");FW.date=e=>e.toLocaleString();FW.tidy=e=>e.map(t=>t.trim()).filter((t,r,n)=>t.length&&n.indexOf(t)===r).sort();FW.xtr=kt;FW.gen=It;FW.img=Ie;FW.hash=Oe;FW.inject=Re;FW.json=Pe;FW.upload=(e,t)=>{var r=html`<input type=file accept=${e} onchange=${n=>{var a=n.target.files;a.length>0&&t(a[0])}}>`;document.body.appendChild(r),r.click(),document.body.removeChild(r)};FW.find=(e,t="slug")=>FW.state.p.pages.find(r=>r[t]===e);FW.getPage=()=>{var{query:e,p:t}=FW.state;return!e.page&&t.home?FW.find(t.home,"id"):FW.find(e.page)};FW.getChildren=(e,t)=>FW.state.p.pages.filter(r=>r.parent===(e==null?void 0:e.id)&&(!t||!r.hide));FW.getChildList=(e,t)=>{var m;if(t&&e.hide)return"";var{getChildren:r,getChildList:n}=FW,a=r(e,t),i=(m=FW.state.pg)==null?void 0:m.slug,l=i===e.slug,o=p=>{var c;return l||FW.state.sbx.has(e.id)||((c=p.find(d=>d.slug===i||o(r(d,t))))!=null?c:!1)},s=[html`<a href="?page=${e.slug}" class=${l?"a":""}>${e.name}</a>`,a.length>0?html`<ul>${a.map(p=>n(p,t))}</ul>`:""],u=t&&s[1]?html`<details open=${o(a)} onclick=${p=>FW.state.sbx.add(e.id)} ontoggle=${p=>{p.target.open||FW.state.sbx.delete(e.id)}}> <summary>${s[0]}</summary> ${s[1]} </details>`:s;return html`<li> ${u} </li>`};FW.missing=()=>FW.state.p.pages.reduce((e,t)=>{var r=document.createElement("div");r.innerHTML=FW.inject.pg(t.content);var n=[...r.getElementsByClassName("e")].filter(a=>e.every(i=>i.href!==a.href));return[...e,...n]},[]).sort();FW.parseJs=e=>e.replace(new RegExp("^FW\\.ready\\(\\(\\)=>\\{\\/\\*\\*\\/(.*)\\/\\*\\*\\/\\}\\);$","gs"),"$1");FW.ready(()=>{Lt(FW.state),Wt(FW.state,FW.emitter)});FW._view=be;FW.mount("body");window.addEventListener("beforeunload",e=>{if(FW.state.changed)return e.preventDefault(),e.returnValue="Lose unsaved changes?"},{capture:!0});})(); </script>  </head> <body> <main> <div class="sb"> <span class="db"><a href="?" class="t">Zeb86 Manual</a></span> <button class="sbt">Hide Menu</button> <nav class="">  <ul style="padding:0"> <li> <a href="?page=6-_atores">6. Atores</a> <p style="margin:0" class="h">6/9/2025, 3:28:27 PM</p></li><li> <a href="?page=armadilhas">armadilhas</a> <p style="margin:0" class="h">6/9/2025, 3:05:23 PM</p></li><li> <a href="?page=casas">casas</a> <p style="margin:0" class="h">6/9/2025, 2:55:44 PM</p></li><li> <a href="?page=sentidos">sentidos</a> <p style="margin:0" class="h">6/9/2025, 2:43:52 PM</p></li><li> <a href="?page=a12-_skills">A12. Skills</a> <p style="margin:0" class="h">6/8/2025, 5:16:34 PM</p></li><li> <a href="?page=9-_fisica">9. Fisica</a> <p style="margin:0" class="h">6/8/2025, 5:15:09 PM</p></li><li> <a href="?page=4-_mundo">4. Mundo</a> <p style="margin:0" class="h">6/8/2025, 5:13:58 PM</p></li><li> <a href="?page=7-_items">7. Items</a> <p style="margin:0" class="h">6/8/2025, 5:12:31 PM</p></li><li> <a href="?page=9-_acoes_e_processos">9. Acoes e Processos</a> <p style="margin:0" class="h">6/8/2025, 5:10:08 PM</p></li><li> <a href="?page=8-_perks">8. Perks</a> <p style="margin:0" class="h">6/8/2025, 5:09:40 PM</p></li><li> <a href="?page=3-_telas_e_input">3. Telas e Input</a> <p style="margin:0" class="h">6/8/2025, 5:02:27 PM</p></li><li> <a href="?page=2-_o_jogo">2. O Jogo</a> <p style="margin:0" class="h">6/8/2025, 5:02:18 PM</p></li><li> <a href="?page=1-_tabela_de_conteudos">1. Tabela de Conteudos</a> <p style="margin:0" class="h">6/8/2025, 5:02:05 PM</p></li><li> <a href="?page=0-_este_manual">0. Este Manual</a> <p style="margin:0" class="h">6/8/2025, 5:01:06 PM</p></li><li> <a href="?page=11-_lore">11. Lore</a> <p style="margin:0" class="h">6/8/2025, 4:43:00 PM</p></li><li> <a href="?page=templates-_win-_loss">R. templates, win, loss</a> <p style="margin:0" class="h">6/8/2025, 3:52:45 PM</p></li><li> <a href="?page=skills">R. Skills</a> <p style="margin:0" class="h">6/8/2025, 3:52:11 PM</p></li><li> <a href="?page=a11-_fen%C3%B4menos">A11. Fenômenos</a> <p style="margin:0" class="h">6/7/2025, 6:20:14 PM</p></li><li> <a href="?page=a10-_equipamentos">A10. Equipamentos</a> <p style="margin:0" class="h">6/7/2025, 6:19:57 PM</p></li><li> <a href="?page=dev1-_feather_resources">DEV1. Feather Resources</a> <p style="margin:0" class="h">6/7/2025, 6:19:03 PM</p></li><li> <a href="?page=dev4-_arquitetura">DEV4. Arquitetura</a> <p style="margin:0" class="h">6/7/2025, 6:17:35 PM</p></li><li> <a href="?page=gloss%C3%A1rio_a-z">Glossário A-Z</a> <p style="margin:0" class="h">6/7/2025, 6:12:52 PM</p></li><li> <a href="?page=a5-_corpos_e_membros">A5. Corpos e Membros</a> <p style="margin:0" class="h">6/7/2025, 6:12:06 PM</p></li><li> <a href="?page=a9-_items">A9. Items</a> <p style="margin:0" class="h">6/7/2025, 6:11:42 PM</p></li><li> <a href="?page=a8-_perks">A8. Perks</a> <p style="margin:0" class="h">6/7/2025, 6:11:19 PM</p></li><li> <a href="?page=a7-_civiliza%C3%A7%C3%B5es_e_fac%C3%A7%C3%B5es">A7. Civilizações e Facções</a> <p style="margin:0" class="h">6/7/2025, 6:10:55 PM</p></li><li> <a href="?page=a4-_monstros">A4. Monstros</a> <p style="margin:0" class="h">6/7/2025, 6:08:16 PM</p></li><li> <a href="?page=a3-_materiais">A3. Materiais</a> <p style="margin:0" class="h">6/7/2025, 6:07:32 PM</p></li><li> <a href="?page=a2-_tiles">A2. Tiles</a> <p style="margin:0" class="h">6/7/2025, 6:07:14 PM</p></li><li> <a href="?page=a1-_telas">A1. Telas</a> <p style="margin:0" class="h">6/7/2025, 6:06:45 PM</p></li><li> <a href="?page=dev3-_download_and_build">DEV3. Download and Build</a> <p style="margin:0" class="h">6/7/2025, 6:05:31 PM</p></li><li> <a href="?page=dev2-_tech_stack">DEV2. Tech Stack</a> <p style="margin:0" class="h">6/7/2025, 6:05:08 PM</p></li></ul></nav></div> <section><header> <h1>All Pages</h1></header><ul> <li> <a href="?page=0-_este_manual" class="">0. Este Manual</a></li><li> <a href="?page=1-_tabela_de_conteudos" class="">1. Tabela de Conteudos</a></li><li> <a href="?page=2-_o_jogo" class="">2. O Jogo</a></li><li> <a href="?page=3-_telas_e_input" class="">3. Telas e Input</a></li><li> <a href="?page=4-_mundo" class="">4. Mundo</a></li><li> <a href="?page=7-_items" class="">7. Items</a></li><li> <a href="?page=6-_atores" class="">6. Atores</a></li><li> <a href="?page=8-_perks" class="">8. Perks</a></li><li> <a href="?page=11-_lore" class="">11. Lore</a></li><li> <a href="?page=gloss%C3%A1rio_a-z" class="">Glossário A-Z</a></li><li> <a href="?page=a1-_telas" class="">A1. Telas</a></li><li> <a href="?page=a2-_tiles" class="">A2. Tiles</a></li><li> <a href="?page=a3-_materiais" class="">A3. Materiais</a></li><li> <a href="?page=a4-_monstros" class="">A4. Monstros</a></li><li> <a href="?page=a5-_corpos_e_membros" class="">A5. Corpos e Membros</a></li><li> <a href="?page=a7-_civiliza%C3%A7%C3%B5es_e_fac%C3%A7%C3%B5es" class="">A7. Civilizações e Facções</a></li><li> <a href="?page=a8-_perks" class="">A8. Perks</a></li><li> <a href="?page=a9-_items" class="">A9. Items</a></li><li> <a href="?page=a10-_equipamentos" class="">A10. Equipamentos</a></li><li> <a href="?page=a11-_fen%C3%B4menos" class="">A11. Fenômenos</a></li><li> <a href="?page=dev1-_feather_resources" class="">DEV1. Feather Resources</a></li><li> <a href="?page=dev2-_tech_stack" class="">DEV2. Tech Stack</a></li><li> <a href="?page=dev3-_download_and_build" class="">DEV3. Download and Build</a></li><li> <a href="?page=dev4-_arquitetura" class="">DEV4. Arquitetura</a></li><li> <a href="?page=skills" class="">R. Skills</a></li><li> <a href="?page=templates-_win-_loss" class="">R. templates, win, loss</a></li><li> <a href="?page=9-_acoes_e_processos" class="">9. Acoes e Processos</a></li><li> <a href="?page=9-_fisica" class="">9. Fisica</a></li><li> <a href="?page=a12-_skills" class="">A12. Skills</a></li><li> <a href="?page=sentidos" class="">sentidos</a></li><li> <a href="?page=casas" class="">casas</a></li><li> <a href="?page=armadilhas" class="">armadilhas</a></li></ul></section></main> <footer><a href=https://src.feather.wiki/#browser-compatibility>JavaScript is required</a></footer>  </body> </html>
+<link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css" type="text/css">
+<!-- link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-vader.css" type="text/css" -->
+<!-- link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Kimeiga/kacit/kacit.min.css" type="text/css">
+<!-- link rel="stylesheet" href="https://davidpaulsson.github.io/no-class/css/no-class.min.css" type="text/css" -->
+<!-- link rel="stylesheet" href="https://vasanthv.github.io/stylize.css/stylize.css" type="text/css" -->
+<!-- link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yorha@1.2.0/dist/yorha.min.css" type="text/css" -->
+<style></style>
+<h1 id="intromanual">intro/manual</h1>
+<h2 id="sobre-o-que-eh-este-manual">sobre o que eh este manual</h2>
+<p>o jogo!</p>
+<h2 id="publico-alvo">publico alvo</h2>
+<h3 id="tutorial">tutorial</h3>
+<p>quero conhecer o jogo ou quero ajuda nas primeiras partidas ou conhecer mecanicas
+diferentes</p>
+<h3 id="jogadores-mais-experientes">jogadores mais experientes</h3>
+<p>quer conhecer coisas mais obscuras e entender mais a mecanica</p>
+<h3 id="consulta-dados-objetivos">consulta dados objetivos</h3>
+<p>explicacao seca de dados, formulas, fluxos</p>
+<h2 id="como-ler-o-manual-estrutura">como ler o manual, estrutura</h2>
+<p>divido em capitulos. o capitulo final para iniciantes. conteudo tutorial/avancado/consulta
+dentro de uma mesma secao. apendices para hard data. secao dev para problemas
+de soft, i.e. instalar, rodar, compilar.</p>
+<h1 id="o-jogo">o jogo</h1>
+<h2 id="genero-inspo">genero, inspo</h2>
+<p>roguelike, xcom, mundos simulados.</p>
+<h2 id="estetica">estetica</h2>
+<p>mistura de medieval, velho oeste; aliens etereais viajantes de tempo; guardioes
+roboticos tecnologicos e futuristas; monstros misteriosos e body horror; outer beings,
+cultistas; natureza muito rica e vasta, com bestas, plantas, fungos complexos.</p>
+<p>os diferentes biomas tem esteticas naturais, medievais, tecnologicas, goticas, demoniacas,
+dark fantasy.</p>
+<p>mundo perigoso mas rico. violencia eh comum. ferimentos podem ser permanentes. no decorrer
+do jogo os pcs vao mudar muito. varias maneiras de resolver conflitos. interacao com faccoes
+e outras pessoas. viajar eh perigoso e deve ser planejado. fome, doencas, ferimentos, emboscadas
+sao perigos constantes.</p>
+<p>gonhecimento e reconhecimento eh importantes. conhecer biomas, saber onde estao
+tesouros, onde eh perigoso, qual a agenda de faccoes sao. interacao com faccoes, npcs, quests, sao importantes e delicadas. estes podem desde oferecerem
+ajuda, informacao, servicos, ate ativamente de cacarem.</p>
+<p>nao existe nivel nem XP. bonus costumam ser temporarios a partir de consumiveis, itens,
+etc. eh importante preservar os PCs e estar atento a possibilidades de melhorias atraves
+de itens, perks, etc. conhecimento tambem eh poder.</p>
+<h2 id="fluxo-partes-do-jogo">fluxo, partes do jogo</h2>
+<h2 id="desafios-mecanincas-puzzles-o-q-gerenciar">desafios, mecanincas, puzzles, o q gerenciar</h2>
+<h2 id="filosofia-design-o-que-preparamos">filosofia, design, o que preparamos</h2>
+<h1 id="uma-partida-superficialmente">uma partida (superficialmente)</h1>
+<h2 id="criando-um-novo-jogo">criando um novo jogo</h2>
+<h3 id="configurando-template-de-criacao">configurando template de criacao</h3>
+<h4 id="geografia-biomas-eventos">geografia, biomas, eventos</h4>
+<h4 id="raridade-de-geracao-de-itens">raridade de geracao de itens</h4>
+<h4 id="nivel-de-violencia-e-perigo">nivel de violencia e perigo</h4>
+<h4 id="qtd-e-forca-de-faccoes">qtd e forca de faccoes</h4>
+<h3 id="party-e-pcs-iniciais">party e PCs iniciais</h3>
+<h4 id="escolhendo-skills-perks-corpos">escolhendo skills, perks, corpos</h4>
+<h4 id="itens-iniciais">itens iniciais</h4>
+<h2 id="comeco-meio-fim">comeco, meio, fim</h2>
+<h3 id="comeco">comeco</h3>
+<p>sobreviver no comeco eh relativamente dificil. tentar preservar pcs enquanto explora
+e adquire itens importantes basicos. conhecer faccoes e geografia.</p>
+<h3 id="meio">meio</h3>
+<p>adquirir mais poder e planejar builds. definir objetivo wincon. interacao mais drastica
+com faccoes. arriscar atras de itens e coisas importantes.</p>
+<h3 id="late">late</h3>
+<p>mundo mais perigoso. planejar realizacao wincon. tarefas high risk high reward.
+tentar atingir wincon ou viver sandbox. empoderar ou derrubar faccoes e civs.</p>
+<h2 id="game-loop">game loop</h2>
+<h3 id="modo-tatico">modo tatico</h3>
+<p>acoes dentro de um tabuleiro. interacao npcs, combate, explorar, loot. tambem aqui
+acampar e sair em jobs. tabuleiros tem rotas para outros tabuleiros</p>
+<h3 id="acampamento">acampamento</h3>
+<p>descansar, passar tempo, acessar stash. acoes de camp. emboscadas. reorganizar
+inventorios de pcs.</p>
+<h3 id="viajando-por-rotas">viajando por rotas</h3>
+<p>tempo de viagem. perigos. se perder. achar items ou npcs no caminho e interagir.</p>
+<h3 id="party-screen">party screen</h3>
+<p>checar quests, standing c faccoes, coisas conhecidas (mapas, aonde estao coisas, etc).
+splitar party. sair em jobs. acoes PC-PC, trocar itens.</p>
+<h2 id="conceitos-importantes">conceitos importantes</h2>
+<h3 id="corpo-stats-membros">Corpo, Stats, Membros</h3>
+<h3 id="skills-senses">Skills, Senses</h3>
+<h3 id="movimentacao-interacao">Movimentacao, interacao</h3>
+<h3 id="combate-exploracao">Combate, exploracao</h3>
+<h3 id="viajar-e-acampar">viajar e acampar</h3>
+<h2 id="telas-e-input">telas e input</h2>
+<h1 id="mundo">mundo</h1>
+<h2 id="tabuleiros-e-grafo-de-rotas">tabuleiros e grafo de rotas</h2>
+<h2 id="tabuleiros-casas-biomaso">tabuleiros, casas, biomaso</h2>
+<h3 id="tabuleiros">tabuleiros</h3>
+<p>grids a la xcom/rogue. aqui o tempo passa em turnos e turnphases. colecao de casas.</p>
+<h4 id="modifiers">modifiers</h4>
+<p>modifiers e.g. escuridao, calor, pouco ar, radiacao, absorcao som, assombracoes,</p>
+<h3 id="casas">casas</h3>
+<p>cada parte discreta de um tabuleiro.</p>
+<h4 id="tileshapes">tileshapes</h4>
+<p>floor, wall, buraco SM, debris SML, pocoMLG, mureta. pocos podem ter pool de liquido, e cair pode machucar. sair eh dificil. modos de movimento interagem diferente com tileshapes, e.g. nao da pra rolar por debris, nem pular sobrewall.</p>
+<h4 id="material-e-integridade-de-cada-casa">material e integridade de cada casa</h4>
+<h4 id="see-thru-move-thru-movimentos-diferentes">see thru, move thru, movimentos diferentes.</h4>
+<h4 id="armadilhas">armadilhas</h4>
+<p>parede falsa. chao que vira poco. trapdoor. traps ativadas ao pisar num floor.</p>
+<h3 id="biomas">biomas</h3>
+<h4 id="humanos">humanos</h4>
+<p>cidades, vilas, fortalezas, assentamentos</p>
+<h4 id="natureza">natureza</h4>
+<p>florestas, desertos, pantanos, lagoas, montanhas, etc</p>
+<h4 id="outer-beings">outer beings</h4>
+<p>acampamentos cultistas. templos, altares, holy sites.</p>
+<h4 id="guardioes">guardioes</h4>
+<p>torres e estruturas subterraneas super tecnologicas. maquinaria. eletronics.</p>
+<h4 id="montros">montros</h4>
+<p>ninhos, calaboucos, ruinas misteriosas de pedra.</p>
+<h4 id="aliens">aliens</h4>
+<p>ruinas de cristal. nao euclidean. teleporting. shifiting room connections.</p>
+<h2 id="civs-faccoes-quests">civs, faccoes, quests</h2>
+<h3 id="humanos-1">humanos</h3>
+<h4 id="faccoes-religioes">faccoes, religioes</h4>
+<h3 id="natureza-1">natureza</h3>
+<p>no geral neutra. fonte de ingredientes bons. o perigo as vezes se esconde.</p>
+<h3 id="monstros">monstros</h3>
+<p>extremamente agresivo contra qqr coisa q n seja monstros. formas diferentes, todas perigosas. parecem nao precisam comer, e nao parecem se reproduzir; eles so surgem. corpo body horror. causam maldicoes. muito territorialistas, mas as vezes raidam humanos, natureza, ou guardioes. unico objetivo parece matar. seus cadaveres sao fonte de ingredientes alquimicos e body parts podem servir como armas ou ferramentas. cuidado com curses.</p>
+<h3 id="guardioes-1">guardioes</h3>
+<p>robos criados ha milhares de anos atras pela humanidade. servem como guerreiros, trabalhadores, construtores, cientistas. ainda executam as tarefas que lhe foram programadas milenios apos o fim da sociedade. podem ser neutrais, aggro ou aliados. tarefas diferentes e.g. patrulhar e matar, construir estruturas, fazer items, etc. continuam servindo mestres que morreram.</p>
+<h3 id="outer-beings-1">outer beings</h3>
+<p>ouer beings sao seres abstratos e conscientes que existem no espaco imaterial entre as realidades. cerca de 5 obs diferentes, cada um com sua agenda. eles nao podem entrar na nossa realidade, entao influenciam cultistas para seguir seus rituais, objetivos, codigos de conduta. seguidores fieis sao agraciados com pactos (perks), intercessoes (e.g. alimentar um cultista com fome, ou curar doencas, ou reenergizar um guerreiro) e regalos (itens fisicos, como armas, consumiveis, ekips). cultos ob sao mal vistos por praticamente todos outros seres humanos, e mesmo a natureza nao os aceita. cultistas tambem desenvolvem uma aura de corrupcao, que fica perceptivel para os outros seres.</p>
+<h2 id="eventos-global-mods-ciclo-dia-noite">eventos, global mods, ciclo dia noite</h2>
+<h1 id="atores">atores</h1>
+<h2 id="manualantigodump">manualantigodump</h2>
+<p>Racionalidade
+Skills</p>
+<p>Determinam acoes possiveis, identificar objetos, saber coisas, auto controle etc.</p>
+<p>O nivel de uma skill nao afeta o nivel da outra, mas certas acoes e testes necessitam ou se beneficiam de mais de uma skill.</p>
+<p>No geral eh muito dificil ganhar skills permanente, mas existem maneiras de bonus temporarios. Eh possivel perder skills perma ou temporariamente.</p>
+<p>Certas skills concedem acoes por si so.</p>
+<p>Skills nao sao limitadas a seres racionais; por exemplo, algum monstro irracional pode ter skill em hide, sprint, hand to thand.
+Requisitos</p>
+<p>Algumas skills estao disponiveis apenas para certos atores. e.g. apenas aliens podem ter skill em viagem temporal; apenas monstros ditto podem ter skill em metamorfose.
+Nivel</p>
+<p>Variam de 0 a +3:</p>
+<pre><code>0: nunca ouviu falar nem usou nem tentou
+1: amador conhece teoria basica, conhece ferramentas, ja fez algumas vezes
+2: pro ampla experiencia, conhece bem a teoria, ja usou varias ferramentas. poderia ser seu emprego
+3: mestre ja lidou com muitas situacoes incluindo edge cases, conhece teoria ampla e profunda, conhece muitas ferramentas. certas tarefas ja lhe sao triviais.
+</code></pre>
+<p>faccoes e standing</p>
+<p>dependendo das accoes, certas faccoes podem te ajudar ou agressivar
+corpo</p>
+<p>o humano baseline tem cabeca, tronco, pes, mainhand, offhand. mas mutantes podem ter membros diferentes como 2 cabecas, asas, cauda ao inves de pes. ou tambem tamanhos diferentes.
+stats</p>
+<p>o corpo tem seu conjunto de stats:</p>
+<pre><code>LP life points, o quao proximo da morte esta. quando LP = 0, ator fica incapacitado e o dano que recebe agora reserva ao inves de spent. quando tudo reserva, ele morre. corpos reanimados continuam com seus pontos reservados, e o processo para telos de volta costuma ser lento e custoso.
+MP mind points. uma medida da disciplina, auto controle, frieza, trnquildade do ator. MP costumam ser gastos por e.g. medo, ferimentos, falhar em acoes, se desconcentrar. perder mt MP de uma vez pode causar traumas. ter MP=0 causa surto e o jogador nao controla o pc, que age sozinho e.g. fugir, berzerk, esconder, catatonico.
+SP stamina points. medida da energia fisica e mental necessaria para agir. SP regenera sempre, mas consome NP no processo. pode se deixar SP negativo ate um certo ponto, mas isso tem consequencias como danar MP, gastar LP, ou devagarar regen.
+NP nutritiion points. eh gasto passivamente com tempo e usado para regenerar LP e SP. pouca nutrition impacta a velocidade dos regens. NP=0 comeca a drenar LP, MP, SP.
+Corrupcao: Um valor de -3 a +3 que indica o quanto o ator esta em contato com as forcas demoniacas. Valores pequenos sao menos demoniacos que positivos. certas acoes violentas e crueis aumentam corrupcao, e o contrario diminui. usar regalos ou pactos demoniacos tb causam corrupcao. quanto mais corrupto mais poderosas suas acoes demoniacas, mas mais fragil vc eh contra elas.
+</code></pre>
+<p>membros
+skills</p>
+<p>conhecimentos, tecnicas, habilidades. variam desde saber climb lugares ate reconhecer monstros, usar escudos. cada skill tem nivel de proficiencia de 0 ate 3. ganhar skills eh raro e normalmente temporario (e.g. uma bota que aumenta seu sprint e sneak), mas existem formas mais comuns de perder skills (e.g. trauma temporario diminui 1hand wep, uma ferida diminui capacidade de roll e climb)</p>
+<h2 id="racionais-bestas">racionais, bestas,</h2>
+<h2 id="gases-liquidos-fenomenos">gases, liquidos, fenomenos,</h2>
+<h2 id="perks">perks</h2>
+<h2 id="npcs-interagindo">npcs, interagindo</h2>
+<h2 id="pcs-party">pcs, party</h2>
+<h2 id="corpo">corpo</h2>
+<h3 id="sentidos">sentidos</h3>
+<h3 id="tamanho">tamanho</h3>
+<h3 id="membros">membros</h3>
+<h3 id="stats">stats</h3>
+<h3 id="skills">skills</h3>
+<h1 id="items">items</h1>
+<h2 id="classes-de-items">classes de items</h2>
+<h2 id="tamanho-material-durabilidade">tamanho, material, durabilidade</h2>
+<h2 id="valor-raridade">valor, raridade</h2>
+<h2 id="objetos-estaticos">objetos estaticos</h2>
+<h2 id="mecanismos">mecanismos</h2>
+<h2 id="usaveis-consumiveis-tesouro-talismans-artefatos-runas">usaveis, consumiveis, tesouro, talismans, artefatos, runas</h2>
+<h2 id="equipamentos">equipamentos</h2>
+<h1 id="sentidos-emissoes">sentidos, emissoes</h1>
+<h2 id="quais-sentidos-sua-sensibilidade">quais sentidos, sua sensibilidade</h2>
+<h2 id="dimensoes-e-unidades-intensidade-emissao-pontual-e-perma">dimensoes e unidades, intensidade, emissao (pontual e perma)</h2>
+<h2 id="visao">visao</h2>
+<h3 id="luz-atores-movimento-tabuleiro">luz, atores, movimento, tabuleiro</h3>
+<h2 id="audicao">audicao</h2>
+<h3 id="volume-direcao-distancia-tipo-de-som">volume, direcao, distancia, tipo de som</h3>
+<h2 id="olfato">olfato</h2>
+<h3 id="intensidade-gradienterastro-tipo-de-cheiro-mistura">intensidade, gradiente(rastro), tipo de cheiro, mistura</h3>
+<h2 id="mentalismo">mentalismo</h2>
+<h3 id="distancia-inteligencia-disposicao-sentir-q-foi-sentido">distancia, inteligencia, disposicao, sentir q foi sentido</h3>
+<h2 id="emsense-eletromag-sense">emsense (eletromag sense)</h2>
+<h3 id="eletricidade-campo-mag-carga">eletricidade, campo mag, carga</h3>
+<h3 id="distancia-direcao-intensidade-origem">distancia, direcao, intensidade, origem</h3>
+<h1 id="party-e-pcs">party e pcs</h1>
+<h2 id="controlando-pcs">controlando pcs</h2>
+<h2 id="saindo-em-missoes-split-party">saindo em missoes, split party</h2>
+<h2 id="acampar">acampar</h2>
+<h2 id="viajar">viajar</h2>
+<h2 id="faccoes-quests">faccoes, quests</h2>
+<h2 id="relacao-com-outerbeings">relacao com outerbeings</h2>
+<h2 id="win-e-loss-condition">win e loss condition</h2>
+<h1 id="mecanicas-de-jogar">mecanicas de jogar</h1>
+<h2 id="dimensoes-unidades-distancia-tempo-">dimensoes, unidades (distancia, tempo, )</h2>
+<h2 id="turn-turn-phases">turn, turn phases</h2>
+<h2 id="efeitos-acoes-procesos-sistemas">efeitos, acoes, procesos, sistemas</h2>
+<h3 id="efeitos">efeitos</h3>
+<h3 id="acoes">acoes</h3>
+<h3 id="processos">processos</h3>
+<h3 id="sistemas">sistemas</h3>
+<h1 id="telas-gui-input">telas, gui, input</h1>
+<h2 id="telas">telas</h2>
+<h3 id="tac">tac</h3>
+<h3 id="party">party</h3>
+<h3 id="inspect-item-actor-casa">inspect item, actor, casa</h3>
+<h3 id="gui-help">GUI help</h3>
+<h1 id="historinha">historinha</h1>
+<h2 id="o-passado">o passado</h2>
+<h3 id="epoca-de-ouro">epoca de ouro</h3>
+<h3 id="guardioes-2">guardioes</h3>
+<h3 id="monstros-1">monstros</h3>
+<h3 id="guerra-final">guerra final</h3>
+<h3 id="outer-beings-2">outer beings</h3>
+<h3 id="aliens-1">aliens</h3>
+<h3 id="fim-da-historia-hiato">fim da historia, hiato</h3>
+<h2 id="o-agora">o agora</h2>
+<h3 id="o-mundo-novo">o mundo novo</h3>
+<h3 id="humanos-2">humanos</h3>
+<h3 id="natureza-2">natureza</h3>
+<h3 id="outer-beings-3">outer beings</h3>
+<h3 id="aliens-2">aliens</h3>
+<h3 id="guardioes-robos">guardioes (robos)</h3>
+<h2 id="o-futuro">o futuro</h2>
+<h3 id="voltar-aa-epoca-de-ouro">voltar aa epoca de ouro</h3>
+<h3 id="um-mundo-sem-humanos">um mundo sem humanos</h3>
+<h3 id="transcendencia-umana">transcendencia umana</h3>
+<h3 id="o-fim-da-realidade">o fim da realidade</h3>
+<h1 id="dicas-iniciantes">dicas iniciantes</h1>
+<h2 id="comeco-1">comeco</h2>
+<h3 id="criando-partida-escolhendo-party">criando partida, escolhendo party</h3>
+<h3 id="explorando-combate-loot">explorando, combate, loot</h3>
+<h3 id="party-faccoes-quests">party, faccoes, quests</h3>
+<h2 id="meio-1">meio</h2>
+<h3 id="empoderando-lidando-com-perdas">empoderando, lidando com perdas</h3>
+<h3 id="quests-build-planning">quests, build planning</h3>
+<h3 id="adquirindo-recursos-lidando-com-perigos">adquirindo recursos, lidando com perigos</h3>
+<h2 id="fim">fim</h2>
+<h3 id="high-risk-high-reward">high risk high reward</h3>
+<h3 id="executando-plano">executando plano</h3>
+<h3 id="winning-sandboxing">winning, sandboxing</h3>
+<h1 id="toc">TOC</h1>
+<ol>
+<li><a href="#intromanual">intro/manual</a>
+<ol>
+<li><a href="#sobre-o-que-eh-este-manual">sobre o que eh este manual</a></li>
+<li><a href="#publico-alvo">publico alvo</a>
+<ol>
+<li><a href="#tutorial">tutorial</a></li>
+<li><a href="#jogadores-mais-experientes">jogadores mais experientes</a></li>
+<li><a href="#consulta-dados-objetivos">consulta dados objetivos</a></li>
+</ol>
+</li>
+<li><a href="#como-ler-o-manual-estrutura">como ler o manual, estrutura</a></li>
+</ol>
+</li>
+<li><a href="#o-jogo">o jogo</a>
+<ol>
+<li><a href="#genero-inspo">genero, inspo</a></li>
+<li><a href="#estetica">estetica</a></li>
+<li><a href="#fluxo-partes-do-jogo">fluxo, partes do jogo</a></li>
+<li><a href="#desafios-mecanincas-puzzles-o-q-gerenciar">desafios, mecanincas, puzzles, o q gerenciar</a></li>
+<li><a href="#filosofia-design-o-que-preparamos">filosofia, design, o que preparamos</a></li>
+</ol>
+</li>
+<li><a href="#uma-partida-superficialmente">uma partida (superficialmente)</a>
+<ol>
+<li><a href="#criando-um-novo-jogo">criando um novo jogo</a>
+<ol>
+<li><a href="#configurando-template-de-criacao">configurando template de criacao</a>
+<ol>
+<li><a href="#geografia-biomas-eventos">geografia, biomas, eventos</a></li>
+<li><a href="#raridade-de-geracao-de-itens">raridade de geracao de itens</a></li>
+<li><a href="#nivel-de-violencia-e-perigo">nivel de violencia e perigo</a></li>
+<li><a href="#qtd-e-forca-de-faccoes">qtd e forca de faccoes</a></li>
+</ol>
+</li>
+<li><a href="#party-e-pcs-iniciais">party e PCs iniciais</a>
+<ol>
+<li><a href="#escolhendo-skills-perks-corpos">escolhendo skills, perks, corpos</a></li>
+<li><a href="#itens-iniciais">itens iniciais</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#comeco-meio-fim">comeco, meio, fim</a>
+<ol>
+<li><a href="#comeco">comeco</a></li>
+<li><a href="#meio">meio</a></li>
+<li><a href="#late">late</a></li>
+</ol>
+</li>
+<li><a href="#game-loop">game loop</a>
+<ol>
+<li><a href="#modo-tatico">modo tatico</a></li>
+<li><a href="#acampamento">acampamento</a></li>
+<li><a href="#viajando-por-rotas">viajando por rotas</a></li>
+<li><a href="#party-screen">party screen</a></li>
+</ol>
+</li>
+<li><a href="#conceitos-importantes">conceitos importantes</a>
+<ol>
+<li><a href="#corpo-stats-membros">Corpo, Stats, Membros</a></li>
+<li><a href="#skills-senses">Skills, Senses</a></li>
+<li><a href="#movimentacao-interacao">Movimentacao, interacao</a></li>
+<li><a href="#combate-exploracao">Combate, exploracao</a></li>
+<li><a href="#viajar-e-acampar">viajar e acampar</a></li>
+</ol>
+</li>
+<li><a href="#telas-e-input">telas e input</a></li>
+</ol>
+</li>
+<li><a href="#mundo">mundo</a>
+<ol>
+<li><a href="#tabuleiros-e-grafo-de-rotas">tabuleiros e grafo de rotas</a></li>
+<li><a href="#tabuleiros-casas-biomaso">tabuleiros, casas, biomaso</a>
+<ol>
+<li><a href="#tabuleiros">tabuleiros</a>
+<ol>
+<li><a href="#modifiers">modifiers</a></li>
+</ol>
+</li>
+<li><a href="#casas">casas</a>
+<ol>
+<li><a href="#tileshapes">tileshapes</a></li>
+<li><a href="#material-e-integridade-de-cada-casa">material e integridade de cada casa</a></li>
+<li><a href="#see-thru-move-thru-movimentos-diferentes">see thru, move thru, movimentos diferentes.</a></li>
+<li><a href="#armadilhas">armadilhas</a></li>
+</ol>
+</li>
+<li><a href="#biomas">biomas</a>
+<ol>
+<li><a href="#humanos">humanos</a></li>
+<li><a href="#natureza">natureza</a></li>
+<li><a href="#outer-beings">outer beings</a></li>
+<li><a href="#guardioes">guardioes</a></li>
+<li><a href="#montros">montros</a></li>
+<li><a href="#aliens">aliens</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#civs-faccoes-quests">civs, faccoes, quests</a>
+<ol>
+<li><a href="#humanos-1">humanos</a>
+<ol>
+<li><a href="#faccoes-religioes">faccoes, religioes</a></li>
+</ol>
+</li>
+<li><a href="#natureza-1">natureza</a></li>
+<li><a href="#monstros">monstros</a></li>
+<li><a href="#guardioes-1">guardioes</a></li>
+<li><a href="#outer-beings-1">outer beings</a></li>
+</ol>
+</li>
+<li><a href="#eventos-global-mods-ciclo-dia-noite">eventos, global mods, ciclo dia noite</a></li>
+</ol>
+</li>
+<li><a href="#atores">atores</a>
+<ol>
+<li><a href="#manualantigodump">manualantigodump</a></li>
+<li><a href="#racionais-bestas">racionais, bestas,</a></li>
+<li><a href="#gases-liquidos-fenomenos">gases, liquidos, fenomenos,</a></li>
+<li><a href="#perks">perks</a></li>
+<li><a href="#npcs-interagindo">npcs, interagindo</a></li>
+<li><a href="#pcs-party">pcs, party</a></li>
+<li><a href="#corpo">corpo</a>
+<ol>
+<li><a href="#sentidos">sentidos</a></li>
+<li><a href="#tamanho">tamanho</a></li>
+<li><a href="#membros">membros</a></li>
+<li><a href="#stats">stats</a></li>
+<li><a href="#skills">skills</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#items">items</a>
+<ol>
+<li><a href="#classes-de-items">classes de items</a></li>
+<li><a href="#tamanho-material-durabilidade">tamanho, material, durabilidade</a></li>
+<li><a href="#valor-raridade">valor, raridade</a></li>
+<li><a href="#objetos-estaticos">objetos estaticos</a></li>
+<li><a href="#mecanismos">mecanismos</a></li>
+<li><a href="#usaveis-consumiveis-tesouro-talismans-artefatos-runas">usaveis, consumiveis, tesouro, talismans, artefatos, runas</a></li>
+<li><a href="#equipamentos">equipamentos</a></li>
+</ol>
+</li>
+<li><a href="#sentidos-emissoes">sentidos, emissoes</a>
+<ol>
+<li><a href="#quais-sentidos-sua-sensibilidade">quais sentidos, sua sensibilidade</a></li>
+<li><a href="#dimensoes-e-unidades-intensidade-emissao-pontual-e-perma">dimensoes e unidades, intensidade, emissao (pontual e perma)</a></li>
+<li><a href="#visao">visao</a>
+<ol>
+<li><a href="#luz-atores-movimento-tabuleiro">luz, atores, movimento, tabuleiro</a></li>
+</ol>
+</li>
+<li><a href="#audicao">audicao</a>
+<ol>
+<li><a href="#volume-direcao-distancia-tipo-de-som">volume, direcao, distancia, tipo de som</a></li>
+</ol>
+</li>
+<li><a href="#olfato">olfato</a>
+<ol>
+<li><a href="#intensidade-gradienterastro-tipo-de-cheiro-mistura">intensidade, gradiente(rastro), tipo de cheiro, mistura</a></li>
+</ol>
+</li>
+<li><a href="#mentalismo">mentalismo</a>
+<ol>
+<li><a href="#distancia-inteligencia-disposicao-sentir-q-foi-sentido">distancia, inteligencia, disposicao, sentir q foi sentido</a></li>
+</ol>
+</li>
+<li><a href="#emsense-eletromag-sense">emsense (eletromag sense)</a>
+<ol>
+<li><a href="#eletricidade-campo-mag-carga">eletricidade, campo mag, carga</a></li>
+<li><a href="#distancia-direcao-intensidade-origem">distancia, direcao, intensidade, origem</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#party-e-pcs">party e pcs</a>
+<ol>
+<li><a href="#controlando-pcs">controlando pcs</a></li>
+<li><a href="#saindo-em-missoes-split-party">saindo em missoes, split party</a></li>
+<li><a href="#acampar">acampar</a></li>
+<li><a href="#viajar">viajar</a></li>
+<li><a href="#faccoes-quests">faccoes, quests</a></li>
+<li><a href="#relacao-com-outerbeings">relacao com outerbeings</a></li>
+<li><a href="#win-e-loss-condition">win e loss condition</a></li>
+</ol>
+</li>
+<li><a href="#mecanicas-de-jogar">mecanicas de jogar</a>
+<ol>
+<li><a href="#dimensoes-unidades-distancia-tempo-">dimensoes, unidades (distancia, tempo, )</a></li>
+<li><a href="#turn-turn-phases">turn, turn phases</a></li>
+<li><a href="#efeitos-acoes-procesos-sistemas">efeitos, acoes, procesos, sistemas</a>
+<ol>
+<li><a href="#efeitos">efeitos</a></li>
+<li><a href="#acoes">acoes</a></li>
+<li><a href="#processos">processos</a></li>
+<li><a href="#sistemas">sistemas</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#telas-gui-input">telas, gui, input</a>
+<ol>
+<li><a href="#telas">telas</a>
+<ol>
+<li><a href="#tac">tac</a></li>
+<li><a href="#party">party</a></li>
+<li><a href="#inspect-item-actor-casa">inspect item, actor, casa</a></li>
+<li><a href="#gui-help">GUI help</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#historinha">historinha</a>
+<ol>
+<li><a href="#o-passado">o passado</a>
+<ol>
+<li><a href="#epoca-de-ouro">epoca de ouro</a></li>
+<li><a href="#guardioes-2">guardioes</a></li>
+<li><a href="#monstros-1">monstros</a></li>
+<li><a href="#guerra-final">guerra final</a></li>
+<li><a href="#outer-beings-2">outer beings</a></li>
+<li><a href="#aliens-1">aliens</a></li>
+<li><a href="#fim-da-historia-hiato">fim da historia, hiato</a></li>
+</ol>
+</li>
+<li><a href="#o-agora">o agora</a>
+<ol>
+<li><a href="#o-mundo-novo">o mundo novo</a></li>
+<li><a href="#humanos-2">humanos</a></li>
+<li><a href="#natureza-2">natureza</a></li>
+<li><a href="#outer-beings-3">outer beings</a></li>
+<li><a href="#aliens-2">aliens</a></li>
+<li><a href="#guardioes-robos">guardioes (robos)</a></li>
+</ol>
+</li>
+<li><a href="#o-futuro">o futuro</a>
+<ol>
+<li><a href="#voltar-aa-epoca-de-ouro">voltar aa epoca de ouro</a></li>
+<li><a href="#um-mundo-sem-humanos">um mundo sem humanos</a></li>
+<li><a href="#transcendencia-umana">transcendencia umana</a></li>
+<li><a href="#o-fim-da-realidade">o fim da realidade</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#dicas-iniciantes">dicas iniciantes</a>
+<ol>
+<li><a href="#comeco-1">comeco</a>
+<ol>
+<li><a href="#criando-partida-escolhendo-party">criando partida, escolhendo party</a></li>
+<li><a href="#explorando-combate-loot">explorando, combate, loot</a></li>
+<li><a href="#party-faccoes-quests">party, faccoes, quests</a></li>
+</ol>
+</li>
+<li><a href="#meio-1">meio</a>
+<ol>
+<li><a href="#empoderando-lidando-com-perdas">empoderando, lidando com perdas</a></li>
+<li><a href="#quests-build-planning">quests, build planning</a></li>
+<li><a href="#adquirindo-recursos-lidando-com-perigos">adquirindo recursos, lidando com perigos</a></li>
+</ol>
+</li>
+<li><a href="#fim">fim</a>
+<ol>
+<li><a href="#high-risk-high-reward">high risk high reward</a></li>
+<li><a href="#executando-plano">executando plano</a></li>
+<li><a href="#winning-sandboxing">winning, sandboxing</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#toc">TOC</a></li>
+<li><a href="#glossario">Glossario</a></li>
+<li><a href="#apendices">Apendices</a>
+<ol>
+<li><a href="#itens">itens</a>
+<ol>
+<li><a href="#staticos">staticos</a></li>
+<li><a href="#mecanismo">mecanismo</a></li>
+<li><a href="#usable">usable</a></li>
+<li><a href="#consumable">consumable</a></li>
+<li><a href="#ekips">ekips</a></li>
+<li><a href="#runas">runas</a></li>
+<li><a href="#dadivas">dadivas</a></li>
+<li><a href="#perks-1">perks</a></li>
+</ol>
+</li>
+<li><a href="#materiais">materiais</a></li>
+<li><a href="#emissoes-de-sentidos">emissoes de sentidos</a>
+<ol>
+<li><a href="#som">som</a></li>
+<li><a href="#olfato-1">olfato</a></li>
+<li><a href="#emsense">emsense</a></li>
+</ol>
+</li>
+<li><a href="#atores-1">atores</a>
+<ol>
+<li><a href="#monstrosk">monstrosk</a></li>
+<li><a href="#bestas">bestas</a></li>
+<li><a href="#racionais">racionais</a></li>
+<li><a href="#fenomenos">fenomenos</a></li>
+<li><a href="#perks-2">perks</a></li>
+</ol>
+</li>
+<li><a href="#corpos">corpos</a>
+<ol>
+<li><a href="#stats-1">stats</a></li>
+<li><a href="#senses">senses</a></li>
+<li><a href="#perks-3">perks</a></li>
+<li><a href="#membros-1">membros</a></li>
+<li><a href="#skills-1">skills</a></li>
+</ol>
+</li>
+<li><a href="#party-1">party</a>
+<ol>
+<li><a href="#acampar-1">acampar</a></li>
+<li><a href="#job-actions">job actions</a></li>
+<li><a href="#perks-4">perks</a></li>
+</ol>
+</li>
+<li><a href="#outer-beings-4">outer beings</a>
+<ol>
+<li><a href="#rituais">rituais</a></li>
+<li><a href="#conduta">conduta</a></li>
+<li><a href="#pactos">pactos</a></li>
+<li><a href="#regalos">regalos</a></li>
+<li><a href="#intercessoes">intercessoes</a></li>
+<li><a href="#corrupcao">corrupcao</a></li>
+</ol>
+</li>
+<li><a href="#materiais-1">materiais</a>
+<ol>
+<li><a href="#solido">solido</a></li>
+<li><a href="#liquido">liquido</a></li>
+<li><a href="#gas">gas</a></li>
+<li><a href="#imaterial">imaterial</a></li>
+</ol>
+</li>
+<li><a href="#geografia">geografia</a>
+<ol>
+<li><a href="#tabuleiros-1">tabuleiros</a>
+<ol>
+<li><a href="#casas-1">casas</a></li>
+<li><a href="#tileshapes-1">tileshapes</a></li>
+</ol>
+</li>
+<li><a href="#rotas">rotas</a></li>
+<li><a href="#eventos">eventos</a>
+<ol>
+<li><a href="#linear">linear</a></li>
+<li><a href="#pontual">pontual</a></li>
+<li><a href="#ciclico">ciclico</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#sociedade">sociedade</a>
+<ol>
+<li><a href="#faccoes">faccoes</a></li>
+<li><a href="#religioes">religioes</a></li>
+<li><a href="#quests">quests</a></li>
+</ol>
+</li>
+<li><a href="#telas-1">telas</a>
+<ol>
+<li><a href="#main-menu">main menu</a></li>
+<li><a href="#new-game">new game</a></li>
+<li><a href="#tac-screen">tac screen</a></li>
+<li><a href="#party-screen-1">party screen</a></li>
+<li><a href="#actoritem-interaction-dialog">actor/item interaction dialog</a></li>
+<li><a href="#pc-screen">PC screen</a></li>
+<li><a href="#ator-inspect">ator inspect</a></li>
+<li><a href="#item-inspect">item inspect</a></li>
+<li><a href="#tabuleiro-inspect">tabuleiro inspect</a></li>
+<li><a href="#casa-inspect">casa inspect</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#dev-e-software-e-comunidade">Dev e software e comunidade</a>
+<ol>
+<li><a href="#site-e-repositorio">site e repositorio</a></li>
+<li><a href="#baixando-instalando-configurando-rodando">baixando, instalando, configurando, rodando</a></li>
+<li><a href="#source-code-compile-tech-stack-modding">source code, compile, tech stack, modding</a></li>
+<li><a href="#bugs-conhecidos">bugs conhecidos</a></li>
+<li><a href="#reportando-bugs">reportando bugs</a></li>
+<li><a href="#feedback-nao-me-de-feedback">feedback (nao me de feedback)</a></li>
+<li><a href="#doacoes-me-de-todo-seu-dinheiro">doacoes (me de todo seu dinheiro)</a></li>
+</ol>
+</li>
+</ol>
+<h1 id="glossario">Glossario</h1>
+<h1 id="apendices">Apendices</h1>
+<h2 id="itens">itens</h2>
+<h3 id="staticos">staticos</h3>
+<h3 id="mecanismo">mecanismo</h3>
+<h3 id="usable">usable</h3>
+<h3 id="consumable">consumable</h3>
+<h3 id="ekips">ekips</h3>
+<h3 id="runas">runas</h3>
+<h3 id="dadivas">dadivas</h3>
+<h3 id="perks-1">perks</h3>
+<h2 id="materiais">materiais</h2>
+<h2 id="emissoes-de-sentidos">emissoes de sentidos</h2>
+<h3 id="som">som</h3>
+<h3 id="olfato-1">olfato</h3>
+<h3 id="emsense">emsense</h3>
+<h2 id="atores-1">atores</h2>
+<h3 id="monstrosk">monstrosk</h3>
+<h3 id="bestas">bestas</h3>
+<h3 id="racionais">racionais</h3>
+<h3 id="fenomenos">fenomenos</h3>
+<h3 id="perks-2">perks</h3>
+<h2 id="corpos">corpos</h2>
+<h3 id="stats-1">stats</h3>
+<h3 id="senses">senses</h3>
+<h3 id="perks-3">perks</h3>
+<h3 id="membros-1">membros</h3>
+<h3 id="skills-1">skills</h3>
+<h2 id="party-1">party</h2>
+<h3 id="acampar-1">acampar</h3>
+<h3 id="job-actions">job actions</h3>
+<h3 id="perks-4">perks</h3>
+<h2 id="outer-beings-4">outer beings</h2>
+<h3 id="rituais">rituais</h3>
+<h3 id="conduta">conduta</h3>
+<h3 id="pactos">pactos</h3>
+<h3 id="regalos">regalos</h3>
+<h3 id="intercessoes">intercessoes</h3>
+<h3 id="corrupcao">corrupcao</h3>
+<h2 id="materiais-1">materiais</h2>
+<h3 id="solido">solido</h3>
+<h3 id="liquido">liquido</h3>
+<h3 id="gas">gas</h3>
+<h3 id="imaterial">imaterial</h3>
+<h2 id="geografia">geografia</h2>
+<h3 id="tabuleiros-1">tabuleiros</h3>
+<h4 id="casas-1">casas</h4>
+<h4 id="tileshapes-1">tileshapes</h4>
+<h3 id="rotas">rotas</h3>
+<h3 id="eventos">eventos</h3>
+<h4 id="linear">linear</h4>
+<h4 id="pontual">pontual</h4>
+<h4 id="ciclico">ciclico</h4>
+<h2 id="sociedade">sociedade</h2>
+<h3 id="faccoes">faccoes</h3>
+<h3 id="religioes">religioes</h3>
+<h3 id="quests">quests</h3>
+<h2 id="telas-1">telas</h2>
+<h3 id="main-menu">main menu</h3>
+<h3 id="new-game">new game</h3>
+<h3 id="tac-screen">tac screen</h3>
+<h3 id="party-screen-1">party screen</h3>
+<h3 id="actoritem-interaction-dialog">actor/item interaction dialog</h3>
+<h3 id="pc-screen">PC screen</h3>
+<h3 id="ator-inspect">ator inspect</h3>
+<h3 id="item-inspect">item inspect</h3>
+<h3 id="tabuleiro-inspect">tabuleiro inspect</h3>
+<h3 id="casa-inspect">casa inspect</h3>
+<h1 id="dev-e-software-e-comunidade">Dev e software e comunidade</h1>
+<h2 id="site-e-repositorio">site e repositorio</h2>
+<h2 id="baixando-instalando-configurando-rodando">baixando, instalando, configurando, rodando</h2>
+<h2 id="source-code-compile-tech-stack-modding">source code, compile, tech stack, modding</h2>
+<h2 id="bugs-conhecidos">bugs conhecidos</h2>
+<h2 id="reportando-bugs">reportando bugs</h2>
+<h2 id="feedback-nao-me-de-feedback">feedback (nao me de feedback)</h2>
+<h2 id="doacoes-me-de-todo-seu-dinheiro">doacoes (me de todo seu dinheiro)</h2>
