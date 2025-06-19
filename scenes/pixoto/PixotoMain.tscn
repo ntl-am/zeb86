@@ -45,3 +45,4 @@ vertical_alignment = 1
 script = ExtResource("5_axjsm")
 
 [connection signal="has_repositioned" from="Mundo/PC" to="UI/CoordsLabel" method="_on_pc_has_repositioned"]
+[connection signal="tabuleiro_clicked" from="UI" to="Mundo/PC" method="_on_ui_tabuleiro_clicked"]

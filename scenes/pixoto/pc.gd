@@ -22,3 +22,11 @@ func reposition() -> void:
 	position = pos
 	has_repositioned.emit(coords)
 	return
+
+func position_to_coords(pos: Vector2) -> void:
+	var c = Vector2i(8, 9)
+	coords = c
+	return
+
+func _on_ui_tabuleiro_clicked(pos: Vector2) -> void:
+	position_to_coords(pos)
