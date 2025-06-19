@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbb3tjjrk3kfs"]
 
-[ext_resource type="StyleBox" uid="uid://djey5taegiknu" path="res://scenes/tacscreen/new_style_box_flat.tres" id="1_2pr6c"]
+[ext_resource type="StyleBox" uid="uid://djey5taegiknu" path="res://scenes/TacScreen/new_style_box_flat.tres" id="1_2pr6c"]
 
 [sub_resource type="Theme" id="Theme_qwxlo"]
 

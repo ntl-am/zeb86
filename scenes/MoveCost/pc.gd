@@ -6,7 +6,7 @@ extends Sprite2D
 
 func reposition() -> void:
 	set_position(Vector2(16 + 32 * (column-1), 16+32*(line-1)))
-	
+
 func _process(_delta):
 	reposition()
 

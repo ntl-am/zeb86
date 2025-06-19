@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=4 uid="uid://bfj7dcu5x4dik"]
 
-[ext_resource type="Texture2D" uid="uid://cp77fp7isfpie" path="res://assets/32x32_packed_EGA.png" id="1_e1ul5"]
-[ext_resource type="Texture2D" uid="uid://tdenh6e3x34e" path="res://assets/32x32_IBM_EGA.png" id="2_dc7o3"]
-[ext_resource type="Script" uid="uid://b8pn711fb0ws7" path="res://scenes/control sprite UDLR/sprite_2d.gd" id="3_lj2u8"]
+[ext_resource type="Texture2D" uid="uid://cp77fp7isfpie" path="res://assets/32x32_packed_EGA.png" id="1_ncp56"]
+[ext_resource type="Texture2D" uid="uid://tdenh6e3x34e" path="res://assets/32x32_IBM_EGA.png" id="2_5c7tk"]
+[ext_resource type="Script" uid="uid://b8pn711fb0ws7" path="res://scenes/ArrowsMovement/sprite_2d.gd" id="3_loyk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u022f"]
-texture = ExtResource("1_e1ul5")
+texture = ExtResource("1_ncp56")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -284,7 +284,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_u022f")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxkb3"]
-atlas = ExtResource("2_dc7o3")
+atlas = ExtResource("2_5c7tk")
 region = Rect2(0, 132, 28, 28)
 
 [node name="Node2D" type="Node2D"]
@@ -296,4 +296,4 @@ tile_set = SubResource("TileSet_xxkb3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(48, 48)
 texture = SubResource("AtlasTexture_xxkb3")
-script = ExtResource("3_lj2u8")
+script = ExtResource("3_loyk0")

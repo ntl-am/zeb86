@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bmkxr3iq25cs"]
 
-[ext_resource type="Theme" uid="uid://btj3fhq50vkdd" path="res://scenes/tacscreen/new_theme.tres" id="1_4yfhj"]
-[ext_resource type="StyleBox" uid="uid://cfcb40lr6hbhj" path="res://scenes/tacscreen/new_style_box_flat2.tres" id="2_086fq"]
-[ext_resource type="LabelSettings" uid="uid://gnxpayjq2bg4" path="res://scenes/tacscreen/actorlistlabel.tres" id="3_y7mqr"]
-[ext_resource type="LabelSettings" uid="uid://bbnenlt8g6vu1" path="res://scenes/tacscreen/logheaderlabelset.tres" id="4_nmrw0"]
+[ext_resource type="Theme" uid="uid://btj3fhq50vkdd" path="res://scenes/TacScreen/new_theme.tres" id="1_4yfhj"]
+[ext_resource type="StyleBox" uid="uid://cfcb40lr6hbhj" path="res://scenes/TacScreen/new_style_box_flat2.tres" id="2_086fq"]
+[ext_resource type="LabelSettings" uid="uid://gnxpayjq2bg4" path="res://scenes/TacScreen/actorlistlabel.tres" id="3_y7mqr"]
+[ext_resource type="LabelSettings" uid="uid://bbnenlt8g6vu1" path="res://scenes/TacScreen/logheaderlabelset.tres" id="4_nmrw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wood7"]
 bg_color = Color(0.6, 0.4608, 0.252, 1)

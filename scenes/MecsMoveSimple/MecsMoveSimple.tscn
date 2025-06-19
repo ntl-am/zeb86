@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://dc50myavrvmdb"]
 
-[ext_resource type="TileSet" uid="uid://bua2abjggyeyg" path="res://scenes/mecs_move_simple/new_tile_set.tres" id="1_736tp"]
-[ext_resource type="Script" uid="uid://c3y8oeigldfkw" path="res://scenes/mecs_move_simple/mecs_move_simple.gd" id="1_fmfl8"]
-[ext_resource type="Texture2D" uid="uid://cckwuesvi0jvf" path="res://scenes/mecs_move_simple/tex_sprite_AT.tres" id="2_fct6o"]
-[ext_resource type="Script" uid="uid://cv3g7ft7jnlsb" path="res://scenes/mecs_move_simple/tabuleiro.gd" id="3_ed2q4"]
-[ext_resource type="Script" uid="uid://dfifdv0o3c40f" path="res://scenes/mecs_move_simple/ator.gd" id="3_ydksf"]
+[ext_resource type="TileSet" uid="uid://bua2abjggyeyg" path="res://scenes/MecsMoveSimple/new_tile_set.tres" id="1_736tp"]
+[ext_resource type="Script" uid="uid://c3y8oeigldfkw" path="res://scenes/MecsMoveSimple/mecs_move_simple.gd" id="1_fmfl8"]
+[ext_resource type="Texture2D" uid="uid://cckwuesvi0jvf" path="res://scenes/MecsMoveSimple/tex_sprite_AT.tres" id="2_fct6o"]
+[ext_resource type="Script" uid="uid://cv3g7ft7jnlsb" path="res://scenes/MecsMoveSimple/tabuleiro.gd" id="3_ed2q4"]
+[ext_resource type="Script" uid="uid://dfifdv0o3c40f" path="res://scenes/MecsMoveSimple/ator.gd" id="3_ydksf"]
 
 [node name="MecsMoveSimple" type="Node2D"]
 script = ExtResource("1_fmfl8")
@@ -14,6 +14,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MovespeedDropdown" type="OptionButton" parent="Control"]
 layout_mode = 0
