@@ -11,8 +11,8 @@ var dbg = true
 @export var hp_now: int = 12
 @export var speed: int = 6
 
-var tabuleiro_topleft_center: Vector2 = Vector2(5, 5)
-var tabuleiro_casa_len: float = 10
+var tabuleiro_topleft_center: Vector2 = Vector2(15, 15)
+var tabuleiro_casa_len: float = 30
 
 func reposition_from_coords() -> void:
 	var x = tabuleiro_casa_len * (coords.x - 1) + tabuleiro_topleft_center.x
