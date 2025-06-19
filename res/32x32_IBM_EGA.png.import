@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7mxg2cwqhw6x"
-path="res://.godot/imported/glyphs_24x24.png-bbb3c63ea705262bf5b34083cf9afb51.ctex"
+uid="uid://tdenh6e3x34e"
+path="res://.godot/imported/32x32_IBM_EGA.png-8c0dde2ab5c8268cebc319e0dc184cb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/glyphs_24x24.png"
-dest_files=["res://.godot/imported/glyphs_24x24.png-bbb3c63ea705262bf5b34083cf9afb51.ctex"]
+source_file="res://res/32x32_IBM_EGA.png"
+dest_files=["res://.godot/imported/32x32_IBM_EGA.png-8c0dde2ab5c8268cebc319e0dc184cb4.ctex"]
 
 [params]
 

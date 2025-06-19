@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy5mkiqvlwn7"
-path="res://.godot/imported/kenney1bit_32x32_monochrome-transparent_packed.png-929117cbcb40b90930e30de8208ec217.ctex"
+uid="uid://bld48q1wyu4i7"
+path="res://.godot/imported/icon.png-6d8fe78458de91dd62ac006d1f83bf78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney1bit_32x32_monochrome-transparent_packed.png"
-dest_files=["res://.godot/imported/kenney1bit_32x32_monochrome-transparent_packed.png-929117cbcb40b90930e30de8208ec217.ctex"]
+source_file="res://addons/editorscriptmanager/icon.png"
+dest_files=["res://.godot/imported/icon.png-6d8fe78458de91dd62ac006d1f83bf78.ctex"]
 
 [params]
 

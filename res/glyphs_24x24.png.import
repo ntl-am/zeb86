@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6wyob2jde7bq"
-path="res://.godot/imported/tiles_30x30-export.png-83da9acf22cf6af2d9445a09d4f69b54.ctex"
+uid="uid://c7mxg2cwqhw6x"
+path="res://.godot/imported/glyphs_24x24.png-8b47506f0151a9a74bb0696a62eadb05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsnovo/tiles_30x30-export.png"
-dest_files=["res://.godot/imported/tiles_30x30-export.png-83da9acf22cf6af2d9445a09d4f69b54.ctex"]
+source_file="res://res/glyphs_24x24.png"
+dest_files=["res://.godot/imported/glyphs_24x24.png-8b47506f0151a9a74bb0696a62eadb05.ctex"]
 
 [params]
 

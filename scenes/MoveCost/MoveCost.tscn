@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://cajttuqrr3apq"]
 
 [ext_resource type="Script" uid="uid://cfymhkexptg0q" path="res://scenes/MoveCost/move_cost.gd" id="1_tmw8o"]
-[ext_resource type="TileSet" uid="uid://defpi32rwq01j" path="res://assets/tileset32exp.tres" id="2_wbgmw"]
+[ext_resource type="TileSet" uid="uid://defpi32rwq01j" path="res://res/tileset32exp.tres" id="2_wbgmw"]
 [ext_resource type="Script" uid="uid://bjbsakwa2kuy5" path="res://scenes/MoveCost/tac_grid.gd" id="3_64te6"]
-[ext_resource type="Texture2D" uid="uid://df2l56j0ha5g4" path="res://assets/sprite_AT.tres" id="4_dh6c0"]
+[ext_resource type="Texture2D" uid="uid://df2l56j0ha5g4" path="res://res/sprite_AT.tres" id="4_dh6c0"]
 [ext_resource type="Script" uid="uid://b3ay3r4r43687" path="res://scenes/MoveCost/pc.gd" id="5_8qoou"]
 
 [node name="MoveCost" type="Node"]

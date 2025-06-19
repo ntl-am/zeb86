@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://blu2hvtca74bh"
-path="res://.godot/imported/Mx437_IBM_BIOS.ttf-a18a064f456dc3acb1a97b823a6a1b0b.fontdata"
+uid="uid://dwmf45ni2tkw6"
+path="res://.godot/imported/Ac437_Cordata_PPC-400.ttf-cb5658ee605f1027b669650f031c5c65.fontdata"
 
 [deps]
 
-source_file="res://assets/Mx437_IBM_BIOS.ttf"
-dest_files=["res://.godot/imported/Mx437_IBM_BIOS.ttf-a18a064f456dc3acb1a97b823a6a1b0b.fontdata"]
+source_file="res://res/Ac437_Cordata_PPC-400.ttf"
+dest_files=["res://.godot/imported/Ac437_Cordata_PPC-400.ttf-cb5658ee605f1027b669650f031c5c65.fontdata"]
 
 [params]
 

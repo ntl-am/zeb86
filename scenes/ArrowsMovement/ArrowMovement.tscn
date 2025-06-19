@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://bfj7dcu5x4dik"]
 
-[ext_resource type="Texture2D" uid="uid://cp77fp7isfpie" path="res://assets/32x32_packed_EGA.png" id="1_ncp56"]
-[ext_resource type="Texture2D" uid="uid://tdenh6e3x34e" path="res://assets/32x32_IBM_EGA.png" id="2_5c7tk"]
+[ext_resource type="Texture2D" uid="uid://cp77fp7isfpie" path="res://res/32x32_packed_EGA.png" id="1_ncp56"]
+[ext_resource type="Texture2D" uid="uid://tdenh6e3x34e" path="res://res/32x32_IBM_EGA.png" id="2_5c7tk"]
 [ext_resource type="Script" uid="uid://b8pn711fb0ws7" path="res://scenes/ArrowsMovement/sprite_2d.gd" id="3_loyk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u022f"]

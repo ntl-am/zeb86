@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tdenh6e3x34e"
-path="res://.godot/imported/32x32_IBM_EGA.png-3e80475ee7e8b92a53cd7fb63167aab7.ctex"
+uid="uid://c6wyob2jde7bq"
+path="res://.godot/imported/tiles_30x30-export.png-692f7e6a380ddbb81295c63e2b5ce491.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/32x32_IBM_EGA.png"
-dest_files=["res://.godot/imported/32x32_IBM_EGA.png-3e80475ee7e8b92a53cd7fb63167aab7.ctex"]
+source_file="res://resnovo/tiles_30x30-export.png"
+dest_files=["res://.godot/imported/tiles_30x30-export.png-692f7e6a380ddbb81295c63e2b5ce491.ctex"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d03v4hta0a6j0"
-path="res://.godot/imported/FSEX300.ttf-9adffe119df089af6b87929c813ec338.fontdata"
+uid="uid://bpktnchgldvj3"
+path="res://.godot/imported/bedstead-condensed.otf-8ef07625997a1b468d5ccffe5670866f.fontdata"
 
 [deps]
 
-source_file="res://assets/FSEX300.ttf"
-dest_files=["res://.godot/imported/FSEX300.ttf-9adffe119df089af6b87929c813ec338.fontdata"]
+source_file="res://res/bedstead-condensed.otf"
+dest_files=["res://.godot/imported/bedstead-condensed.otf-8ef07625997a1b468d5ccffe5670866f.fontdata"]
 
 [params]
 

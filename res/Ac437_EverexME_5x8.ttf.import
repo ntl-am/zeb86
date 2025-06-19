@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://edev075feauc"
-path="res://.godot/imported/Mx437_IBM_EGA_8x8.ttf-522067b25e56ad8c52b5fd7f77e092cd.fontdata"
+uid="uid://cnaf2qgni3alb"
+path="res://.godot/imported/Ac437_EverexME_5x8.ttf-9a59d9e20d1583891475399b7d70e96d.fontdata"
 
 [deps]
 
-source_file="res://assetsnovo/Mx437_IBM_EGA_8x8.ttf"
-dest_files=["res://.godot/imported/Mx437_IBM_EGA_8x8.ttf-522067b25e56ad8c52b5fd7f77e092cd.fontdata"]
+source_file="res://res/Ac437_EverexME_5x8.ttf"
+dest_files=["res://.godot/imported/Ac437_EverexME_5x8.ttf-9a59d9e20d1583891475399b7d70e96d.fontdata"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jl1spd3kecs0"
-path="res://.godot/imported/32x32_packed_EGA_experimental.png-96a2f96dc559ad1cc7059ddc76b634ea.ctex"
+uid="uid://b3bhirrkon4pk"
+path="res://.godot/imported/bg_30x30-export.png-d2b59c617370d963bfd0d1d299a3e2a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/32x32_packed_EGA_experimental.png"
-dest_files=["res://.godot/imported/32x32_packed_EGA_experimental.png-96a2f96dc559ad1cc7059ddc76b634ea.ctex"]
+source_file="res://resnovo/bg_30x30-export.png"
+dest_files=["res://.godot/imported/bg_30x30-export.png-d2b59c617370d963bfd0d1d299a3e2a2.ctex"]
 
 [params]
 
