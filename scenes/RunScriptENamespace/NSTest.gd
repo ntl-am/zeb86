@@ -1,15 +1,15 @@
 class_name NSTest extends Node
 
 static func cumprimentar():
-	print("oi eu vim do nsteste!!!!")
+	print("ola eu vim do NSTest!!!!")
 
 const cachorrinho = "ZEKINHA"
 
-static func pathcost(origin : Vector2i, target : Vector2i) -> int:
+static func pathcost(origin: Vector2i, target: Vector2i) -> int:
 	var dv = origin - target
 	var dc = absi(dv.x)
 	var dl = absi(dv.y)
-	if dc < dl: #forcing bresenhaam like octant condition
+	if dc < dl: # forcing bresenhaam like octant condition
 		var dc_ = dc
 		dc = dl
 		dl = dc_
@@ -18,5 +18,5 @@ static func pathcost(origin : Vector2i, target : Vector2i) -> int:
 	if dl == 0: return dc
 	var diags = dc - dl
 	var orthos = dc - diags
-	var diagscost = diags + floori(diags/2)
+	var diagscost = diags + floori(diags / 2)
 	return orthos + diagscost
