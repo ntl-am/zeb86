@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bi35ufvskrebt"]
+
+[ext_resource type="FontFile" uid="uid://cvboi2w45b46y" path="res://resnovo/Ac437_Cordata_PPC-400.ttf" id="1_fwa6s"]
+
+[resource]
+default_font = ExtResource("1_fwa6s")
+default_font_size = 16

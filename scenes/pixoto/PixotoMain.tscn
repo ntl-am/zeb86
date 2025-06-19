@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddyga5d2o3o15"]
+[gd_scene load_steps=7 format=4 uid="uid://ddyga5d2o3o15"]
 
 [ext_resource type="Script" uid="uid://metteofw7rmr" path="res://scenes/pixoto/pixoto_main.gd" id="1_ki8qp"]
 [ext_resource type="TileSet" uid="uid://bxq2qlc2sokqa" path="res://scenes/pixoto/tileset_cp437.tres" id="1_v10f7"]
 [ext_resource type="Script" uid="uid://djce6cxslymws" path="res://scenes/pixoto/pc.gd" id="3_kmrll"]
 [ext_resource type="Texture2D" uid="uid://6tq6353ain2p" path="res://scenes/pixoto/sprite_arroba.tres" id="3_p7o62"]
+[ext_resource type="Script" uid="uid://3tggakaxxmx3" path="res://scenes/pixoto/coords_label.gd" id="5_axjsm"]
+[ext_resource type="Theme" uid="uid://bi35ufvskrebt" path="res://scenes/pixoto/new_theme.tres" id="5_oeedh"]
 
 [node name="PixotoMain" type="Node"]
 script = ExtResource("1_ki8qp")
@@ -15,13 +17,29 @@ tile_map_data = PackedByteArray("AAAAAAAAAAALAA0AAAAAAAEAAAALAA0AAAAAAAIAAAALAA0
 tile_set = ExtResource("1_v10f7")
 
 [node name="PC" type="Sprite2D" parent="Mundo"]
-position = Vector2(60, 60)
+position = Vector2(156, 108)
 texture = ExtResource("3_p7o62")
 script = ExtResource("3_kmrll")
-coords = Vector2i(3, 3)
+coords = Vector2i(7, 5)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("5_oeedh")
+
+[node name="CoordsLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 11.0
+offset_right = 951.0
+offset_bottom = 34.0
+theme = ExtResource("5_oeedh")
+theme_override_font_sizes/font_size = 24
+text = "coords = <x, y>"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_axjsm")
+
+[connection signal="has_repositioned" from="Mundo/PC" to="UI/CoordsLabel" method="_on_pc_has_repositioned"]

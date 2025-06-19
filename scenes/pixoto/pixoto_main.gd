@@ -9,4 +9,5 @@ var dbg = true
 func _ready() -> void:
 	pc.tab_canto = tabuleiro.position
 	pc.tab_lado = tabuleiro.tile_set.tile_size.x
+	pc.reposition()
 	return
