@@ -17,3 +17,6 @@
 
 # SCENES
 - descrever com arquivo texto(?) objetivo de cada cena
+
+# AMB DEV
+- salvar settings atuais no workspace, incluindo extensions
