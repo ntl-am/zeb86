@@ -5,7 +5,7 @@
 <!-- link rel="stylesheet" href="https://davidpaulsson.github.io/no-class/css/no-class.min.css" type="text/css" -->
 <!-- link rel="stylesheet" href="https://vasanthv.github.io/stylize.css/stylize.css" type="text/css" -->
 <!-- link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yorha@1.2.0/dist/yorha.min.css" type="text/css" -->
-<style></style>
+<!--style></style-->
 
 # intro/manual
 
